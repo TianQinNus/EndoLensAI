@@ -1,0 +1,17 @@
+{
+  "name": "unetpp_scale_20261018",
+  "checkpoint": "runs/unetpp_scale_20261018/best.pt",
+  "checkpoint_sha256": "35b3ec72547f7013d8b961e2e2f2e2affdaa930f4c9416cff577e7bf7ca36860",
+  "source": "unetpp_scale/train.py",
+  "source_sha256": "ba0edd1c44bbb5bb1795e0060d2cdfc6624b4c1f1ad6aae1cab6b0bf9a37cc99",
+  "best_validation": {
+    "epoch": 92,
+    "learning_rate": 7.122819337828763e-06,
+    "train_loss": 0.28585813949848043,
+    "val_loss": 0.37037390264971504,
+    "val_dice": 0.8845352049531607,
+    "val_iou": 0.8143665798779192,
+    "seconds": 256.8782160282135
+  },
+  "selection_rule": "highest validation Dice; frozen before test"
+}

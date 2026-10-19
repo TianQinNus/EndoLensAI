@@ -1,0 +1,420 @@
+{
+  "selection": "highest validation Dice; test is a repeatedly viewed reporting set, not untouched",
+  "best_completed_run": "unetpp_scale_20261018",
+  "consecutive_completed_candidates_without_improvement": 0,
+  "active_run": null,
+  "experiments": [
+    {
+      "name": "unet_scratch_20261016",
+      "status": "COMPLETED",
+      "method": "constant learning rate 1e-4",
+      "epochs": 100,
+      "best_validation": {
+        "epoch": 77,
+        "train_loss": 0.1296044736072935,
+        "val_loss": 0.45818855885801646,
+        "val_dice": 0.7860437105441915,
+        "val_iou": 0.6959390023659016,
+        "seconds": 67.87475109100342
+      },
+      "last_validation": {
+        "epoch": 100,
+        "train_loss": 0.09274906495521809,
+        "val_loss": 0.5350967111258671,
+        "val_dice": 0.7638691367774174,
+        "val_iou": 0.670432944955497,
+        "seconds": 66.56681489944458
+      },
+      "checkpoint": "runs/unet_scratch_20261016/best.pt",
+      "checkpoint_sha256": "fa235bcdd4bb03ef44764e6d2a14435efc8b01ef0401a23f059470d82a57b5ac"
+    },
+    {
+      "name": "unet_scratch_cosine_20261016",
+      "status": "COMPLETED",
+      "source": "unet_scratch_cosine/train.py",
+      "source_sha256": "b30086a1666477eb81f94c04682b3813e94d29176b6290b6da51f01304951cb6",
+      "change": "Only learning rate schedule: epoch cosine from 1e-4 to 1e-6",
+      "epochs": 100,
+      "initialization": "random seed 42; no previous checkpoint loaded",
+      "rationale": "Baseline validation deteriorated after best epoch 77 despite falling training loss; test whether declining learning rate improves validation.",
+      "best_validation": {
+        "epoch": 66,
+        "learning_rate": 2.712258179875221e-05,
+        "train_loss": 0.17663748839805865,
+        "val_loss": 0.44299928402078564,
+        "val_dice": 0.7752529530689634,
+        "val_iou": 0.6815797361834296,
+        "seconds": 70.2685911655426
+      },
+      "last_validation": {
+        "epoch": 100,
+        "learning_rate": 1.0000000000000002e-06,
+        "train_loss": 0.1116811049395594,
+        "val_loss": 0.4886139335303471,
+        "val_dice": 0.7676343449230851,
+        "val_iou": 0.6724445042939021,
+        "seconds": 70.13186502456665
+      },
+      "checkpoint": "runs/unet_scratch_cosine_20261016/best.pt",
+      "checkpoint_sha256": "199c6336cc7e9221d315afbece140dff574a141d4acc8f1ad6c1095d0eb9e4bc",
+      "delta_vs_baseline": -0.010790757475228174
+    },
+    {
+      "name": "unet_scratch_augment_20261016",
+      "status": "COMPLETED",
+      "source": "unet_scratch_augment/train.py",
+      "source_sha256": "8194ac57a82e0542a0774102543053c91d83f37b0b1d2ab42c5fbf1b22567c9f",
+      "epochs": 100,
+      "initialization": "random seed 42; no checkpoint loaded",
+      "comparison": "baseline constant LR 1e-4",
+      "change": "augmentation only: paired flips and uniform quarter rotations; RGB brightness/contrast 0.8..1.2",
+      "rationale": "Baseline train/validation gap; test augmentation to improve generalization. Cosine candidate failed to improve best Dice.",
+      "best_validation": {
+        "epoch": 80,
+        "train_loss": 0.2812132453096324,
+        "val_loss": 0.38505415505376356,
+        "val_dice": 0.8032006946103326,
+        "val_iou": 0.7070338273870533,
+        "seconds": 66.50581884384155
+      },
+      "last_validation": {
+        "epoch": 100,
+        "train_loss": 0.217449191520954,
+        "val_loss": 0.41064402399391964,
+        "val_dice": 0.7962433239509319,
+        "val_iou": 0.7067688555553042,
+        "seconds": 67.17027306556702
+      },
+      "checkpoint": "runs/unet_scratch_augment_20261016/best.pt",
+      "checkpoint_sha256": "bfd60ad073a779086d95f70d5a1c5acbbee5c6e33ca1f832ab0d0383f63aeca1",
+      "delta_vs_baseline": 0.01715698406614108
+    },
+    {
+      "name": "unet_scratch_boundary_20261016",
+      "status": "COMPLETED",
+      "source": "unet_scratch_boundary/train.py",
+      "source_sha256": "50df990900ec6a9f9decd56abc28d13d87dd18114fa6614674247cd94b22ec11",
+      "epochs": 100,
+      "initialization": "random seed 42; no checkpoint loaded",
+      "comparison": "unet_scratch_augment_20261016",
+      "change": "loss only: add 0.2 inner-boundary soft Dice via 3x3 zero-padded erosion",
+      "rationale": "Augmentation improved validation Dice and IoU; test additional boundary supervision while keeping augmentation and all other training settings.",
+      "selection": "validation region Dice at 256x256, not direct evidence of improved boundary accuracy",
+      "best_validation": {
+        "epoch": 97,
+        "train_loss": 0.3697089178808804,
+        "val_loss": 0.5468374934689751,
+        "val_dice": 0.8078887059770782,
+        "val_iou": 0.7134889495783838,
+        "seconds": 71.78526830673218
+      },
+      "last_validation": {
+        "epoch": 100,
+        "train_loss": 0.35739635917647133,
+        "val_loss": 0.5687219007261868,
+        "val_dice": 0.7893131765825995,
+        "val_iou": 0.7011557940779061,
+        "seconds": 71.70351600646973
+      },
+      "checkpoint": "runs/unet_scratch_boundary_20261016/best.pt",
+      "checkpoint_sha256": "0c776257131d99b2716d564444a88a4c0c1b86f88b18536fe65133b9ab173098"
+    },
+    {
+      "name": "unet_scratch_groupnorm_20261016",
+      "status": "COMPLETED",
+      "source": "unet_scratch_groupnorm/train.py",
+      "source_sha256": "3081cae3ba2435d075b93f984c9d4d7289410ff2eba33ae8eae8541c19372118",
+      "epochs": 100,
+      "initialization": "random seed 42; no checkpoint loaded",
+      "comparison": "unet_scratch_boundary_20261016",
+      "change": "architecture only: GroupNorm after each double-conv convolution",
+      "rationale": "Test below requested continuation target; choose normalization as next generic architecture experiment to improve optimization, selected only by validation Dice; keep resolution, augmentation, loss, training budget fixed.",
+      "best_validation": {
+        "epoch": 86,
+        "train_loss": 0.3503168763785527,
+        "val_loss": 0.4070421033892138,
+        "val_dice": 0.8738194091566678,
+        "val_iou": 0.8003292133068216,
+        "seconds": 114.05054497718811
+      },
+      "last_validation": {
+        "epoch": 100,
+        "train_loss": 0.3205539645819828,
+        "val_loss": 0.43571634744775706,
+        "val_dice": 0.8686734372171863,
+        "val_iou": 0.7938883247046635,
+        "seconds": 113.84448480606079
+      },
+      "checkpoint": "runs/unet_scratch_groupnorm_20261016/best.pt",
+      "checkpoint_sha256": "04e1b6f691a34f401593eea1d4629728d474f585d540790fa9ba5a55502923c3"
+    },
+    {
+      "name": "unet_scratch_gn_decay_20261017",
+      "status": "COMPLETED",
+      "source": "unet_scratch_gn_decay/train.py",
+      "source_sha256": "a8de3a3e5dde3c97658cef298682aa08ba0c15f44ced9b033aabefa9e4756322",
+      "epochs": 100,
+      "initialization": "random seed 42; no checkpoint loaded",
+      "comparison": "unet_scratch_groupnorm_20261016",
+      "change": "learning rate only: hold 1e-4 first 50 epochs; cosine decay to 1e-6 for remaining 50",
+      "rationale": "GroupNorm validation improved but oscillates late; test late decay while preserving early optimization. Test score only triggers user-requested continuation.",
+      "best_validation": {
+        "epoch": 93,
+        "learning_rate": 5.711060902932042e-06,
+        "train_loss": 0.26986154965285597,
+        "val_loss": 0.3802387007351579,
+        "val_dice": 0.883246609260296,
+        "val_iou": 0.8126563828566978,
+        "seconds": 114.42035698890686
+      },
+      "last_validation": {
+        "epoch": 100,
+        "learning_rate": 1.0000000000000002e-06,
+        "train_loss": 0.2667839466497816,
+        "val_loss": 0.3858071631398694,
+        "val_dice": 0.8808094242523457,
+        "val_iou": 0.8098738325053247,
+        "seconds": 114.4812490940094
+      },
+      "checkpoint": "runs/unet_scratch_gn_decay_20261017/best.pt",
+      "checkpoint_sha256": "cd7af9f7ed5bc79c54ab6ab87d34149bc6e79f9d6badf27ab0df305275aaef2f"
+    },
+    {
+      "name": "unet_scratch_gn_wide_20261017",
+      "status": "COMPLETED",
+      "source": "unet_scratch_gn_wide/train.py",
+      "source_sha256": "a8de3a3e5dde3c97658cef298682aa08ba0c15f44ced9b033aabefa9e4756322",
+      "epochs": 100,
+      "base": 48,
+      "initialization": "random seed 42; no checkpoint loaded",
+      "comparison": "unet_scratch_gn_decay_20261017",
+      "change": "capacity only: base channels 32 to 48; batch, resolution, loss, augmentation and LR schedule unchanged",
+      "rationale": "Next architecture capacity ablation after normalization and schedule improvements; choose model by validation Dice only. Test score triggers continuation, not hyperparameter selection.",
+      "best_validation": {
+        "epoch": 91,
+        "learning_rate": 8.705767687650265e-06,
+        "train_loss": 0.2642489160957008,
+        "val_loss": 0.37778004120136127,
+        "val_dice": 0.8837979292047435,
+        "val_iou": 0.8155065470728381,
+        "seconds": 210.06122589111328
+      },
+      "last_validation": {
+        "epoch": 100,
+        "learning_rate": 1.0000000000000002e-06,
+        "train_loss": 0.25605086211500494,
+        "val_loss": 0.3781239088239341,
+        "val_dice": 0.8823550380509475,
+        "val_iou": 0.8146226167678833,
+        "seconds": 210.21161484718323
+      },
+      "checkpoint": "runs/unet_scratch_gn_wide_20261017/best.pt",
+      "checkpoint_sha256": "af0fa6b0adf40c6766ca180f934ec4a91ce2e61f6710a94e7aea0a249ecb5863"
+    },
+    {
+      "name": "unet_scratch_region_only_20261017",
+      "status": "COMPLETED",
+      "source": "unet_scratch_region_only/train.py",
+      "source_sha256": "0c298277086b4d762ff787f457af55648252db749a56ce4ec98e51ff625da2d8",
+      "epochs": 100,
+      "base": 48,
+      "initialization": "random seed 42; no checkpoint loaded",
+      "comparison": "unet_scratch_gn_wide_20261017",
+      "change": "loss only: remove additional 0.2 boundary Dice term; retain BCE + region Dice",
+      "rationale": "Boundary contribution has not been isolated under GroupNorm; controlled loss ablation after width produced only a small validation gain. Keep all other settings fixed; select on validation Dice.",
+      "best_validation": {
+        "epoch": 88,
+        "learning_rate": 1.441605294264014e-05,
+        "train_loss": 0.13183549519242913,
+        "val_loss": 0.24654843642793853,
+        "val_dice": 0.8789644582518216,
+        "val_iou": 0.8071953732391883,
+        "seconds": 193.86536502838135
+      },
+      "last_validation": {
+        "epoch": 100,
+        "learning_rate": 1.0000000000000002e-06,
+        "train_loss": 0.1223514696647381,
+        "val_loss": 0.25009651882895106,
+        "val_dice": 0.8776912064387881,
+        "val_iou": 0.8061483580490638,
+        "seconds": 193.70347380638123
+      },
+      "checkpoint": "runs/unet_scratch_region_only_20261017/best.pt",
+      "checkpoint_sha256": "bea315152411436effd4143a5b35d2dc74fd0271f273c8a95baf7840dc55ba5a"
+    },
+    {
+      "name": "unetpp_scratch_20261017",
+      "status": "COMPLETED",
+      "source": "unetpp_scratch/train.py",
+      "source_sha256": "9a41be7665353bd999b06b26c2aad4af28835782ec9faf66cd39a8a3f2ff2bb6",
+      "epochs": 100,
+      "base": 32,
+      "initialization": "random seed 42; no checkpoint loaded",
+      "comparison": "unet_scratch_gn_decay_20261017 (base32)",
+      "change": "architecture: nested dense skip pathways, single final output head; base32 and other settings match gn_decay",
+      "rationale": "User requested comparisons across CNN architectures. UNet++ topology with project adaptations; not a faithful paper reproduction.",
+      "architecture_provenance": "unetpp_scratch/architecture.json",
+      "best_validation": {
+        "epoch": 99,
+        "learning_rate": 1.0976769428005578e-06,
+        "train_loss": 0.24594324734704248,
+        "val_loss": 0.38360269439631495,
+        "val_dice": 0.8840193403178248,
+        "val_iou": 0.8132601462561508,
+        "seconds": 434.30777192115784
+      },
+      "last_validation": {
+        "epoch": 100,
+        "learning_rate": 1.0000000000000002e-06,
+        "train_loss": 0.24783923512902753,
+        "val_loss": 0.3838597092135199,
+        "val_dice": 0.8840111350191051,
+        "val_iou": 0.8132814464897945,
+        "seconds": 441.03204894065857
+      },
+      "checkpoint": "runs/unetpp_scratch_20261017/best.pt",
+      "checkpoint_sha256": "66dfce498aa6c0cdf26a0274987da2c167287d7e6ceba5faacd15ab7a15e733e"
+    },
+    {
+      "name": "unetpp_scale_20261018",
+      "status": "COMPLETED",
+      "source": "unetpp_scale/train.py",
+      "source_sha256": "ba0edd1c44bbb5bb1795e0060d2cdfc6624b4c1f1ad6aae1cab6b0bf9a37cc99",
+      "epochs": 100,
+      "base": 32,
+      "initialization": "random seed42; no checkpoint loaded",
+      "comparison": "unetpp_scratch_20261017",
+      "change": "augmentation only: p0.5 paired shrink factor0.4..0.8, random-position black padding",
+      "rationale": "User-directed diagnostic found scarce small objects in training; test-informed exploratory experiment, not independent holdout validation.",
+      "protocol": "unetpp_scale/protocol.json",
+      "best_validation": {
+        "epoch": 92,
+        "learning_rate": 7.122819337828763e-06,
+        "train_loss": 0.28585813949848043,
+        "val_loss": 0.37037390264971504,
+        "val_dice": 0.8845352049531607,
+        "val_iou": 0.8143665798779192,
+        "seconds": 256.8782160282135
+      },
+      "last_validation": {
+        "epoch": 100,
+        "learning_rate": 1.0000000000000002e-06,
+        "train_loss": 0.28134810061290344,
+        "val_loss": 0.3709735997791948,
+        "val_dice": 0.8836787454013166,
+        "val_iou": 0.8130173329649301,
+        "seconds": 257.105370759964
+      },
+      "checkpoint": "runs/unetpp_scale_20261018/best.pt",
+      "checkpoint_sha256": "35b3ec72547f7013d8b961e2e2f2e2affdaa930f4c9416cff577e7bf7ca36860"
+    },
+    {
+      "name": "unetpp_resolution_20261018",
+      "status": "PAUSED_BY_USER",
+      "source": "unetpp_resolution/train.py",
+      "source_sha256": "9cd7163316424f6a66b0b4d02f8632411c4ee2c81f0611cda1ddcd42ad250f4d",
+      "epochs": 100,
+      "base": 32,
+      "input_size": 320,
+      "validation_resolution": 256,
+      "initialization": "random seed42; no checkpoint loaded",
+      "comparison": "unetpp_scale_20261018",
+      "change": "input resolution only:256 to320; validation GT fixed256, logits resized back to256 before scoring",
+      "rationale": "Preplanned small-object detail hypothesis after user-requested diagnostic; test-informed exploration.",
+      "protocol": "unetpp_resolution/protocol.json"
+    }
+  ],
+  "test_evaluations": [
+    {
+      "result": "runs/test_selected_boundary_20261016/evaluation.json",
+      "selection": "unet_evaluation/selection_20261016.json",
+      "dice": 0.6226259178810394,
+      "iou": 0.532830452846059,
+      "target_dice": 0.76,
+      "target_met": false
+    },
+    {
+      "result": "runs/test_selected_groupnorm_20261017/evaluation.json",
+      "selection": "unet_evaluation/selection_groupnorm_20261017.json",
+      "dice": 0.6774963750432547,
+      "iou": 0.5966648464099816,
+      "target_dice": 0.76,
+      "target_met": false
+    },
+    {
+      "result": "runs/test_selected_gn_decay_20261017/evaluation.json",
+      "selection": "unet_evaluation/selection_gn_decay_20261017.json",
+      "dice": 0.6790822404610567,
+      "iou": 0.6010033874745132,
+      "target_dice": 0.76,
+      "target_met": false
+    },
+    {
+      "result": "runs/test_selected_gn_wide_20261017/evaluation.json",
+      "selection": "unet_evaluation/selection_gn_wide_20261017.json",
+      "dice": 0.6955252688662662,
+      "iou": 0.6152241651986905,
+      "target_dice": 0.76,
+      "target_met": false
+    },
+    {
+      "result": "runs/test_selected_unetpp_20261018/evaluation.json",
+      "selection": "unet_evaluation/selection_unetpp_20261018.json",
+      "dice": 0.7139445392803155,
+      "iou": 0.6277336659373809,
+      "target_dice": 0.76,
+      "target_met": false
+    },
+    {
+      "result": "runs/test_selected_scale_20261018/evaluation.json",
+      "selection": "unet_evaluation/selection_scale_20261018.json",
+      "dice": 0.7341213961540712,
+      "iou": 0.6471525560111897,
+      "target_dice": 0.76,
+      "target_met": false
+    }
+  ],
+  "next_architecture_plan": {
+    "user_request": "Compare different CNN architectures after the current run, rather than only U-Net parameter changes.",
+    "priority": [
+      "UNet++",
+      "PraNet",
+      "ACSNet"
+    ],
+    "other_candidates": [
+      "SFA",
+      "MSEG",
+      "DCRNet",
+      "EU-Net",
+      "SANet"
+    ],
+    "requirements": [
+      "Verify original paper and official implementation before implementing a named architecture.",
+      "Random initialization; no external pretrained weights.",
+      "Keep fixed training/validation split and use validation for model selection.",
+      "Run only one GPU training process at a time; do not modify active training source.",
+      "Document architectural adaptations and distinguish controlled variants from faithful paper reproductions."
+    ],
+    "priority_note": "User subsequently requested diagnosis before further model changes: follow error_analysis_plan after current run."
+  },
+  "error_analysis_plan": {
+    "evidence": "runs/error_analysis_20261018/distribution.json and cases.json; CPU diagnostics of 12 preselected cases, same frozen wide checkpoint",
+    "findings": [
+      "Small-object area distribution shift; errors include total misses and spatially displaced false positives, not just contour inaccuracies.",
+      "ETIS examples 100-102 predict adjacent tissue rather than GT; ColonDB 2 predicts empty; 206/208 predict other regions.",
+      "Original ETIS median resolution 1225x966 is downscaled to 256x256; detail loss is a hypothesis, not demonstrated causal explanation.",
+      "No gross image/mask alignment issue apparent in reviewed examples; this does not validate all annotations."
+    ],
+    "next_steps": [
+      "Finish current UNet++ unchanged.",
+      "Before another architecture, audit small-object performance on existing training/validation split.",
+      "Prioritize a controlled scale-augmentation experiment using training images only; introduce smaller objects by paired downscale/pad, keep masks aligned.",
+      "Separately test higher input resolution with a fixed common validation metric protocol; do not conflate changed validation resolution with model gains.",
+      "Only then consider context/attention architectures."
+    ],
+    "evaluation_caveat": "User explicitly requested test-error-guided model development. This is test-informed exploratory development; these 798 entries are not an independent final holdout. Do not include test images in training or optimize test threshold. Seek a fresh external holdout for final unbiased evaluation.",
+    "diagnostic_source_sha256": "2dbe44441aabde2a013d9aa1a98781002d64856e3e9600c9b930270f2416574c"
+  },
+  "paused_run": "unetpp_resolution_20261018"
+}

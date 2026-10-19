@@ -1,0 +1,17 @@
+{
+  "name": "unet_scratch_gn_wide_20261017",
+  "checkpoint": "runs/unet_scratch_gn_wide_20261017/best.pt",
+  "checkpoint_sha256": "af0fa6b0adf40c6766ca180f934ec4a91ce2e61f6710a94e7aea0a249ecb5863",
+  "source": "unet_scratch_gn_wide/train.py",
+  "source_sha256": "a8de3a3e5dde3c97658cef298682aa08ba0c15f44ced9b033aabefa9e4756322",
+  "best_validation": {
+    "epoch": 91,
+    "learning_rate": 8.705767687650265e-06,
+    "train_loss": 0.2642489160957008,
+    "val_loss": 0.37778004120136127,
+    "val_dice": 0.8837979292047435,
+    "val_iou": 0.8155065470728381,
+    "seconds": 210.06122589111328
+  },
+  "selection_rule": "highest validation Dice among seven completed experiments; frozen before test evaluation"
+}

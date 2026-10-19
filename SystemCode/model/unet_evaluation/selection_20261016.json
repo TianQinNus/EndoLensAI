@@ -1,0 +1,16 @@
+{
+  "name": "unet_scratch_boundary_20261016",
+  "checkpoint": "runs/unet_scratch_boundary_20261016/best.pt",
+  "checkpoint_sha256": "0c776257131d99b2716d564444a88a4c0c1b86f88b18536fe65133b9ab173098",
+  "source": "unet_scratch_boundary/train.py",
+  "source_sha256": "50df990900ec6a9f9decd56abc28d13d87dd18114fa6614674247cd94b22ec11",
+  "best_validation": {
+    "epoch": 97,
+    "train_loss": 0.3697089178808804,
+    "val_loss": 0.5468374934689751,
+    "val_dice": 0.8078887059770782,
+    "val_iou": 0.7134889495783838,
+    "seconds": 71.78526830673218
+  },
+  "selection_rule": "highest validation Dice among all four completed experiments, frozen before test inference"
+}

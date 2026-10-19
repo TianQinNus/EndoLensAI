@@ -1,0 +1,17 @@
+{
+  "name": "unetpp_scratch_20261017",
+  "checkpoint": "runs/unetpp_scratch_20261017/best.pt",
+  "checkpoint_sha256": "66dfce498aa6c0cdf26a0274987da2c167287d7e6ceba5faacd15ab7a15e733e",
+  "source": "unetpp_scratch/train.py",
+  "source_sha256": "9a41be7665353bd999b06b26c2aad4af28835782ec9faf66cd39a8a3f2ff2bb6",
+  "best_validation": {
+    "epoch": 99,
+    "learning_rate": 1.0976769428005578e-06,
+    "train_loss": 0.24594324734704248,
+    "val_loss": 0.38360269439631495,
+    "val_dice": 0.8840193403178248,
+    "val_iou": 0.8132601462561508,
+    "seconds": 434.30777192115784
+  },
+  "selection_rule": "highest validation Dice among completed experiments; frozen before test"
+}

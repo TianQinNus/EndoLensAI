@@ -1,0 +1,17 @@
+{
+  "comparison": "unetpp_scale_20261018",
+  "only_experimental_factor": "training/inference input size 256 -> 320",
+  "validation": "input320; GT resized directly from original to256 with nearest; logits interpolated to256 bilinear align_corners=False before loss and threshold0.5 metrics; same GT as previous runs",
+  "unchanged": [
+    "base32",
+    "batch8",
+    "100 epochs",
+    "seed42 random initialization",
+    "scale augmentation",
+    "GroupNorm",
+    "BCE+Dice+0.2 boundary loss",
+    "late cosine schedule"
+  ],
+  "test": "original-resolution logits interpolation then sigmoid, same protocol; already known test set",
+  "rationale": "user-requested diagnostic suggests downsampling can harm small-object detail; higher resolution is a hypothesis to test, not a demonstrated cause"
+}

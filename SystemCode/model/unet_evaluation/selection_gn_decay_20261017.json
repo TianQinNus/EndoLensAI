@@ -1,0 +1,17 @@
+{
+  "name": "unet_scratch_gn_decay_20261017",
+  "checkpoint": "runs/unet_scratch_gn_decay_20261017/best.pt",
+  "checkpoint_sha256": "cd7af9f7ed5bc79c54ab6ab87d34149bc6e79f9d6badf27ab0df305275aaef2f",
+  "source": "unet_scratch_gn_decay/train.py",
+  "source_sha256": "a8de3a3e5dde3c97658cef298682aa08ba0c15f44ced9b033aabefa9e4756322",
+  "best_validation": {
+    "epoch": 93,
+    "learning_rate": 5.711060902932042e-06,
+    "train_loss": 0.26986154965285597,
+    "val_loss": 0.3802387007351579,
+    "val_dice": 0.883246609260296,
+    "val_iou": 0.8126563828566978,
+    "seconds": 114.42035698890686
+  },
+  "selection_rule": "highest validation Dice among six completed experiments; frozen before this test evaluation"
+}

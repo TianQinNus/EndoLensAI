@@ -1,0 +1,14 @@
+{
+  "comparison": "unetpp_scratch_20261017",
+  "change": "training augmentation only; p0.5 downscale 0.4..0.8 then random-position black padding; identical transform for mask with nearest resize",
+  "motivation": "user-requested test error analysis showed small-object distribution shift",
+  "caveats": [
+    "test-informed exploratory development; need fresh holdout for independent final assessment",
+    "black padding can create artificial cues; effectiveness must be measured",
+    "only 3 native validation masks below 1% area, so subgroup conclusions are uncertain"
+  ],
+  "smoke_100_real_train_samples": {
+    "valid": true,
+    "area_below_1pct": 8
+  }
+}

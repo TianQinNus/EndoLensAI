@@ -1,0 +1,14 @@
+{
+  "paper": "https://arxiv.org/html/1807.10165v1",
+  "official_repository": "https://github.com/MrGiovanni/UNetPlusPlus",
+  "implementation": "Independent implementation of nested dense paths, equation 1; no upstream source copied",
+  "adaptations": [
+    "project two-convolution GroupNorm blocks",
+    "transposed convolution reduces deeper channels to current level before concatenation",
+    "single output head X(0,4), no deep supervision",
+    "project BCE + region Dice + 0.2 boundary Dice",
+    "base 32, random initialization, 256px, AdamW and late cosine schedule"
+  ],
+  "comparison": "unet_scratch_gn_decay_20261017: same base32 and training settings; architecture topology only changed",
+  "not_claimed": "faithful paper training reproduction"
+}

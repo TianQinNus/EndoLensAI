@@ -1,0 +1,16 @@
+{
+  "name": "unet_scratch_groupnorm_20261016",
+  "checkpoint": "runs/unet_scratch_groupnorm_20261016/best.pt",
+  "checkpoint_sha256": "04e1b6f691a34f401593eea1d4629728d474f585d540790fa9ba5a55502923c3",
+  "source": "unet_scratch_groupnorm/train.py",
+  "source_sha256": "3081cae3ba2435d075b93f984c9d4d7289410ff2eba33ae8eae8541c19372118",
+  "best_validation": {
+    "epoch": 86,
+    "train_loss": 0.3503168763785527,
+    "val_loss": 0.4070421033892138,
+    "val_dice": 0.8738194091566678,
+    "val_iou": 0.8003292133068216,
+    "seconds": 114.05054497718811
+  },
+  "selection_rule": "highest validation Dice among five completed experiments; frozen before this test evaluation"
+}
