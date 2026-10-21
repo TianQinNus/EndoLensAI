@@ -219,31 +219,31 @@ def analyze():
     write_json(OUTPUT / "verification.json", verification)
     write_json(OUTPUT / "complementarity.json", pair)
     date = datetime.now(ZoneInfo("Asia/Singapore")).strftime("%Y-%m-%d")
-    report = [f"# E8-H：冻结 C6 留出评估与 B/E0 互补性诊断\n\n日期：{date}（Asia/Singapore）。",
-              "## 1. 范围与协议\n\n沿用 E8 冻结协议，在 C6 的83张单帧阳性图像上评估四组 seed42 开发 best 与原始 E0。B 仍为验证集选出的主方案，不根据 C6 重选模型。没有训练或融合权重搜索。",
-              f"模型配置锁定于 {lock['created_utc']}；补充描述性分析计划冻结于 {plan['frozen_at_singapore']}，早于首次 C6 推理。",
-              "二值阈值0.5、原尺寸 logits 插值后 sigmoid、ImageNet RGB归一化，与既有评估协议一致。原始模型、冻结配置与图像/掩膜通过校验；五模型全部83张缓存概率、PNG与逐图指标重放一致。",
-              "## 2. 同数据模型结果\n\n| 模型 | Dice | IoU | MAE | Dice<0.5 | Dice<0.1 | 零Dice |\n|---|---:|---:|---:|---:|---:|---:|"]
+    report = [f"# E8-H frozen C6 evaluation and B/E0 complementarity\n\nDate: {date} (Asia/Singapore).",
+              "## 1. Scope and protocol\n\nUnder the frozen E8 protocol, evaluate four seed42 development bests and original E0 on83 C6 positive single frames. B remains validation-selected, not reselected on C6. No training/fusion-weight search.",
+              f"Model configuration locked at {lock['created_utc']}; descriptive analysis plan frozen at {plan['frozen_at_singapore']}, before first C6 inference.",
+              "Threshold0.5, native logits resize before sigmoid and ImageNet RGB normalization match the protocol. Models/config/data pass checks; all five models x83 probability/PNG/metric caches replay consistently.",
+              "## 2. Same-data model results\n\n| Model | Dice | IoU | MAE | Dice<0.5 | Dice<0.1 | Zero Dice |\n|---|---:|---:|---:|---:|---:|---:|"]
     for r in summaries:
         report.append(f"| {r['model']} | {r['dice']:.6f} | {r['iou']:.6f} | {r['mae']:.6f} | {r['dice_lt05']} | {r['dice_lt01']} | {r['zero_dice']} |")
-    report += ["\n## 3. 预声明对照\n\n| 对照 | Dice增量 | MAE增量 | 低Dice数量增量 | 零Dice数量增量 |\n|---|---:|---:|---:|---:|"]
+    report += ["\n## 3. Declared contrasts\n\n| Contrast | Dice gain | MAE change | Low-Dice count change | Zero-Dice count change |\n|---|---:|---:|---:|---:|"]
     for r in contrasts:
         report.append(f"| {r['contrast']} | {r['dice_delta']:+.6f} | {r['mae_delta']:+.6f} | {r['low05_delta']:+d} | {r['zero_delta']:+d} |")
-    report += ["\n## 4. B与E0的逐图互补性\n\n| E0状态 / B状态 | B Dice≥0.5 | B Dice<0.5 |\n|---|---:|---:|",
+    report += ["\n## 4. Per-image B/E0 complementarity\n\n| E0 / B status | B Dice>=0.5 | B Dice<0.5 |\n|---|---:|---:|",
                f"| E0 Dice≥0.5 | {pair['both_ge05']} | {pair['E0_rescues_B_low']} |",
                f"| E0 Dice<0.5 | {pair['B_rescues_E0_low']} | {pair['both_lt05']} |",
-               f"\nB 的 Dice 胜/平/负为 {pair['dice_wins_B']}/{pair['dice_ties']}/{pair['dice_losses_B']}；绝对差超过0.01的明显胜/负为 {pair['practical_dice_wins_B_gt001']}/{pair['practical_dice_losses_B_lt_minus001']}。",
-               f"B补救E0零Dice {pair['zero_rescued_by_B']}张，同时新增零Dice {pair['zero_new_in_B']}张。B在Dice提高且MAE不增加的图像有 {pair['B_dice_up_mae_not_worse']}张；Dice提高但MAE增加的有 {pair['B_dice_up_mae_worse']}张。",
-               "这是使用真实掩膜的事后错误诊断，不是可部署路由规则；不能据此给推理阶段提供真实Dice或GT面积。模型错误相关性仅描述这83张图像，不是患者级统计推断。",
-               "## 5. 小目标与其他面积分层\n\n| 模型 | 面积分层 | 数量 | Dice | MAE | Dice<0.5 | 零Dice |\n|---|---|---:|---:|---:|---:|---:|"]
+               f"\nB Dice wins/ties/losses {pair['dice_wins_B']}/{pair['dice_ties']}/{pair['dice_losses_B']}; differences beyond0.01 wins/losses {pair['practical_dice_wins_B_gt001']}/{pair['practical_dice_losses_B_lt_minus001']}.",
+               f"B rescues E0 zero Dice {pair['zero_rescued_by_B']}; newly zero Dice {pair['zero_new_in_B']}. B Dice up with MAE not increased {pair['B_dice_up_mae_not_worse']}; B Dice up with MAE increased {pair['B_dice_up_mae_worse']} images.",
+               "This retrospective GT error diagnosis is not deployable routing; true Dice/GT area must not enter inference. Error correlation describes these83 images, not patient-level inference.",
+               "## 5. Small-target and other area strata\n\n| Model | Area stratum | Count | Dice | MAE | Dice<0.5 | Zero Dice |\n|---|---|---:|---:|---:|---:|---:|"]
     for name in (E0, B):
         for r in summarize_groups(all_rows[name]):
             if r["group"] in ("small_lt1pct", "medium_1to10pct", "large_ge10pct"):
                 report.append(f"| {name} | {r['group']} | {r['count']} | {r['dice']:.6f} | {r['mae']:.6f} | {r['dice_lt05']} | {r['zero_dice']} |")
-    report += ["\n## 6. 解释边界与下一阶段\n\n这是单个新中心、83张阳性图像、seed42的有限范围证据；没有可靠患者ID，不提供患者级置信区间或显著性宣称。没有阴性帧，不能据此判断完整临床误报率。",
-               "C6已完成模型评估，从此不能称为新融合实验的未见盲测集。C6上的互补病例只提供开发假设，未证明固定权重融合有效，也不能据此选择权重、阈值或自动路由。",
-               "后续应先依据本轮结果选择研究主线；若研究融合，另行声明开发数据与未用于调参的评估数据；若研究U-Net稳定性，按预声明种子作匹配对照。不修改已完成的E8模型选择、协议或留出结果。",
-               "详细逐图差值与类别见 paired_B_vs_E0.csv；模型概率文件保留在原评估目录。验证记录见 verification.json。"]
+    report += ["\n## 6. Interpretation and next stage\n\nLimited one-center83-positive-image seed42 evidence, without reliable patient IDs or patient confidence/significance claims. No negative frames, so no clinical false-alarm estimate.",
+               "C6 is now viewed and cannot become a new blind fusion test. Complementarity supplies hypotheses, not proof of fixed fusion or grounds to tune weights/thresholds/routing here.",
+               "Choose the next research question explicitly. Fusion needs declared development/evaluation roles; U-Net stability needs matched declared seeds. Do not alter completed E8 selection, protocol or holdout outcomes.",
+               "Per-image deltas/categories are in paired_B_vs_E0.csv; original probability caches remain in their evaluation directory; see verification.json."]
     (OUTPUT / "report.md").write_text("\n\n".join(report)+"\n", encoding="utf-8")
     hashes = {p.name: file_hash(p) for p in OUTPUT.iterdir() if p.is_file()}
     write_json(OUTPUT / "analysis_artifacts.json", hashes)

@@ -77,7 +77,7 @@ class PolypOutline:
 
 
 def main():
-    parser = argparse.ArgumentParser(description='输入照片，输出仅叠加绿色息肉轮廓的原尺寸 PNG')
+    parser = argparse.ArgumentParser(description='Input a photo; output a native-size PNG with green predicted polyp outlines only')
     parser.add_argument('image', type=Path)
     parser.add_argument('-o', '--output', type=Path)
     parser.add_argument('--line-width', type=int, default=2, choices=range(1, 21), metavar='1..20')

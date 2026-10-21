@@ -1,0 +1,43 @@
+{
+  "group": "early",
+  "success": true,
+  "suites": [
+    {
+      "script": "e5_windows/test_e5.py",
+      "exit_code": 0,
+      "tests": 5
+    },
+    {
+      "script": "e6_windows/test_e6.py",
+      "exit_code": 0,
+      "tests": 9
+    },
+    {
+      "script": "e7a_windows/test_e7a.py",
+      "exit_code": 0,
+      "tests": 5
+    },
+    {
+      "script": "e7a2_windows/test_e7a2.py",
+      "exit_code": 0,
+      "tests": 7
+    },
+    {
+      "script": "e7b0_windows/test_e7b0.py",
+      "exit_code": 0,
+      "tests": 5
+    },
+    {
+      "script": "e7b1_windows/test_e7b1.py",
+      "exit_code": 0,
+      "tests": 6
+    },
+    {
+      "script": "e7b2_windows/test_e7b2.py",
+      "exit_code": 0,
+      "tests": 9
+    }
+  ],
+  "tests": 46,
+  "scope": "CPU/synthetic regression, not formal training, patient evaluation or a deployment benchmark"
+}

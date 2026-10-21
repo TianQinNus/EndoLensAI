@@ -1,0 +1,28 @@
+{
+  "group": "training",
+  "success": true,
+  "suites": [
+    {
+      "script": "e8_windows/test_e8.py",
+      "exit_code": 0,
+      "tests": 14
+    },
+    {
+      "script": "e8_windows/test_holdout_analysis.py",
+      "exit_code": 0,
+      "tests": 4
+    },
+    {
+      "script": "e8_repeat_windows/test_e8_repeat.py",
+      "exit_code": 0,
+      "tests": 12
+    },
+    {
+      "script": "e9_balance_windows/test_e9_balance.py",
+      "exit_code": 0,
+      "tests": 13
+    }
+  ],
+  "tests": 43,
+  "scope": "CPU/synthetic regression, not formal training, patient evaluation or a deployment benchmark"
+}

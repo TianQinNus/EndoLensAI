@@ -22,3 +22,5 @@ Snapshot22 October2026. These58 explicitly selected original files support the E
 Do not infer that a recorded TRAINING state is currently active. Do not select an E11 checkpoint or claim completed improvement from partial best values. B seed42 round98 remains the integration model.
 
 Original experiment paths in metadata are historical provenance, not teammate setup instructions. Preserving a checksum does not make this compact directory sufficient for training recovery. Dataset images, real masks, probability maps, optimizer/RNG state and complete source snapshots remain separately controlled. See [reports](../../../ProjectReport/README.md) for interpretation.
+
+On model_exploration, publication_checks contains newly executed synthetic regression summaries:46 early-stage tests,43 expansion/balance tests,62 later fusion/background tests and5 retained teammate boundary tests, all passing. These156 checks supplement the master edition's27 historical synthetic tests and15 integration tests. They are software checks, not newly measured patient-data performance.

@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-22",
+  "scope": "English research publication regression, not formal experiments",
+  "original_executed_source_commit": "c00b15fae599ae00d788393f366016e4e9c9516b",
+  "original_import_files_verified": 131,
+  "presentation_only_source_files": 10,
+  "ast_check": "Only originally non-English report/CLI text constants or CJK punctuation may differ; all other AST fields unchanged",
+  "original_preflight_hashes_relaxed": false,
+  "frozen_E0_E4_python_sources_verified": 34,
+  "research_regression_groups": {"early": 46, "training": 43, "fusion": 62, "teammate": 5},
+  "research_regression_total": 156,
+  "research_regression_success": true,
+  "master_historical_synthetic_total": 27,
+  "master_integration_total": 15,
+  "combined_test_executions": 198,
+  "new_formal_training": false,
+  "new_patient_image_evaluation": false,
+  "teammate_missing_weights_or_results_invented": false,
+  "remaining": ["Complete E11 under its original protocol after safe process inspection", "New independently audited confirmation data", "Actual React integration and production security acceptance"]
+}

@@ -233,8 +233,8 @@ def calibrate():
                        "images": len(rows) // 5, "selection_candidates_computed": 0,
                        "locked_config_sha256": file_hash(OUTPUT / "locked_config.json")})
             (folder / "report.md").write_text(report_table("E10-B calibration", summaries) +
-                    "\n\n状态：" + lock["status"] + "\n\n冻结E0权重：" + str(lock["selected_alpha_e0"]) +
-                    "\n\n只有calibration用于选择；完整条件见candidate_gates.json。无候选通过时，不计算selection融合。\n", encoding="utf-8")
+                    "\n\nStatus: " + lock["status"] + "\n\nFrozen E0 weight: " + str(lock["selected_alpha_e0"]) +
+                    "\n\nOnly calibration selects; see candidate_gates.json. If none pass, selection fusion is not computed.\n", encoding="utf-8")
             dump_audit(folder)
             write_json(OUTPUT / "freeze_audit.json", {"plan_sha256": file_hash(PLAN),
                        "locked_config_sha256": file_hash(OUTPUT / "locked_config.json"),
@@ -263,7 +263,7 @@ def read_lock():
 
 
 def report_table(title, summaries):
-    lines = ["# " + title, "", "| 模型 | Dice | IoU | MAE | Dice<0.5 | Dice<0.1 | 零Dice |",
+    lines = ["# " + title, "", "| Model | Dice | IoU | MAE | Dice<0.5 | Dice<0.1 | Zero Dice |",
              "|---|---:|---:|---:|---:|---:|---:|"]
     for r in summaries:
         lines.append(f"| {r['model']} | {r['dice']:.6f} | {r['iou']:.6f} | {r['mae']:.6f} | {r['dice_lt05']} | {r['dice_lt01']} | {r['zero_dice']} |")
@@ -342,9 +342,9 @@ def evaluate():
             write_json(folder / "failure_transitions.json", counts)
             write_json(folder / "patient_bootstrap.json", intervals)
             write_json(folder / "decision.json", decision)
-            (folder / "report.md").write_text(report_table("E10-B 冻结selection开发结果", summaries) +
-                    "\n\n状态：" + decision["status"] + "\n\n冻结E0权重：" + str(lock["selected_alpha_e0"]) +
-                    "\n\n逐项门槛见decision.json；双向失败转移、患者描述性bootstrap及面积分层见同目录。\n\n" +
+            (folder / "report.md").write_text(report_table("E10-B frozen selection development results", summaries) +
+                    "\n\nStatus: " + decision["status"] + "\n\nFrozen E0 weight: " + str(lock["selected_alpha_e0"]) +
+                    "\n\nSee decision.json for gates; sibling files cover failure transitions, descriptive patient bootstrap and area strata.\n\n" +
                     plan["data_role"] + "\n\n" + decision["next_step"] + "\n", encoding="utf-8")
             if file_hash(OUTPUT / "locked_config.json") != lock_hash:
                 raise ValueError("Lock changed during selection")

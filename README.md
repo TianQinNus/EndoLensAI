@@ -1,5 +1,7 @@
 # EndoLens AI
 
+This is the **model_exploration** branch. Start with the [research source and reproduction guide](SystemCode/model/docs/RESEARCH_GUIDE.md). The retained integration model and project progress are also published on master; teammate scratch experiments are preserved here as a separate research line.
+
 Polyp segmentation research and interactive recorded-video analysis.
 
 We study whether a pretrained U-Net can generalize better through additional training data and controlled error-focused training, while keeping an existing Polyp-PVT model frozen as a reference. Fusion is an evaluated research question, not an assumed product improvement.

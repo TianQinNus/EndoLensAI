@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-22",
+  "original_source_commit": "c00b15fae599ae00d788393f366016e4e9c9516b",
+  "original_imported_files_verified": 131,
+  "changes": [
+    {
+      "path": "SystemCode/model/e8_windows/analyze_holdout.py",
+      "executed_sha256": "393b70260b0e89d5bf81362f419bacfe43010686a007f3162cd1daa22f13f61d",
+      "english_sha256": "b7dc97b23e3d2fa1717df26649fb33adaa8929823e906b4393ac4d020c53ccbb",
+      "change": "Only originally non-English report text constants; all other AST fields unchanged"
+    },
+    {
+      "path": "SystemCode/model/e8_repeat_windows/run_e8_repeat.py",
+      "executed_sha256": "b6d37aad6a107e3b63e676e087695198fe61a7446abcbd25119036c463d49438",
+      "english_sha256": "8e79fec8a54bf095de7cb4d9cc127cf176f13bbedde8277baf4681142cf4c453",
+      "change": "Only originally non-English report text constants; all other AST fields unchanged"
+    },
+    {
+      "path": "SystemCode/model/e9_balance_windows/run_e9_balance.py",
+      "executed_sha256": "bb5af0ea1500ff19b89d9a87abe25528fb4e573023fc11cb47c8573a55a56a49",
+      "english_sha256": "bb690810cb2b28977c880595efc69c42edcadbdbc2a62d6f0350c94ad5e9fc76",
+      "change": "Only originally non-English report text constants; all other AST fields unchanged"
+    },
+    {
+      "path": "SystemCode/model/e10a_windows/run_e10a.py",
+      "executed_sha256": "a4a649f002d6ea818f53e86af0706a5cd2f212656f04ae9c7c0813024fe38eb1",
+      "english_sha256": "04b48112f60b12e6fdac5917e1a1328f83a16e8974c5d24b5c5751863709365a",
+      "change": "Only originally non-English report text constants; all other AST fields unchanged"
+    },
+    {
+      "path": "SystemCode/model/e10b_windows/run_e10b.py",
+      "executed_sha256": "3d4c162f2eaef3c9325d2c9e75234b01ef560ea5d1796fc9fef8945b949c7410",
+      "english_sha256": "6f0d251f711bcef1e07b2ff64e45d5cd34237813d680576ba9e2c7d894570070",
+      "change": "Only originally non-English report text constants; all other AST fields unchanged"
+    },
+    {
+      "path": "SystemCode/model/e10c_windows/run_e10c.py",
+      "executed_sha256": "5faa7395a5da6c74fa320e1cbc7c8375e24240c6cf72f5ebda8f5db193c75246",
+      "english_sha256": "7698e384a72ba79060218970721b0114aa01718bdcd55dc28578651cd5c606ab",
+      "change": "Only originally non-English report text constants; all other AST fields unchanged"
+    },
+    {
+      "path": "SystemCode/model/e10d_windows/run_e10d.py",
+      "executed_sha256": "1b423492504049532485f72f82e73383e19624a10c9f5d71aaab38ae82c98b06",
+      "english_sha256": "49ac5389dae4bf3470136e108b42c0761bb7d977cc0eebf34273e258cdddbe42",
+      "change": "Only originally non-English report text constants; all other AST fields unchanged"
+    },
+    {
+      "path": "SystemCode/model/e11_background_windows/diagnose_errors.py",
+      "executed_sha256": "fb5ffc43e325cc983a98ad07d5d769d9d8ff90d12fc6a626324f57d0c8721061",
+      "english_sha256": "1f7cac7685455f3f752ef217c28eb6c2eeab5db2fdaff0c362df428fee0bb4b3",
+      "change": "Only originally non-English report text constants; all other AST fields unchanged"
+    },
+    {
+      "path": "SystemCode/model/e11_background_windows/run_e11.py",
+      "executed_sha256": "e3e71ce3a803b7b40d4c6a3fedf1c99e859c86e286b53330f647f85b47a85e92",
+      "english_sha256": "d337714a83909302bd346add0154bbf88e07d3d26dd2ef5fc18ff75564f1e8ae",
+      "change": "Only originally non-English report text constants; all other AST fields unchanged"
+    },
+    {
+      "path": "SystemCode/model/polyp_outline/predict.py",
+      "executed_sha256": "07c9bd3b92644a0b7883917d5e76f7a602bbaa5186047ad044b4b2dbcc0af35a",
+      "english_sha256": "62211952e9a90cd8fd5aeae0d91df541a0063669414304f2d6155538d5f15775",
+      "change": "English CLI description only; teammate inference computation unchanged"
+    }
+  ],
+  "metric_values_or_gates_changed": false,
+  "old_preflight_checks_relaxed": false,
+  "recovery": "Use original archived commit and complete matching private artifacts for historical recovery. English sources must not silently resume old source-hash-locked runs."
+}

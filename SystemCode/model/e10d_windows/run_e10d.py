@@ -417,15 +417,15 @@ def diagnose():
                 transitions[label]["zero"] = {"new": sum(r["dice"] == 0 and base[r["sample_id"]]["dice"] > 0 for r in values),
                                                 "rescued": sum(r["dice"] > 0 and base[r["sample_id"]]["dice"] == 0 for r in values)}
             write_json(folder / "failure_transitions.json", transitions)
-            lines = ["# E10-D 局部补救可行性诊断", "", "日期：2026-10-14（Asia/Singapore）", "",
-                     "状态：" + decision["status"], "", "FAR calibration160张/75患者，5折；B/E0冻结。仅探索，非独立确认，无部署参数。", "",
+            lines = ["# E10-D local-rescue feasibility diagnosis", "", "Date: 2026-10-14 (Asia/Singapore)", "",
+                     "Status: " + decision["status"], "", "FAR calibration160 images/75 patient groups, five folds; frozen B/E0. Exploratory, not independent confirmation; no deployed parameters.", "",
                      c.b.report_table("OOF / diagnostic controls", [{"model": label, **r} for label, r in summaries.items()]), "",
-                     "接纳规则固定0.8；5个预测特征、ridge0.01，无阈值搜索。no_tta是固定消融，不作为失败后的备选。",
-                     "GT仅用于训练折helpful标签和留出诊断。图像失败类型由precision/recall粗分，不等于医学病因诊断。",
-                     "局部补充不删除B区域，因此阳性样本已有TP不能被抹掉；但FP、Dice、近零、MAE仍可能恶化，不能保证阴性帧安全。", "",
-                     "## 接纳与稳定性判别", "", str(decision["tta_discrimination"]), "", str(decision["no_tta_discrimination"]), "",
-                     "失败门槛：" + ", ".join(k for k, v in decision["gates"].items() if not v), "",
-                     "无全量重拟合、selection、C5/C6或独立确认。失败保留B，不更改旧E10-B/C结论。"]
+                     "Fixed acceptance0.8, five prediction features, ridge0.01; no threshold search. no_tta is a declared ablation, not a fallback after failure.",
+                     "GT is used only for training-fold helpful labels and held-out diagnosis. Precision/recall failure categories are coarse, not medical causal diagnoses.",
+                     "Local additions do not delete B regions or existing TP on positive images; FP, Dice, near-zero and MAE can still worsen, with no negative-frame safety guarantee.", "",
+                     "## Acceptance and stability discrimination", "", str(decision["tta_discrimination"]), "", str(decision["no_tta_discrimination"]), "",
+                     "Failed gates: " + ", ".join(k for k, v in decision["gates"].items() if not v), "",
+                     "No full-data refit, selection, C5/C6 or independent confirmation. Retain B on failure; E10-B/C decisions remain unchanged."]
             (folder / "report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
             write_json(folder / "run_info.json", {"status": "COMPLETED", "plan_sha256": file_hash(PLAN),
                        "base_network_training": 0, "gate_fits": 10, "selection_images": 0})

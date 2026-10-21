@@ -353,14 +353,14 @@ def summarize():
                          ("paired_mean_sd.csv", [paired]), ("source_deltas.csv", sources)):
         write_csv(OUTPUT / name, values)
     write_json(OUTPUT / "decision.json", decision)
-    lines = ["# E11 背景误报强化开发结果", "", "状态："+decision["status"], "",
-             "只改有界背景像素BCE权重，训练曝光/增强/初始化/验证选择不变。三种子全部完成，旧B保持不变。", "",
-             "| 方案 | 宏Dice均值±种子SD | 宏FP/图像面积 | 召回 | 小目标召回 | MAE |",
+    lines = ["# E11 background-error emphasis development results", "", "Status: "+decision["status"], "",
+             "Only bounded background-pixel BCE weighting changes; exposure/augmentation/initialization/validation selection stay fixed. All three seeds completed; original B retained.", "",
+             "| Recipe | Macro Dice mean+/-seed SD | Macro FP/image area | Recall | Small-target recall | MAE |",
              "|---|---:|---:|---:|---:|---:|"]
     for r in aggregates:
         lines.append(f"| {r['arm']} | {r['macro_dice_mean']:.6f}±{r['macro_dice_sample_sd']:.6f} | {r['macro_fp_image_fraction_mean']:.6f} | {r['recall_mean']:.6f} | {r['small_recall_mean']:.6f} | {r['mae_mean']:.6f} |")
-    lines += ["", "所有门槛与来源失败数量见decision.json和source_deltas.csv。不按最好种子或安全指标重选检查点。",
-              "", "通过仍需新独立确认；失败保留B，不在本批开发结果上追加lambda/阈值搜索。", "", decision["interpretation"]]
+    lines += ["", "See decision.json/source_deltas.csv for gates and source failures. No best-seed or safety-metric checkpoint reselection.",
+              "", "Passing still needs new independent confirmation; retain B on failure without extra lambda/threshold search on these development data.", "", decision["interpretation"]]
     (OUTPUT / "report.md").write_text("\n".join(lines)+"\n", encoding="utf-8")
     write_json(OUTPUT / "audit.json", {"plan_sha256": file_hash(PLAN), "inputs": inputs,
                "outputs": {p.relative_to(PROJECT).as_posix(): file_hash(p) for p in OUTPUT.iterdir() if p.is_file()}})

@@ -336,23 +336,23 @@ def summarize():
     write_csv(OUTPUT / "paired_contrast_mean_sd.csv", contrast_aggregates)
     write_csv(OUTPUT / "B_source_tail_details.csv", tail_details)
     write_json(OUTPUT / "stability.json", result)
-    lines = ["# E8-R：多种子开发重复实验结果", "", f"日期：{now()}。状态：{result['status']}。", "",
-             "同一冻结数据划分，seed42/17/2024，四组各100 round。下面±为种子间样本标准差，不是患者置信区间。", "",
-             "| 方案 | 宏Dice均值±SD | 图像均Dice均值±SD | MAE均值±SD | 低Dice数量均值±SD | 零Dice数量均值±SD |",
+    lines = ["# E8-R matched-seed development repetition", "", f"Date: {now()}. Status: {result['status']}.", "",
+             "Same frozen split, seeds42/17/2024, four arms x100 rounds. +/- is sample SD across seeds, not a patient confidence interval.", "",
+             "| Recipe | Macro Dice mean+/-SD | Image Dice mean+/-SD | MAE mean+/-SD | Low Dice mean+/-SD | Zero Dice mean+/-SD |",
              "|---|---:|---:|---:|---:|---:|"]
     for r in aggregates:
         cells = [f"{r[k+'_mean']:.6f}±{r[k+'_sample_sd']:.6f}" for k in ("macro_dice","dice","mae","dice_lt05","zero_dice")]
         lines.append("| "+r["arm"]+" | "+" | ".join(cells)+" |")
-    lines += ["", "## 同种子 B−A 的方向与原门槛", "", "| seed | 宏Dice增量 | 原开发门槛全部通过 |", "|---|---:|---|"]
+    lines += ["", "## Matched-seed B-A direction and original gates", "", "| Seed | Macro Dice gain | All original development gates passed |", "|---|---:|---|"]
     for r in b_gates:
         lines.append(f"| {r['seed']} | {r['macro_dice_gain_B_minus_A']:+.6f} | {r['unchanged_development_pass']} |")
-    lines += ["", "## B−A 的来源严重失败变化（描述性，不改原门槛）", "", "| seed | 验证来源 | Dice<0.1 数增量 | 零Dice数增量 |", "|---|---|---:|---:|"]
+    lines += ["", "## B-A source severe-failure changes (descriptive; unchanged gates)", "", "| Seed | Validation source | Delta Dice<0.1 count | Delta zero Dice count |", "|---|---|---:|---:|"]
     for r in tail_details:
         lines.append(f"| {r['seed']} | {r['source']} | {r['near_zero01_delta_B_minus_A']:+d} | {r['zero_delta_B_minus_A']:+d} |")
-    lines += ["", "## 解释边界", "", "B为先前固定的主方案，不从这些种子中挑最好检查点、不按新结果重新选择C6模型。",
-              "这是同数据划分上的训练随机性重复；验证参与checkpoint选择。不能证明新患者/新中心的泛化，不能通过三种子均值宣布显著优于E0。",
-              "已完成C6只保留seed42原结果，本轮没有C6推理、融合或seed集成。未来融合或更大范围外部确认需要另立协议。",
-              "零Dice/近零Dice未被隐藏：详见groups_per_seed.csv和per_seed.csv。若原门槛不一致，不改变门槛强行宣称重复成功。"]
+    lines += ["", "## Interpretation boundaries", "", "B remains the previously fixed recipe; do not cherry-pick a seed or reselect the C6 model from these results.",
+              "This repeats training randomness on the same split; validation selects checkpoints. It does not establish new-patient/center generalization or significant superiority to E0.",
+              "Retain the original seed42 C6 result; no C6 inference, fusion or seed ensemble here. Future fusion/external confirmation needs a separate protocol.",
+              "Zero/near-zero Dice remain visible in groups_per_seed.csv and per_seed.csv. Do not change gates to claim successful repetition."]
     (OUTPUT / "report.md").write_text("\n".join(lines)+"\n", encoding="utf-8")
     audit = {"plan_sha256":file_hash(PLAN_PATH), "runner_sha256":file_hash(Path(__file__)), "inputs_sha256":inputs,
              "outputs_sha256":{p.name:file_hash(p) for p in OUTPUT.iterdir() if p.is_file()}}

@@ -102,14 +102,14 @@ def build():
                "definition": "Nearest-resized binary masks at352; GT dilation Chebyshev radius5. Descriptive only; does not identify folds/highlights or separate connected overgrowth from remote components.",
                "new_model_forwards": 0, "training_exports": 0}
     write_json(OUTPUT / "summary.json", summary)
-    lines = ["# E11 训练前错误区域复核", "", "仅已缓存FAR calibration30张低Dice图，未重新推理。", "",
-             "颜色：第四栏绿色=TP，红色=FP，蓝色=FN；第二栏是原始标注，不是预测。", "",
-             f"远于GT外侧5像素（352尺度）的FP占多数：{summary['far_fp_majority_images']}/30；池化比例约{summary['pooled_far_fp_fraction']:.1%}。",
-             "该尺度只是诊断，不作为训练规则。不能单凭红色区域判定皱襞/高光，也不能把这些FAR区域加入训练。", "",
-             "查看时注意：标注是否完整、息肉是否被找对、FP是连接外扩还是其他位置、是否有明显成像伪影。", ""]
+    lines = ["# E11 pretraining error-region review", "", "Only30 cached FAR calibration low-Dice images; no new inference.", "",
+             "Colors: panel4 green=TP, red=FP, blue=FN; panel2 is original GT, not prediction.", "",
+             f"FP beyond the outer5-pixel GT band at352 dominates in {summary['far_fp_majority_images']}/30; pooled fraction approximately {summary['pooled_far_fp_fraction']:.1%}.",
+             "This scale is diagnostic, not a training rule. Red regions alone do not identify folds/highlights, and these FAR regions must not enter training.", "",
+             "Review GT completeness, localization, connected overgrowth versus remote FP and visible imaging artifacts.", ""]
     for r in rows:
-        lines += [f"## {r['stem']}", "", f"Dice={r['dice']:.4f}；precision={r['precision']:.4f}；recall={r['recall']:.4f}。", "",
-                  "![原图/标注/B预测/错误区域]("+(OUTPUT / r["plate"]).as_posix()+")", ""]
+        lines += [f"## {r['stem']}", "", f"Dice={r['dice']:.4f}; precision={r['precision']:.4f}; recall={r['recall']:.4f}.", "",
+                  "![Source/GT/B prediction/error regions]("+(OUTPUT / r["plate"]).as_posix()+")", ""]
     (OUTPUT / "index.md").write_text("\n".join(lines)+"\n", encoding="utf-8")
     write_json(OUTPUT / "audit.json", {"script_sha256": file_hash(Path(__file__)), "inputs": inputs,
                "outputs": {p.name: file_hash(p) for p in OUTPUT.iterdir() if p.is_file()}})

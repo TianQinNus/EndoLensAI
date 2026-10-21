@@ -1,0 +1,33 @@
+{
+  "group": "fusion",
+  "success": true,
+  "suites": [
+    {
+      "script": "e10a_windows/test_e10a.py",
+      "exit_code": 0,
+      "tests": 13
+    },
+    {
+      "script": "e10b_windows/test_e10b.py",
+      "exit_code": 0,
+      "tests": 9
+    },
+    {
+      "script": "e10c_windows/test_e10c.py",
+      "exit_code": 0,
+      "tests": 12
+    },
+    {
+      "script": "e10d_windows/test_e10d.py",
+      "exit_code": 0,
+      "tests": 15
+    },
+    {
+      "script": "e11_background_windows/test_e11.py",
+      "exit_code": 0,
+      "tests": 13
+    }
+  ],
+  "tests": 62,
+  "scope": "CPU/synthetic regression, not formal training, patient evaluation or a deployment benchmark"
+}

@@ -447,23 +447,23 @@ def analyze():
                 "selection_partition_already_inspected_in_this_stage": True,
                 "limitation": "Reused positive-only FAR; descriptive indicator, not a performance PASS or external confirmation."}
     write_json(OUTPUT / "decision.json", decision)
-    lines = ["# E10-A：冻结B/E0在FAR上的比较与互补性", "", "日期：" + e9.repeat.now(), "",
-             "原B seed42 round98与冻结E0；B新增FP32 CUDA推理，E0复用经逐图概率/指标重放核验的原E6缓存。",
-             "没有训练、融合、校准拟合、权重/阈值搜索、检查点重选或C6重评估。", "",
-             "FAR共432张阳性图像、187患者组；calibration160张/75组，selection272张/112组，患者交集0。",
-             "全部FAR及两分区单模型结果在本阶段查看；它们均是复用开发数据，后续selection不能称为未见或盲测。", "",
-             "## 图像等权主结果", "", "| 分区 | 模型 | Dice | IoU | MAE | Dice<0.5 | Dice<0.1 | 零Dice |",
+    lines = ["# E10-A frozen B/E0 comparison and complementarity on FAR", "", "Date: " + e9.repeat.now(), "",
+             "Original B seed42 round98 and frozen E0; new B FP32 CUDA inference, verified original E6 probability/metric caches for E0.",
+             "No training, fusion, calibrator fitting, weight/threshold search, checkpoint reselection or C6 reevaluation.", "",
+             "FAR has432 positive images/187 patient groups; calibration160/75, selection272/112, no shared groups.",
+             "All FAR and both partition single-model results were viewed here; these are reused development data, not unseen/blind future selection.", "",
+             "## Image-equal main results", "", "| Partition | Model | Dice | IoU | MAE | Dice<0.5 | Dice<0.1 | Zero Dice |",
              "|---|---|---:|---:|---:|---:|---:|---:|"]
     for r in summaries:
         lines.append(f"| {r['partition']} | {r['model']} | {r['dice']:.6f} | {r['iou']:.6f} | {r['mae']:.6f} | {r['dice_lt05']} | {r['dice_lt01']} | {r['zero_dice']} |")
-    lines += ["", "## 双向互补（GT事后诊断，不是可部署路由）", "",
-              f"全量：B补救E0低Dice {pair['B_rescues_E0_low']}张；E0补救B低Dice {pair['E0_rescues_B_low']}张；两者共同低Dice {pair['both_lt05']}张；两者均>=0.5 {pair['both_ge05']}张。",
-              f"B补救E0零Dice {pair['zero_rescued_by_B']}张；E0补救B零Dice {pair['zero_new_in_B']}张。",
-              f"B相对E0的Dice胜/平/负：{pair['dice_wins_B']}/{pair['dice_ties']}/{pair['dice_losses_B']}。错误相关性仅描述：{pair['error_pearson_correlation_descriptive']}。", "",
-              "完整分区互补、面积分层、患者均值与描述性患者成组bootstrap见同目录文件。bootstrap不重新拟合模型，不校正历史选择，不能据此宣称普遍显著优越。", "",
-              "## 下一阶段指示", "", decision["next_stage"], "",
-              "存在双向补救仅说明可以考虑小规模固定权重开发，不证明概率平均有效；没有自动启动融合。若继续需独立冻结新协议，B/E0均作为对照。",
-              "单一复用来源、阳性病例、单B种子；不能推断无息肉帧误报率、新患者/中心普遍泛化。训练重叠审计只覆盖本项目登记数据与固定图像近重复启发式，不证明公开模型作者从未见过相关数据。"]
+    lines += ["", "## Bidirectional complementarity (GT diagnosis, not deployable routing)", "",
+              f"All images: B rescues E0 low Dice {pair['B_rescues_E0_low']}; E0 rescues B low Dice {pair['E0_rescues_B_low']}; both low Dice {pair['both_lt05']}; both>=0.5 {pair['both_ge05']} images.",
+              f"B rescues E0 zero Dice {pair['zero_rescued_by_B']}; E0 rescues B zero Dice {pair['zero_new_in_B']} images.",
+              f"B versus E0 Dice wins/ties/losses: {pair['dice_wins_B']}/{pair['dice_ties']}/{pair['dice_losses_B']}. Error correlation is descriptive only: {pair['error_pearson_correlation_descriptive']}.", "",
+              "See sibling files for partition complementarity, area strata, patient means and descriptive cluster bootstrap. It does not refit models or correct historical selection; no universal/significant superiority claim.", "",
+              "## Next-stage indication", "", decision["next_stage"], "",
+              "Bidirectional rescue permits considering a small fixed-weight development study, not proof that averaging works. No automatic fusion; freeze a new protocol and retain B/E0 controls.",
+              "One reused source, positive images and one B seed do not establish negative-frame false alarms or broad patient/center generalization. Audits cover registered project data and fixed image heuristics, not all public-model training history."]
     (OUTPUT / "report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     info.update(status="COMPLETED", completed_at_singapore=e9.repeat.now(), probability_metric_replay="PASS",
                 patient_groups=187, E0_cache_replayed_images=432)

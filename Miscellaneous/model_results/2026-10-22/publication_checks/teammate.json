@@ -1,0 +1,18 @@
+{
+  "group": "teammate",
+  "success": true,
+  "suites": [
+    {
+      "script": "unet_edges/test_boundary.py",
+      "exit_code": 0,
+      "tests": 2
+    },
+    {
+      "script": "polyp_outline/test_predict.py",
+      "exit_code": 0,
+      "tests": 3
+    }
+  ],
+  "tests": 5,
+  "scope": "CPU/synthetic regression, not formal training, patient evaluation or a deployment benchmark"
+}

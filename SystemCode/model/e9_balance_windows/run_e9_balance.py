@@ -348,15 +348,15 @@ def summarize():
                          ("paired_contrast_mean_sd.csv", paired_aggregates)):
         write_csv(OUTPUT / name, values)
     write_json(OUTPUT / "decision.json", decision)
-    lines = ["# E9-Balance 开发实验结果", "", "状态：" + decision["status"], "",
-             "仅原/新增采样质量从50/50调整为70/30；不改数据划分、网络、损失、预算、检查点选择。", "",
-             "| 方案 | 宏Dice均值±种子SD | 图像平均Dice | MAE | 低Dice平均张数 | 零Dice平均张数 |",
+    lines = ["# E9-Balance development results", "", "Status: " + decision["status"], "",
+             "Only original/additional sampling mass changes from50/50 to70/30; split, network, loss, budget and checkpoint selection stay fixed.", "",
+             "| Recipe | Macro Dice mean+/-seed SD | Image Dice | MAE | Mean low-Dice count | Mean zero-Dice count |",
              "|---|---:|---:|---:|---:|---:|"]
     for row in aggregates:
         lines.append(f"| {row['arm']} | {row['macro_dice_mean']:.6f}±{row['macro_dice_sample_sd']:.6f} | {row['dice_mean']:.6f} | {row['mae_mean']:.6f} | {row['dice_lt05_mean']:.2f} | {row['zero_dice_mean']:.2f} |")
-    lines += ["", "三个种子必须全部通过；不选最好种子。完整逐项门槛见decision.json，配对差值见paired_contrast_mean_sd.csv。",
-              "", "后续协议候选：" + decision["selected_recipe_for_next_protocol"], "",
-              "仅开发选择，不自动启动融合或外部测试；E8-R未通过状态保持原样。", "",
+    lines += ["", "All three seeds must pass; no best-seed selection. See decision.json for gates and paired_contrast_mean_sd.csv for paired differences.",
+              "", "Candidate for a later protocol: " + decision["selected_recipe_for_next_protocol"], "",
+              "Development selection only; no automatic fusion/external test. E8-R's failed repeatability status remains unchanged.", "",
               decision["limitation"]]
     (OUTPUT / "report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     outputs = {p.relative_to(PROJECT).as_posix(): file_hash(p) for p in OUTPUT.iterdir() if p.is_file()}

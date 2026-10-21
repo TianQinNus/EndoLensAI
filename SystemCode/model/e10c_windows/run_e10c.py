@@ -212,8 +212,8 @@ def save_diagnostics(folder, rows, decision):
     write_json(folder / "patient_bootstrap.json", intervals)
     write_json(folder / "decision.json", decision)
     (folder / "report.md").write_text(b.report_table("E10-C " + folder.name, metrics) +
-             "\n\n状态：" + decision["status"] + "\n\n温度独立按训练折NLL拟合，不按Dice搜索；相同患者不跨折。\n\n" +
-             "旧数据复用、自适应开发，不是新的独立确认。失败时保留原B，不扩展温度/权重/阈值范围。\n", encoding="utf-8")
+             "\n\nStatus: " + decision["status"] + "\n\nTemperatures independently fit training-fold NLL, not Dice search; patients do not cross folds.\n\n" +
+             "Reused adaptive development, not new independent confirmation. On failure retain original B; do not expand temperature/weight/threshold ranges.\n", encoding="utf-8")
 
 
 def cv():
