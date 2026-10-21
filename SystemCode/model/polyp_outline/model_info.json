@@ -1,0 +1,25 @@
+{
+  "name": "unetpp_context_20261020",
+  "checkpoint": "runs/unetpp_context_20261020/best.pt",
+  "checkpoint_sha256": "06b1684648afaa7b02a949d35aafdde6d224d9d16bad040fdd6c0c16027d3ab5",
+  "source": "unetpp_context/train.py",
+  "source_sha256": "5c71ebf9d5b5c0d2ccfbb97e909bf1e2f7877811476ec34280895f69f036f32a",
+  "best_validation": {
+    "epoch": 100,
+    "learning_rate": 1.0000000000000002e-06,
+    "train_loss": 0.290910614564501,
+    "val_loss": 0.355205959287183,
+    "val_dice": 0.8935946398767932,
+    "val_iou": 0.8248359515749175,
+    "seconds": 410.56013798713684
+  },
+  "selection_rule": "highest validation Dice; frozen before test",
+  "input_size": 320,
+  "base": 32,
+  "threshold": 0.5,
+  "model_sha256": "258f64bfcce02500453bf9fd472ad426b4d54e2b113a820478ff8105b518a853",
+  "test_dice": 0.7183735043291554,
+  "test_iou": 0.6386574946667227,
+  "test_count": 798,
+  "test_caveat": "Known exploratory evaluation set, not independent holdout"
+}
