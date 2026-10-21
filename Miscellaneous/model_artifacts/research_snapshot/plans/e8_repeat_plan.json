@@ -1,0 +1,66 @@
+{
+  "stage": "E8_R_REPLICATION_PREPARATION",
+  "frozen_at_singapore": "2026-10-12T15:51:57.074467+08:00",
+  "runner_sha256": "b6d37aad6a107e3b63e676e087695198fe61a7446abcbd25119036c463d49438",
+  "parent_protocol_signature": "5780eeb41192b28ab62674f5691213ec3b2ecda32b87fb7b9d1bb419c6f4e2b3",
+  "bundle_signature": "292878d54aac2b29f292b544e55f634fcf8ebba7179119ef774bc6aed437f6d6",
+  "protected_seed42_and_holdout_artifacts": {
+    "runs/e8_A_baseline_seed42/run_info.json": "8d3839b0462dc9325ee599c7d67c0e8ef29231b0bd3ee5fcd5a7447eb5435b8d",
+    "runs/e8_A_baseline_seed42/checkpoints/best.pth": "547ccaba4a8f8083d1d4d5f9a5597c78857c56d9eb77f627af50567bcff00ac9",
+    "runs/e8_A_baseline_seed42/validation_best_per_image.csv": "228f24667b256906230943f95141b9f10fd66506657703a6c9566ddd1cdd7cce",
+    "runs/e8_A_baseline_seed42/train_history.csv": "0515456f77fc5a1d80701369b9b37d2f4e1a7c4cb69a1afa66e219357ec647d3",
+    "runs/e8_B_expanded_seed42/run_info.json": "0821e1acb39acb36131372659fc7c875b9154da89d572d37454213636bcaf181",
+    "runs/e8_B_expanded_seed42/checkpoints/best.pth": "2ee7145fe5509d6cdbeefd90c8a2f0d87ca7f1d9daf78ce79e7edb4764ee7b5f",
+    "runs/e8_B_expanded_seed42/validation_best_per_image.csv": "7d614aa743d519796ab8f18be7a05f9a87476f7275fab4278fcd5554cf5ddcf3",
+    "runs/e8_B_expanded_seed42/train_history.csv": "cec44ee9877929fa8924d7489c1dbc69c54d56b855c4f18f78790e75abe8671b",
+    "runs/e8_C_hard_seed42/run_info.json": "4f2e18a9640bd8339ceb418ee10c213f247a837b3da075a8191d6d90df48534e",
+    "runs/e8_C_hard_seed42/checkpoints/best.pth": "720d43dc6181941bcd3cb1ef1d1a6cf5ecaf895e51f5fa40fb8033b8e6ddb18b",
+    "runs/e8_C_hard_seed42/validation_best_per_image.csv": "4072460b5cf248a21b788714f2848a4a269e00c68e7428cd1a4b52f9bb2c35b2",
+    "runs/e8_C_hard_seed42/train_history.csv": "b81680176220a8ea299194f2e3e730e4a41728c2818c00caf795e4c2bccae3e1",
+    "runs/e8_D_expanded_hard_seed42/run_info.json": "d6be05886a6675ab5fa63504dbd0b3b82b883134f5bd9db0cfae69b2aa847926",
+    "runs/e8_D_expanded_hard_seed42/checkpoints/best.pth": "f8faeb7b725952ddb7279ac7da21ddc6c3a253c48459d88209299cd39f505340",
+    "runs/e8_D_expanded_hard_seed42/validation_best_per_image.csv": "a1f4f70d1c2aaec9871b6f65c8d019c5f1e4a30ceb5f9b5d5b2176e359a3e1aa",
+    "runs/e8_D_expanded_hard_seed42/train_history.csv": "381d90ab7245b4c34946156a74fc0866ed73f5a221d5a845e5467858b20967a0",
+    "runs/e8_data_seed42/protocol.json": "a4a18e655e4ddc1e0ac304e8c215cab29564467186de760eb1e28c6d8cedc788",
+    "runs/e8_validation_comparison_seed42/decision.json": "3eef47358fa0bda18b21677a55aa24457436a3cab4dae135d42d686b89203f42",
+    "runs/e8_holdout_lock_seed42.json": "6e9d67ab5b31caa80429537fd3529fced02b7da269f19fb15e88564d2ce8380b",
+    "runs/e8_holdout_seed42/run_info.json": "4e3d0587b30adc70bacafd0200ee50b6a957c12e51a4ee26253e992e14f3be23",
+    "runs/e8_holdout_seed42/summary.csv": "6b99124e40aeec4006dd6a6a26f7e6d82a176c670070059556a5e7855dbc7d4d",
+    "runs/e8_holdout_analysis_plan.json": "1d75f5dc35cd2e9f5b8ecdc51dc3cf7a0dc08f029952e99d20d9675eb4b5b235"
+  },
+  "existing_seed": 42,
+  "new_seeds": [
+    17,
+    2024
+  ],
+  "aggregate_seeds": [
+    42,
+    17,
+    2024
+  ],
+  "arms": [
+    "A_baseline",
+    "B_expanded",
+    "C_hard",
+    "D_expanded_hard"
+  ],
+  "primary_replication_contrast": "B_expanded-A_baseline",
+  "secondary_contrasts": [
+    "C_hard-A_baseline",
+    "D_expanded_hard-B_expanded",
+    "D_expanded_hard-C_hard"
+  ],
+  "hyperparameter_changes": false,
+  "data_split_changes": false,
+  "summary_rule": "All 12 runs required; arithmetic mean and sample SD(ddof=1) across seeds; same-seed paired contrasts. Additionally separate two newly run seeds from existing screening seed42.",
+  "consistency_rule": "Report B's unchanged E8 development gates for every seed; all-seed reproduction only when all three pass. Also report each source's near-zero and zero failures without retroactively adding gates.",
+  "selection_policy": "B remains the fixed recipe; never select best seed or replace seed42 checkpoint from these summaries.",
+  "evaluation_policy": "Validation only; no C6 reevaluation, no E0 inference, no fusion or seed ensemble.",
+  "limitations": [
+    "Three seeds test training randomness on the same split, not independent patient or centre sampling.",
+    "Validation selected checkpoints; results are development reproducibility, not new external confirmation.",
+    "No p-value, patient CI, or blanket significance claim from three seeds.",
+    "Extra seeds were declared before E8 seed42 training; B-focused replication interpretation follows observed screening and C6."
+  ],
+  "plan_signature": "02b6aee90c6fdd4c45b9e5e248ee5dd06b6fabc2b88c54e9d04b6fbab7bbf1e6"
+}

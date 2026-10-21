@@ -1,0 +1,26 @@
+{
+  "stage": "E8_HOLDOUT_DESCRIPTIVE_COMPLEMENTARITY",
+  "frozen_at_singapore": "2026-10-12T15:25:46.648258+08:00",
+  "analysis_script_sha256": "393b70260b0e89d5bf81362f419bacfe43010686a007f3162cd1daa22f13f61d",
+  "lock_sha256": "6e9d67ab5b31caa80429537fd3529fced02b7da269f19fb15e88564d2ce8380b",
+  "binary_mask_threshold": 0.5,
+  "low_dice_cutoff": 0.5,
+  "near_zero_dice_cutoff": 0.1,
+  "practical_dice_difference": 0.01,
+  "tie_tolerance": 1e-12,
+  "pair": [
+    "E0_frozen_reference",
+    "B_expanded"
+  ],
+  "selected_model_remains": "B_expanded",
+  "policy": "Replay cached probabilities and masks; descriptive paired comparison of B/E0. No fusion evaluated, no holdout model reselection, no patient-level inference/CI.",
+  "diagnostics": [
+    "All five model metrics and GT size strata",
+    "B-E0 per-image Dice/MAE and mask agreement IoU",
+    "B-E0 low/near-zero/zero failure transitions",
+    "Both good / only B good / only E0 good / both low",
+    "Error Pearson correlation, descriptive only",
+    "Data expansion and hard sampling prespecified contrasts"
+  ],
+  "plan_signature": "ed2e30a06c67709de556f04602ba23cb53cd3f6ca38cf66e458ea7bea686b041"
+}

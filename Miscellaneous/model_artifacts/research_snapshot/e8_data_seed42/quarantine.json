@@ -1,0 +1,791 @@
+[
+  {
+    "sample_id": "TrainDataset/182",
+    "reason": "original_train_near_protected",
+    "matches": [
+      [
+        "TrainDataset/183",
+        0.007291666666666667
+      ]
+    ]
+  },
+  {
+    "sample_id": "TrainDataset/195",
+    "reason": "original_train_near_protected",
+    "matches": [
+      [
+        "TrainDataset/194",
+        0.006745302443410836
+      ],
+      [
+        "TrainDataset/196",
+        0.003947099517373477
+      ]
+    ]
+  },
+  {
+    "sample_id": "TrainDataset/364",
+    "reason": "original_train_near_protected",
+    "matches": [
+      [
+        "TrainDataset/367",
+        0.006326593137254902
+      ]
+    ]
+  },
+  {
+    "sample_id": "TrainDataset/365",
+    "reason": "original_train_near_protected",
+    "matches": [
+      [
+        "TrainDataset/367",
+        0.006341911764705882
+      ]
+    ]
+  },
+  {
+    "sample_id": "TrainDataset/366",
+    "reason": "original_train_near_protected",
+    "matches": [
+      [
+        "TrainDataset/367",
+        0.008389501945645202
+      ]
+    ]
+  },
+  {
+    "sample_id": "TrainDataset/370",
+    "reason": "original_train_near_protected",
+    "matches": [
+      [
+        "TrainDataset/372",
+        0.009706903906429516
+      ]
+    ]
+  },
+  {
+    "sample_id": "TrainDataset/371",
+    "reason": "original_train_near_protected",
+    "matches": [
+      [
+        "TrainDataset/372",
+        0.0035590276998632093
+      ]
+    ]
+  },
+  {
+    "sample_id": "TrainDataset/476",
+    "reason": "original_train_near_protected",
+    "matches": [
+      [
+        "TrainDataset/477",
+        0.004493464208116718
+      ]
+    ]
+  },
+  {
+    "sample_id": "TrainDataset/cju886ryxnsl50801r93jai7q",
+    "reason": "original_train_near_protected",
+    "matches": [
+      [
+        "TrainDataset/cju8amfdtqi4x09871tygrgqe",
+        0.0007965686274509804
+      ]
+    ]
+  },
+  {
+    "sample_id": "PolypGen-C1/100S0001",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C1/431OLCV1_100S0007",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C1/442OLCV1_100H0002",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C1/564OLCV1_100H0002",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C1/711OLCV1_100H0006",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001002",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001014",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001035",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001054",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001057",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001078",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001087",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001093",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001104",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001108",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001122",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001128",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001131",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001141",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001144",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001150",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001160",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001161",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001165",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001177",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001184",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001206",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001213",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001217",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001218",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001241",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001245",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001252",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001253",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001256",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001365",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C3/C3_EndoCV2021_00453",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/10_endocv2021_positive_499",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/10_endocv2021_positive_584",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/11_endocv2021_positive_1228",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/11_endocv2021_positive_1344",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/11_endocv2021_positive_146",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/11_endocv2021_positive_1475",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/11_endocv2021_positive_61",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/12_endocv2021_positive_148",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/12_endocv2021_positive_25",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/12_endocv2021_positive_289",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/12_endocv2021_positive_38",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/13_endocv2021_positive_222",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/13_endocv2021_positive_464",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/14_endocv2021_positive_1069",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/14_endocv2021_positive_192",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/14_endocv2021_positive_230",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/14_endocv2021_positive_302",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/14_endocv2021_positive_421",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/14_endocv2021_positive_491",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/14_endocv2021_positive_503",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/14_endocv2021_positive_782",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/14_endocv2021_positive_864",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/15_endocv2021_positive_1283",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/16_endocv2021_positive_269",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/16_endocv2021_positive_328",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/17_endocv2021_positive_106",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/17_endocv2021_positive_1456",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/17_endocv2021_positive_1499",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/17_endocv2021_positive_151",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/17_endocv2021_positive_457",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/18_endocv2021_positive_115",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/18_endocv2021_positive_265",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/18_endocv2021_positive_334",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/18_endocv2021_positive_341",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/19_endocv2021_positive_688",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/19_endocv2021_positive_711",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/19_endocv2021_positive_757",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/19_endocv2021_positive_787",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/19_endocv2021_positive_845",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/19_endocv2021_positive_879",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/20_endocv2021_positive_270",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/20_endocv2021_positive_417",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/20_endocv2021_positive_434",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/20_endocv2021_positive_544",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/21_endocv2021_positive_1129",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/21_endocv2021_positive_812",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/22_endocv2021_positive_225",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/23_endocv2021_positive_254",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/23_endocv2021_positive_370",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/23_endocv2021_positive_480",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/23_endocv2021_positive_768",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/23_endocv2021_positive_98",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/24_endocv2021_positive_189",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/25_endocv2021_positive_29",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/25_endocv2021_positive_3",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/26_endocv2021_positive_14",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/26_endocv2021_positive_588",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/26_endocv2021_positive_684",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/27_endocv2021_positive_132",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/27_endocv2021_positive_216",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/27_endocv2021_positive_27",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/28_endocv2021_positive_201",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/29_endocv2021_positive_254",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/29_endocv2021_positive_323",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/29_endocv2021_positive_39",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/30_endocv2021_positive_1057",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/30_endocv2021_positive_1417",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/30_endocv2021_positive_1459",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/30_endocv2021_positive_447",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/30_endocv2021_positive_480",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/30_endocv2021_positive_614",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/30_endocv2021_positive_876",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/30_endocv2021_positive_898",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/31_endocv2021_positive_329 2",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/31_endocv2021_positive_38",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/32_endocv2021_positive_339",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/35_endocv2021_negative_1058",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/5_endocv2021_positive_1114",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/5_endocv2021_positive_1122",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/6_endocv2021_positive_1007",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C4/6_endocv2021_positive_1308",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C5/EndoCV2021_C5_50000005",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C5/EndoCV2021_C5_50000266",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C6/EndoCV2021_C6_0100056",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C6/EndoCV2021_C6_0100059",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C6/EndoCV2021_C6_0100070",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C6/EndoCV2021_C6_0100088",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C6/EndoCV2021_C6_0100102",
+    "reason": "empty_gt_excluded_from_positive_only_stage",
+    "matches": []
+  },
+  {
+    "sample_id": "PolypGen-C5/EndoCV2021_C5_50000141",
+    "reason": "new_near_duplicate_quarantine",
+    "matches": [
+      [
+        "PolypGen-C5/EndoCV2021_C5_50000140",
+        0.0
+      ]
+    ]
+  },
+  {
+    "sample_id": "PolypGen-C5/EndoCV2021_C5_50000285",
+    "reason": "new_near_duplicate_quarantine",
+    "matches": [
+      [
+        "PolypGen-C5/EndoCV2021_C5_50000284",
+        0.0
+      ]
+    ]
+  },
+  {
+    "sample_id": "PolypGen-C4/11_endocv2021_positive_968",
+    "reason": "new_near_duplicate_quarantine",
+    "matches": [
+      [
+        "PolypGen-C4/11_endocv2021_positive_948",
+        0.00013786764705882353
+      ]
+    ]
+  },
+  {
+    "sample_id": "PolypGen-C4/11_endocv2021_positive_976",
+    "reason": "new_near_duplicate_quarantine",
+    "matches": [
+      [
+        "PolypGen-C4/11_endocv2021_positive_948",
+        0.00017871732513109843
+      ]
+    ]
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001030",
+    "reason": "new_near_duplicate_quarantine",
+    "matches": [
+      [
+        "PolypGen-C2/EndoCV2021_001029",
+        0.0
+      ]
+    ]
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001031",
+    "reason": "new_near_duplicate_quarantine",
+    "matches": [
+      [
+        "PolypGen-C2/EndoCV2021_001028",
+        0.00032169117647058823
+      ]
+    ]
+  },
+  {
+    "sample_id": "PolypGen-C2/EndoCV2021_001139",
+    "reason": "new_near_duplicate_quarantine",
+    "matches": [
+      [
+        "PolypGen-C2/EndoCV2021_001138",
+        0.0002144607843137255
+      ]
+    ]
+  }
+]

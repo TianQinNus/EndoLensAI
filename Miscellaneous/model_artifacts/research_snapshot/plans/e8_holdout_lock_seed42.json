@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-10-12T07:22:39.214033+00:00",
+  "seed": 42,
+  "selected_arm_from_validation": "B_expanded",
+  "validation_decision_sha256": "3eef47358fa0bda18b21677a55aa24457436a3cab4dae135d42d686b89203f42",
+  "models": {
+    "A_baseline": {
+      "checkpoint": "runs/e8_A_baseline_seed42/checkpoints/best.pth",
+      "sha256": "547ccaba4a8f8083d1d4d5f9a5597c78857c56d9eb77f627af50567bcff00ac9",
+      "epoch": 37
+    },
+    "B_expanded": {
+      "checkpoint": "runs/e8_B_expanded_seed42/checkpoints/best.pth",
+      "sha256": "2ee7145fe5509d6cdbeefd90c8a2f0d87ca7f1d9daf78ce79e7edb4764ee7b5f",
+      "epoch": 98
+    },
+    "C_hard": {
+      "checkpoint": "runs/e8_C_hard_seed42/checkpoints/best.pth",
+      "sha256": "720d43dc6181941bcd3cb1ef1d1a6cf5ecaf895e51f5fa40fb8033b8e6ddb18b",
+      "epoch": 74
+    },
+    "D_expanded_hard": {
+      "checkpoint": "runs/e8_D_expanded_hard_seed42/checkpoints/best.pth",
+      "sha256": "f8faeb7b725952ddb7279ac7da21ddc6c3a253c48459d88209299cd39f505340",
+      "epoch": 84
+    },
+    "E0_frozen_reference": {
+      "checkpoint": "model_pth/PolypPVT.pth",
+      "sha256": "aef5ac34f7795b85af0ecbb730502db251d416a73a4c6b04a74e30aa45554048"
+    }
+  },
+  "protocol_signature": "5780eeb41192b28ab62674f5691213ec3b2ecda32b87fb7b9d1bb419c6f4e2b3",
+  "bundle_signature": "292878d54aac2b29f292b544e55f634fcf8ebba7179119ef774bc6aed437f6d6",
+  "holdout_manifest_sha256": "ba6a1cc42467b3917d91809ac9d730d78f0a1cb08450286b25fdaa53e1959a11",
+  "evaluation_policy": "All four prespecified arms and E0; no reselection/tuning on C6",
+  "lock_signature": "ee48780d9fab95bb0637a70c987112aa70a3d724e4f2a04a3e4d189f0c977cbe"
+}

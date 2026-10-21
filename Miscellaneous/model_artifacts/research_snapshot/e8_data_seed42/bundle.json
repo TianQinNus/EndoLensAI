@@ -1,0 +1,123 @@
+{
+  "stage": "E8_PRETRAINED_UNET_DATA_AND_HARD_SAMPLING",
+  "split_seed": 42,
+  "new_data": "PolypGen v3 original single frames, positive masks only",
+  "centre_roles": {
+    "train": [
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "validation": [
+      "C5"
+    ],
+    "holdout": [
+      "C6"
+    ]
+  },
+  "raw_single_frame_counts": {
+    "PolypGen-C1": 256,
+    "PolypGen-C2": 301,
+    "PolypGen-C3": 457,
+    "PolypGen-C4": 227,
+    "PolypGen-C5": 208,
+    "PolypGen-C6": 88
+  },
+  "counts": {
+    "original_train": 1151,
+    "new_train": 1118,
+    "validation": 494,
+    "holdout": 83
+  },
+  "source_pairing_notes": [
+    "Official C3_EndoCV2021_00489].jpg matched to C3_EndoCV2021_00489_mask.jpg; literal trailing-bracket filename typo, original files unchanged."
+  ],
+  "strata": {
+    "original_train": {
+      "original_training": 1151
+    },
+    "new_train": {
+      "PolypGen-C1": 251,
+      "PolypGen-C2": 267,
+      "PolypGen-C3": 456,
+      "PolypGen-C4": 144
+    },
+    "validation": {
+      "PolypGen-C5": 204,
+      "original_validation": 290
+    },
+    "holdout": {
+      "PolypGen-C6": 83
+    }
+  },
+  "quarantine_reasons": {
+    "original_train_near_protected": 9,
+    "empty_gt_excluded_from_positive_only_stage": 125,
+    "new_near_duplicate_quarantine": 7
+  },
+  "near_duplicate_rule": {
+    "dhash64_hamming_max": 2,
+    "rgb16_mean_absolute_difference_max": 0.01,
+    "aspect_ratio_absolute_difference_max": 0.01
+  },
+  "download_provenance": {
+    "dataset": "PolypGen v3",
+    "filename": "PolypGen2021_MultiCenterData_v3.zip",
+    "bytes": 3419253506,
+    "source": "Author-linked public Google Drive full archive (not third-party conversion)",
+    "author_repository": "https://github.com/DebeshJha/PolypGen",
+    "author_folder": "https://drive.google.com/drive/folders/16uL9n84SrMt7IiQFzTUQNaJ9TbHJ8DhW",
+    "public_file_id": "1DV-q3g35CiHHG16k13QmvuHdaDQ6dkqh",
+    "canonical_entity": "https://www.synapse.org/Synapse:syn45200214",
+    "paper": "https://doi.org/10.1038/s41597-023-01981-y",
+    "license": "Archive license.txt: CC BY-NC-SA 4.0; README/paper: CC BY 4.0. Discrepancy recorded; non-commercial research only, retain attribution and share-alike restrictions for derived data; seek author clarification before redistribution/commercial use.",
+    "retrieved_utc": "2026-10-11T14:12:21.962299+00:00",
+    "sha256": "a22f956a9f0fc3f941927108a3de8217fc61f1944c7eda598536dbabc27dbff3",
+    "md5": "bd0c0b6d70a0c0b1a5a36f6a5a200205",
+    "validation": "Expected public Drive byte count and all ZIP member CRCs passed",
+    "limitation": "SHA256/MD5 are local fingerprints, not independently published author checksums."
+  },
+  "frozen_e0": {
+    "model_pth/PolypPVT.pth": "aef5ac34f7795b85af0ecbb730502db251d416a73a4c6b04a74e30aa45554048",
+    "runs/e0_20261004_221345_872444/manifest.json": "ed9e510313ffee1ec8af5b8e6be90acddbc7f6f603d96b204a6eb2579da74b25",
+    "lib/pvt.py": "aa34ef3da7dcad9db95f757a3326e2b6b8839a14f7aadb34fab555bda4f0d1d9",
+    "lib/pvtv2.py": "db5c540f6289ded4333fdd43b59df532d11d8b0baa415586ea9d0ce0de1bf39d",
+    "runs/e0_20261004_221345_872444/run_info.json": "14e9071007124aa508e208651abe743fa300d29b82f6237a00a5c2599372b32b",
+    "runs/e0_20261004_221345_872444/per_image.csv": "604356000fbbe23ecdf8cab79896565b6f260f9a196a126450ab333f67b324fd"
+  },
+  "old_manifest_hashes": {
+    "dev_train": "680750ac39537fab09b3eca5cd7f84333a86841f0a6b7a3e925a1469c004ad0c",
+    "validation": "073a15e8f90d2987946609f0a96550417065209631b9671bde727f63ccd138d1",
+    "test": "ed9e510313ffee1ec8af5b8e6be90acddbc7f6f603d96b204a6eb2579da74b25"
+  },
+  "validation_selection": "0.5*old validation mean Dice + 0.5*C5 mean Dice; earlier checkpoint breaks ties",
+  "limitations": [
+    "Old split lacks reliable patient identities; image split is not patient-independent.",
+    "E0 pvtv2.py differs from the macOS source hash only by CRLF line endings; LF identity verified and current Windows bytes frozen.",
+    "New partitions are whole-centre isolated; no inferred per-patient identities are claimed.",
+    "Near-duplicate heuristic is conservative, not proof of complete absence of related frames.",
+    "Sequence frames and negatives intentionally excluded from first-stage training.",
+    "C6 is E8-uninspected, not necessarily unseen by public-model authors or prior publications.",
+    "Historical 798 and FAR were previously inspected and cannot be called fresh blind tests."
+  ],
+  "files": {
+    "original_train": {
+      "filename": "original_train.json",
+      "sha256": "775b2578592ef92fd4ce429205263a4a410f4e5062b870a5f6eb0e90555c7f4b"
+    },
+    "new_train": {
+      "filename": "new_train.json",
+      "sha256": "713418b0dffc2cd4be6c956885f1520850f6221aa8ee53a6e9de7f0102bdf6cd"
+    },
+    "validation": {
+      "filename": "validation.json",
+      "sha256": "68fcf084ea487cfdb6bc5f3d8825e68050a18371f84d68852552bd169ce904b6"
+    },
+    "holdout": {
+      "filename": "holdout.json",
+      "sha256": "ba6a1cc42467b3917d91809ac9d730d78f0a1cb08450286b25fdaa53e1959a11"
+    }
+  },
+  "bundle_signature": "292878d54aac2b29f292b544e55f634fcf8ebba7179119ef774bc6aed437f6d6"
+}

@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "environment": {
+    "python": "3.11.17 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:16:54) [MSC v.1942 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "device": "cuda:0",
+    "python_executable": "C:\\Users\\yuche\\.conda\\envs\\endolens-e2-win\\python.exe",
+    "torch": "2.9.1+cu128",
+    "cuda_build": "12.8",
+    "versions": {
+      "torch": "2.9.1+cu128",
+      "torchvision": "0.24.1+cu128",
+      "numpy": "1.26.4",
+      "Pillow": "10.2.0"
+    },
+    "cpu_threads": 24,
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "gpu_total_bytes": 8546484224,
+    "gpu_capability": [
+      12,
+      0
+    ],
+    "cuda_arch_list": [
+      "sm_70",
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_90",
+      "sm_100",
+      "sm_120"
+    ],
+    "cudnn": 91002,
+    "nvidia_smi": "NVIDIA GeForce RTX 5060 Laptop GPU, 592.01, 8151 MiB"
+  },
+  "model_device": "cuda:0",
+  "input_device": "cuda:0",
+  "output_device": "cuda:0",
+  "loss": 1.4604989290237427,
+  "amp": true,
+  "forward_dtype": "torch.float16",
+  "peak_cuda_allocated_mb": 779.6396484375,
+  "probe": "ResNet34-U-Net at actual resolution, forward + BCE/Dice backward + AdamW parameter update",
+  "disclaimer": "A device probe, not an experiment score"
+}

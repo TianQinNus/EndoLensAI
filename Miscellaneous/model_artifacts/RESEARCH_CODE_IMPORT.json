@@ -1,0 +1,661 @@
+{
+  "date": "2026-10-22",
+  "scope": "E5-E11 original executed code, protocols and split metadata; results retained separately.",
+  "files": [
+    {
+      "path": "SystemCode/model/e5_windows/01_check_and_smoke.cmd",
+      "sha256": "c91136d89b07dd46e9f86739ff4a8d3397cbe1262b4b9996ead6510fb2c5b28f",
+      "bytes": 292
+    },
+    {
+      "path": "SystemCode/model/e5_windows/02_run_full.cmd",
+      "sha256": "3d71e66aa651837b99ac448f8c390a6e53315ee7de7a885f4b1c804d168f57c0",
+      "bytes": 137
+    },
+    {
+      "path": "SystemCode/model/e5_windows/requirements.txt",
+      "sha256": "611b87d21026c1840651efab66367fef8f3de165d770b674e068a67c4a317590",
+      "bytes": 29
+    },
+    {
+      "path": "SystemCode/model/e5_windows/run_e5.py",
+      "sha256": "fcb87d3c68889cd6fbdc989bb8c335c349d342674c9d1b770acea98ab18f22d2",
+      "bytes": 26878
+    },
+    {
+      "path": "SystemCode/model/e5_windows/test_e5.py",
+      "sha256": "80aa7c0da351f9460b51e534cdeee35b4c3f2a0977d629a8d4918e6ed521902a",
+      "bytes": 11434
+    },
+    {
+      "path": "SystemCode/model/e6_windows/01_test_and_prepare.cmd",
+      "sha256": "d45fdaecbf504921da38f1595ee42a464af5e8e35276b67260056d46b777cb8a",
+      "bytes": 355
+    },
+    {
+      "path": "SystemCode/model/e6_windows/02_smoke_inference.cmd",
+      "sha256": "27d49a03fdb930c1b4bc30abde0186223afc69a73d6eecb238fc0f201fea8303",
+      "bytes": 214
+    },
+    {
+      "path": "SystemCode/model/e6_windows/03_infer_development.cmd",
+      "sha256": "4970a6ddaf2d0acdb29082435d877e5cc816c80b8285cf4d2ce68564d271506d",
+      "bytes": 210
+    },
+    {
+      "path": "SystemCode/model/e6_windows/04_calibrate_and_select.cmd",
+      "sha256": "812db01da4bf6c8ae108b98d26a988c29c49aa4e2f27a70986011c9373a5139d",
+      "bytes": 240
+    },
+    {
+      "path": "SystemCode/model/e6_windows/05_apply_locked_test_once.cmd",
+      "sha256": "3c44055ba1c06f98deb4495230eebf54aeb29f60a8abccf42004ae25d8e630ea",
+      "bytes": 199
+    },
+    {
+      "path": "SystemCode/model/e6_windows/check_models.py",
+      "sha256": "85f38af305de8428ba5cc3071e2ba3292dface9e0a195f73c379b3a1c68945d1",
+      "bytes": 4066
+    },
+    {
+      "path": "SystemCode/model/e6_windows/metadata_template.csv",
+      "sha256": "ae46570d0a0ae4881b59699d5fb85987848bcdea89a5d525d6663f5ec795eea8",
+      "bytes": 77
+    },
+    {
+      "path": "SystemCode/model/e6_windows/prepare_far_polyp_seg.py",
+      "sha256": "e5704c728d42890fe5b1bf5ca69095a266a3ef78525ddee97565495fa92610b0",
+      "bytes": 4760
+    },
+    {
+      "path": "SystemCode/model/e6_windows/pvt_timm_compat.py",
+      "sha256": "c0e918153dcd12a110d2e2f7a64a51b16fbecd85c2a5692c25ae777add75f14e",
+      "bytes": 2309
+    },
+    {
+      "path": "SystemCode/model/e6_windows/requirements.txt",
+      "sha256": "611b87d21026c1840651efab66367fef8f3de165d770b674e068a67c4a317590",
+      "bytes": 29
+    },
+    {
+      "path": "SystemCode/model/e6_windows/run_e6.py",
+      "sha256": "0f7117b62f042975a3f76940f2a8546a9a8aa11006b9eb45f340c98e95991575",
+      "bytes": 52070
+    },
+    {
+      "path": "SystemCode/model/e6_windows/test_e6.py",
+      "sha256": "c8455e90b326e96541d547b9a39ef472049bde1b8802def9b7a2afdf2b890772",
+      "bytes": 9501
+    },
+    {
+      "path": "SystemCode/model/e7a_windows/01_test_e7a.cmd",
+      "sha256": "e44218593ca1926dcc94beaec557ff394f769055c1dd4a88179a1c4156ad704d",
+      "bytes": 101
+    },
+    {
+      "path": "SystemCode/model/e7a_windows/02_select_e7a.cmd",
+      "sha256": "83e54784843d6c337b379dbc28292d0a3d44a1202bcb12241a1e7db4f1dffdf3",
+      "bytes": 305
+    },
+    {
+      "path": "SystemCode/model/e7a_windows/03_apply_locked_test_once.cmd",
+      "sha256": "05193a5b352f3339624cfcc1457d5fdf389ae9eb8e51d3e3a0ad722b25d49c77",
+      "bytes": 211
+    },
+    {
+      "path": "SystemCode/model/e7a_windows/requirements.txt",
+      "sha256": "611b87d21026c1840651efab66367fef8f3de165d770b674e068a67c4a317590",
+      "bytes": 29
+    },
+    {
+      "path": "SystemCode/model/e7a_windows/run_e7a.py",
+      "sha256": "8059a0cf7e3374f14465e7a3ca90c7df76ce1869bad48979623f56a0e4812ae7",
+      "bytes": 31551
+    },
+    {
+      "path": "SystemCode/model/e7a_windows/test_e7a.py",
+      "sha256": "c1e2d269421bb24bb9a7b2678fa8da434fb6279b6446a348591f42ffead52551",
+      "bytes": 7922
+    },
+    {
+      "path": "SystemCode/model/e7a2_windows/01_test_e7a2.cmd",
+      "sha256": "4501633738336acf54426487916997c68eb511047f29d158f2eb26f17aff6a24",
+      "bytes": 103
+    },
+    {
+      "path": "SystemCode/model/e7a2_windows/02_select_e7a2.cmd",
+      "sha256": "7a090a0289a2b95c517a2629707ec0a9c7df02d01db99d64ac90036d119438c8",
+      "bytes": 109
+    },
+    {
+      "path": "SystemCode/model/e7a2_windows/03_apply_locked_test_once.cmd",
+      "sha256": "16d60e157cb40d33e5f4248f3c7f249e7ac78a5172e39bac276a1cc04b4c6424",
+      "bytes": 113
+    },
+    {
+      "path": "SystemCode/model/e7a2_windows/run_e7a2.py",
+      "sha256": "9c18aff3ae21ffbb80d11ee6c646e3c80d1c9a7cc5805a354311f720fdee4e50",
+      "bytes": 20041
+    },
+    {
+      "path": "SystemCode/model/e7a2_windows/test_e7a2.py",
+      "sha256": "fa49641493b432b792bc99e3ffd7cc035dd4356864c846f600827b50a9f003e9",
+      "bytes": 7531
+    },
+    {
+      "path": "SystemCode/model/e7b0_windows/01_test_e7b0.cmd",
+      "sha256": "424336c53e16ed9309ce2c7c35b0b99cf1dfaa1afcbf73d5532b5509be75cc7f",
+      "bytes": 103
+    },
+    {
+      "path": "SystemCode/model/e7b0_windows/02_run_diagnostics.cmd",
+      "sha256": "789e4267a8feb86e70baa04a2ac2d2d1acadb624edcdbf51f89f27c92891c388",
+      "bytes": 102
+    },
+    {
+      "path": "SystemCode/model/e7b0_windows/run_e7b0.py",
+      "sha256": "816c32604029582d1599031ad0ba0dde2f18d85e2a562213ab79996f590dd231",
+      "bytes": 22021
+    },
+    {
+      "path": "SystemCode/model/e7b0_windows/test_e7b0.py",
+      "sha256": "f43c5d1386ecd490931d102f82b280d3cb1c078fbf503dfd80086994b15f2388",
+      "bytes": 6397
+    },
+    {
+      "path": "SystemCode/model/e7b1_windows/01_test_e7b1.cmd",
+      "sha256": "a3045b91e6e8bd0414941148af7b46cf5260aa8a6ffae2e462da61316b375106",
+      "bytes": 103
+    },
+    {
+      "path": "SystemCode/model/e7b1_windows/02_run_gate_cv.cmd",
+      "sha256": "b1a8819e840ac425cd4e9249c2c5c91b5d12be46c5b8bb1446533f7aecf8c819",
+      "bytes": 102
+    },
+    {
+      "path": "SystemCode/model/e7b1_windows/03_verify_outputs.cmd",
+      "sha256": "e6d0e87932f6b08b5cc17a1d1deff815bce37cb480abbf9ab69c01be8ba4ba1e",
+      "bytes": 105
+    },
+    {
+      "path": "SystemCode/model/e7b1_windows/run_e7b1.py",
+      "sha256": "964b83b38f5b1cfc9c1873f2eb67b942f40cb589cfdc10e44d78eb8c365bce23",
+      "bytes": 19726
+    },
+    {
+      "path": "SystemCode/model/e7b1_windows/test_e7b1.py",
+      "sha256": "26c8b21c72b5835c857396248f2c0ef588de6c774f89f6fe5b76bba68742c6be",
+      "bytes": 8537
+    },
+    {
+      "path": "SystemCode/model/e7b1_windows/verify_e7b1.py",
+      "sha256": "696665bfa9fe5b745e7eceba13ddcc43b72a79fb4a5fce9f863cc0f67bea6a17",
+      "bytes": 6349
+    },
+    {
+      "path": "SystemCode/model/e7b2_windows/01_test_e7b2.cmd",
+      "sha256": "ed00da870747c3c0706e3c98f21a6969a7596c1cfeb1ada0a428d88aacd1cebe",
+      "bytes": 103
+    },
+    {
+      "path": "SystemCode/model/e7b2_windows/02_freeze_rule.cmd",
+      "sha256": "c9eb8894e0a8343c9a89262a482dc3a59df9cb6ed5747e7ad8ba2bf64ffa6ba6",
+      "bytes": 109
+    },
+    {
+      "path": "SystemCode/model/e7b2_windows/03_evaluate_selection_once.cmd",
+      "sha256": "9c1f0e6f24b4d19a03ae416e90ecc638aec8ab04997b3e36c8262c3900ada28a",
+      "bytes": 111
+    },
+    {
+      "path": "SystemCode/model/e7b2_windows/04_verify_outputs.cmd",
+      "sha256": "90f237d34251435958c7fbb3d2108eb49684fac3765bd2342c24e30e0cfb52ec",
+      "bytes": 109
+    },
+    {
+      "path": "SystemCode/model/e7b2_windows/run_e7b2.py",
+      "sha256": "c190ee4885b8a5e8b3ceb784b1baedf871c50695d33c8464aa38957ce8a871c7",
+      "bytes": 24609
+    },
+    {
+      "path": "SystemCode/model/e7b2_windows/test_e7b2.py",
+      "sha256": "883ed9d080fa746a75bcd231768f171d0041bfa3d0b94eb4f4579f6294525b9d",
+      "bytes": 10094
+    },
+    {
+      "path": "SystemCode/model/e8_windows/00_download_and_prepare.cmd",
+      "sha256": "813af4c695bdc81436953c239dd64671c84cf919c0fe1b0e3bb74e730d807c78",
+      "bytes": 425
+    },
+    {
+      "path": "SystemCode/model/e8_windows/01_check_and_smoke.cmd",
+      "sha256": "51f2a7213835d614fbe00878c99eca161691042f8cf98e246cc5f9fa583e7867",
+      "bytes": 447
+    },
+    {
+      "path": "SystemCode/model/e8_windows/02_train_baseline.cmd",
+      "sha256": "d19a5691e6dd0f955909732c8fa5a678b99a73b52e62facc7581e690f088c5d1",
+      "bytes": 121
+    },
+    {
+      "path": "SystemCode/model/e8_windows/03_train_expanded.cmd",
+      "sha256": "992b245b97ce1054513403cbc7f6a1f7208133fb8c245e408e82b7fd4c63fd1d",
+      "bytes": 121
+    },
+    {
+      "path": "SystemCode/model/e8_windows/04_train_hard_controls.cmd",
+      "sha256": "519a289c441bcfb2582587d174038dc22bd6b34bcbffed8252a14582c60b9718",
+      "bytes": 199
+    },
+    {
+      "path": "SystemCode/model/e8_windows/05_compare_validation.cmd",
+      "sha256": "f736fadf9301e40e71153924f67d19f3daa2e0e9d4fb1e8ed45206ed11e149fc",
+      "bytes": 186
+    },
+    {
+      "path": "SystemCode/model/e8_windows/06_lock_holdout.cmd",
+      "sha256": "e9fc8bb13f8af911a29730bed2a1938a53abfbb205e8ad9f8215a86e288d38b1",
+      "bytes": 121
+    },
+    {
+      "path": "SystemCode/model/e8_windows/07_evaluate_locked_holdout.cmd",
+      "sha256": "2c0fe5b9354f7c0f55759a87ec6760a286b31d6f49d97e62d9ce38a188a73580",
+      "bytes": 115
+    },
+    {
+      "path": "SystemCode/model/e8_windows/08_analyze_holdout.cmd",
+      "sha256": "777460ac691ae1f1b3d47a9c0508c3441010a94cba5d1c2ae0234280919f2206",
+      "bytes": 419
+    },
+    {
+      "path": "SystemCode/model/e8_windows/analyze_holdout.py",
+      "sha256": "393b70260b0e89d5bf81362f419bacfe43010686a007f3162cd1daa22f13f61d",
+      "bytes": 18348
+    },
+    {
+      "path": "SystemCode/model/e8_windows/common.py",
+      "sha256": "148922dfbc42e0ba2d9004c3dd2ae588b90b2f5ca8237e427dd1a798b63af625",
+      "bytes": 5722
+    },
+    {
+      "path": "SystemCode/model/e8_windows/download_polypgen.py",
+      "sha256": "cb1ee5b122560a5edbd149150517d22423554d224e8c69b32213de4c5f2b3725",
+      "bytes": 7879
+    },
+    {
+      "path": "SystemCode/model/e8_windows/prepare_data.py",
+      "sha256": "e9c743ee6cf3af71ed5e5b9d45e46d0fbef7d7d65b19b27fcec03c872049788a",
+      "bytes": 12544
+    },
+    {
+      "path": "SystemCode/model/e8_windows/run_e8.py",
+      "sha256": "b5e5937109495eaaa4398836ab209e4bc39e66bc223a085c317d899b56a2535e",
+      "bytes": 17711
+    },
+    {
+      "path": "SystemCode/model/e8_windows/test_e8.py",
+      "sha256": "ad21eec7de4816243cd17a8f30177ebc8c92ca606f1b6472e5f7d45bbda1d552",
+      "bytes": 10451
+    },
+    {
+      "path": "SystemCode/model/e8_windows/test_holdout_analysis.py",
+      "sha256": "86bd480866b029eb45f7c2ac5fe421d1e7113c740bc99108ca54d2104b2e2a80",
+      "bytes": 1856
+    },
+    {
+      "path": "SystemCode/model/e8_windows/train_e8.py",
+      "sha256": "7943e025319b6de9ad8a7118a77a2b3972b0c143cb9142da64ac0efcd08a66b1",
+      "bytes": 18518
+    },
+    {
+      "path": "SystemCode/model/e8_repeat_windows/01_check_and_prepare.cmd",
+      "sha256": "ba837feee94ee76d15432f72893847d8062f24ac82d9054a89e304761f2e7677",
+      "bytes": 386
+    },
+    {
+      "path": "SystemCode/model/e8_repeat_windows/02_train_seed17.cmd",
+      "sha256": "2cc8fd3fd26386b234c55545cf44cc8458478e4155b498f2240cafbd35196806",
+      "bytes": 133
+    },
+    {
+      "path": "SystemCode/model/e8_repeat_windows/03_train_seed2024.cmd",
+      "sha256": "9cbd48f80dc76834bc19bd5ee396e0cb8f6b9ac1708cde23f69f979043af65da",
+      "bytes": 135
+    },
+    {
+      "path": "SystemCode/model/e8_repeat_windows/04_summarize_seeds.cmd",
+      "sha256": "d5b34b921f4630feb774cc7746835f2c6c16090b5b0e771d10801e9161675560",
+      "bytes": 262
+    },
+    {
+      "path": "SystemCode/model/e8_repeat_windows/05_status.cmd",
+      "sha256": "9683c80a58be024b92cf3fda6a7978d844a4a331b6266c019211d831b64a2a41",
+      "bytes": 119
+    },
+    {
+      "path": "SystemCode/model/e8_repeat_windows/run_e8_repeat.py",
+      "sha256": "b6d37aad6a107e3b63e676e087695198fe61a7446abcbd25119036c463d49438",
+      "bytes": 22906
+    },
+    {
+      "path": "SystemCode/model/e8_repeat_windows/test_e8_repeat.py",
+      "sha256": "d1580e6fb9103b14e7b806442a7140098b896683054cc915148f4de1bea4a21c",
+      "bytes": 8047
+    },
+    {
+      "path": "SystemCode/model/e9_balance_windows/01_check_and_smoke.cmd",
+      "sha256": "7729c7063da996ca9d9b7edcedb4eae8d5ba7a3008c5682fc62401e636e8eafa",
+      "bytes": 198
+    },
+    {
+      "path": "SystemCode/model/e9_balance_windows/02_train_all.cmd",
+      "sha256": "e79bddaeff1c65927a6a5530667e7e15383b379343e1e27090ff700f73cbd09b",
+      "bytes": 124
+    },
+    {
+      "path": "SystemCode/model/e9_balance_windows/03_summarize.cmd",
+      "sha256": "446dbe9104923f42a1c20179f756ab63727999d7626df063b5e63e2c27ac8424",
+      "bytes": 201
+    },
+    {
+      "path": "SystemCode/model/e9_balance_windows/04_status.cmd",
+      "sha256": "0bc34002ef433202e28fa18d450b6ce6f56b932c3e0fecd4cbf8d1d6330abdbb",
+      "bytes": 121
+    },
+    {
+      "path": "SystemCode/model/e9_balance_windows/diagnose_e8.py",
+      "sha256": "9c17bcc2a3cf9fa4e9da48a3ce6c4d3015404885962c0a1f15453069ccbbf71b",
+      "bytes": 9930
+    },
+    {
+      "path": "SystemCode/model/e9_balance_windows/run_e9_balance.py",
+      "sha256": "bb5af0ea1500ff19b89d9a87abe25528fb4e573023fc11cb47c8573a55a56a49",
+      "bytes": 23684
+    },
+    {
+      "path": "SystemCode/model/e9_balance_windows/test_e9_balance.py",
+      "sha256": "c6758fc0123b80c59c661d5cacf786861d0322ac9d6b2d812150eebfe9d8953d",
+      "bytes": 13255
+    },
+    {
+      "path": "SystemCode/model/e10a_windows/01_check_and_freeze.cmd",
+      "sha256": "fa5d6f61c2cb05b2c123995705e6f9fa5d8b6ee322d72775dbc978775b2a15c3",
+      "bytes": 168
+    },
+    {
+      "path": "SystemCode/model/e10a_windows/02_compare_frozen_models.cmd",
+      "sha256": "9998dd39a54c5569d4bc16f48be496dbe33f165b7f339cc35c6bc05d779b24ce",
+      "bytes": 108
+    },
+    {
+      "path": "SystemCode/model/e10a_windows/03_verify.cmd",
+      "sha256": "d186f526b8f97d85dee572ac6c0febcc1e46cd3b0c152513b4424e451060b126",
+      "bytes": 109
+    },
+    {
+      "path": "SystemCode/model/e10a_windows/run_e10a.py",
+      "sha256": "a4a649f002d6ea818f53e86af0706a5cd2f212656f04ae9c7c0813024fe38eb1",
+      "bytes": 31620
+    },
+    {
+      "path": "SystemCode/model/e10a_windows/test_e10a.py",
+      "sha256": "d8b03b06d0c4f7f8ae93ac6450ed1fff443463be0ad83142ce1765c9a43b7fc0",
+      "bytes": 8344
+    },
+    {
+      "path": "SystemCode/model/e10b_windows/01_test_and_freeze.cmd",
+      "sha256": "b3987bfe7da8a790c51268027ba5fbe33461faee1a339d45e5f8655ae14f2a1f",
+      "bytes": 168
+    },
+    {
+      "path": "SystemCode/model/e10b_windows/02_calibrate_and_lock.cmd",
+      "sha256": "b8d709254fd820f19601eff57bfe90ac1a435488c266066fb86f5989ee7982a1",
+      "bytes": 112
+    },
+    {
+      "path": "SystemCode/model/e10b_windows/03_evaluate_locked_selection.cmd",
+      "sha256": "b2984257e8a18bb57848245be7a9165212d43b1569ea7d5cf54acb1078110657",
+      "bytes": 111
+    },
+    {
+      "path": "SystemCode/model/e10b_windows/04_verify.cmd",
+      "sha256": "9b40fed4f07d09b43fa19928f7bb3b92a9928badec6cd4d5ca794ca503f8a0ab",
+      "bytes": 109
+    },
+    {
+      "path": "SystemCode/model/e10b_windows/run_e10b.py",
+      "sha256": "3d4c162f2eaef3c9325d2c9e75234b01ef560ea5d1796fc9fef8945b949c7410",
+      "bytes": 26668
+    },
+    {
+      "path": "SystemCode/model/e10b_windows/test_e10b.py",
+      "sha256": "b48772171b89d436b2d502de9ac4f99c2038f3f44c0e8072a8f2540a49452161",
+      "bytes": 8489
+    },
+    {
+      "path": "SystemCode/model/e10c_windows/01_test_and_freeze.cmd",
+      "sha256": "680ce819572d61d2da8a10ded09649b3bee747de3a76f2e30a17d3513fe8eb1b",
+      "bytes": 168
+    },
+    {
+      "path": "SystemCode/model/e10c_windows/02_patient_cv.cmd",
+      "sha256": "ed6c3eb20a898c63853fc8dd244286d3fbe450daea8a663c133c3fff11593fd9",
+      "bytes": 105
+    },
+    {
+      "path": "SystemCode/model/e10c_windows/03_refit_if_pass.cmd",
+      "sha256": "2f578b3afe08f9897a434b4ccf8e1bb7ad21fc89621aae96575b17e9fab699e9",
+      "bytes": 108
+    },
+    {
+      "path": "SystemCode/model/e10c_windows/04_locked_selection_if_pass.cmd",
+      "sha256": "d587cef874a2863173951b286adf24e829eb5f5bc9119484878d97f5cfbdb1e1",
+      "bytes": 111
+    },
+    {
+      "path": "SystemCode/model/e10c_windows/05_verify.cmd",
+      "sha256": "7f0e6d211b3330d6bc19355559a1e6caed841660b4d4e46d7dda353191aadeb5",
+      "bytes": 109
+    },
+    {
+      "path": "SystemCode/model/e10c_windows/run_e10c.py",
+      "sha256": "5faa7395a5da6c74fa320e1cbc7c8375e24240c6cf72f5ebda8f5db193c75246",
+      "bytes": 24383
+    },
+    {
+      "path": "SystemCode/model/e10c_windows/temperature.py",
+      "sha256": "da29690eb3be7d4b1eee026260b00315300d45ecb3e3fbb47f07bbd4caebcdd8",
+      "bytes": 5436
+    },
+    {
+      "path": "SystemCode/model/e10c_windows/test_e10c.py",
+      "sha256": "f48ae24c4941130d3dad227f08a4090f9531bddb9dddedf5a61586a71fd896a2",
+      "bytes": 10781
+    },
+    {
+      "path": "SystemCode/model/e10d_windows/01_test_and_freeze.cmd",
+      "sha256": "8e6a58008b05f68f1025a7b35b885ba7c6d09ccf908c0d0f97d160f96dac0490",
+      "bytes": 203
+    },
+    {
+      "path": "SystemCode/model/e10d_windows/02_infer_stability.cmd",
+      "sha256": "7caf3aeaa4851e363adf8b3169a711eab1c027aeb6bce6346f5e0d6ecd14b49c",
+      "bytes": 143
+    },
+    {
+      "path": "SystemCode/model/e10d_windows/03_diagnose_patient_cv.cmd",
+      "sha256": "0399a533ffa0aa35d45ed381ff0bb88b8405940c8e7930b851a3d2f3a9e7c7e2",
+      "bytes": 146
+    },
+    {
+      "path": "SystemCode/model/e10d_windows/04_verify.cmd",
+      "sha256": "55aaa1dea740c09c6477f616010e39193c8dec3858b249985fcdffeed3f4f96e",
+      "bytes": 144
+    },
+    {
+      "path": "SystemCode/model/e10d_windows/rescue.py",
+      "sha256": "5986593faf268d14fdc5677daa37439a46408db039cdf9b49b03f65d42eccfd2",
+      "bytes": 9174
+    },
+    {
+      "path": "SystemCode/model/e10d_windows/run_e10d.py",
+      "sha256": "1b423492504049532485f72f82e73383e19624a10c9f5d71aaab38ae82c98b06",
+      "bytes": 29720
+    },
+    {
+      "path": "SystemCode/model/e10d_windows/test_e10d.py",
+      "sha256": "e4c796785ac1e625cc6b6510f6cf1c5f8657031858e10f7161bb47ece603e87e",
+      "bytes": 8400
+    },
+    {
+      "path": "SystemCode/model/e11_background_windows/00_review_cached_errors.cmd",
+      "sha256": "ac8bfd4df1275b14def62c8c901c989d43e3c26c68fbbe9335699a0e82719236",
+      "bytes": 160
+    },
+    {
+      "path": "SystemCode/model/e11_background_windows/01_test_and_prepare.cmd",
+      "sha256": "7988e61b6daed5b3acc974dc056fe7c5cbb93859e4fe48aff127d03fa9f68cfa",
+      "bytes": 222
+    },
+    {
+      "path": "SystemCode/model/e11_background_windows/02_smoke.cmd",
+      "sha256": "2beed5c278f7f4868c1ee741906df1a9a38f22fce152eba0ea8d56a4f8e44e59",
+      "bytes": 164
+    },
+    {
+      "path": "SystemCode/model/e11_background_windows/03_train_all.cmd",
+      "sha256": "4a4b696219eb278c2c431852fc6a6c77b1aa4270b9d5867bc48b3365647d903a",
+      "bytes": 168
+    },
+    {
+      "path": "SystemCode/model/e11_background_windows/04_summarize.cmd",
+      "sha256": "915aaf1f34c7464fa927dcd734764d410eed8aff38bda9b177cfdafd5d3ef656",
+      "bytes": 156
+    },
+    {
+      "path": "SystemCode/model/e11_background_windows/05_status.cmd",
+      "sha256": "4cc732e54581a931f115abfd0c96f42fbc0737d3becb113d09b0a184a17dbc10",
+      "bytes": 153
+    },
+    {
+      "path": "SystemCode/model/e11_background_windows/06_verify_summary.cmd",
+      "sha256": "d3832adc17ecd8d8924460db188e41d6b012540101773523267d669c3941dad1",
+      "bytes": 153
+    },
+    {
+      "path": "SystemCode/model/e11_background_windows/background_loss.py",
+      "sha256": "609a682e87b989ba8cc5bb441d68bb85d6e81a7e241c2f96c759806a191bbfbc",
+      "bytes": 2032
+    },
+    {
+      "path": "SystemCode/model/e11_background_windows/diagnose_errors.py",
+      "sha256": "fb5ffc43e325cc983a98ad07d5d769d9d8ff90d12fc6a626324f57d0c8721061",
+      "bytes": 7758
+    },
+    {
+      "path": "SystemCode/model/e11_background_windows/run_e11.py",
+      "sha256": "e3e71ce3a803b7b40d4c6a3fedf1c99e859c86e286b53330f647f85b47a85e92",
+      "bytes": 26983
+    },
+    {
+      "path": "SystemCode/model/e11_background_windows/test_e11.py",
+      "sha256": "d5a23369f7722e27dc5e1a9c0ef24072e636cbff85c344707247805d7f88b1f0",
+      "bytes": 10688
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/e6_development_seed42/development_manifest.json",
+      "sha256": "85fda99e50134370fe994719f58e97ff6db92227db643f3e91fdddff49940786",
+      "bytes": 386696
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/e8_data_seed42/bundle.json",
+      "sha256": "7f61c269dfdb402789e38a6520285137375c40d2a741bee72e657ee7c15f16a9",
+      "bytes": 5265
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/e8_data_seed42/original_train.json",
+      "sha256": "775b2578592ef92fd4ce429205263a4a410f4e5062b870a5f6eb0e90555c7f4b",
+      "bytes": 896164
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/e8_data_seed42/new_train.json",
+      "sha256": "713418b0dffc2cd4be6c956885f1520850f6221aa8ee53a6e9de7f0102bdf6cd",
+      "bytes": 977185
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/e8_data_seed42/validation.json",
+      "sha256": "68fcf084ea487cfdb6bc5f3d8825e68050a18371f84d68852552bd169ce904b6",
+      "bytes": 407064
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/e8_data_seed42/holdout.json",
+      "sha256": "ba6a1cc42467b3917d91809ac9d730d78f0a1cb08450286b25fdaa53e1959a11",
+      "bytes": 73261
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/e8_data_seed42/quarantine.json",
+      "sha256": "973173fd348ba9dffb362ca2686d65a3c64d5d7d31175b2acf6afcd5122d3e8f",
+      "bytes": 22010
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/e8_data_seed42/protocol.json",
+      "sha256": "a4a18e655e4ddc1e0ac304e8c215cab29564467186de760eb1e28c6d8cedc788",
+      "bytes": 16032
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/plans/e10a_far_plan.json",
+      "sha256": "d250579c44ee55ed7973baa1b95416a32c5a7c52393d5608df06795ee775dffc",
+      "bytes": 84967
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/plans/e10b_fusion_plan.json",
+      "sha256": "300864e28847fb8c55e4173b98a1f94dcd1fffb725ccf98d678c08a7a1fc3374",
+      "bytes": 225886
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/plans/e10c_temperature_plan.json",
+      "sha256": "477b0735e7ec2d2bc08142673db401c55d81241f7fa6e50760bd71dec1942f56",
+      "bytes": 256728
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/plans/e10d_rescue_compat_plan.json",
+      "sha256": "5cae95114d145eaaf3c9df9383c8c3feb83fc9938fc5b7c9fa81b6a75e2c745f",
+      "bytes": 469188
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/plans/e10d_rescue_plan.json",
+      "sha256": "fbe58063ddf67f2f57451309e3ed94a1fd5dcd083cc8a0e78e3e8872e9746d90",
+      "bytes": 382859
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/plans/e11_background_plan.json",
+      "sha256": "da1747e4fae776d8bb5931a3a29b534f3e7b39982737d6839db375e16a260735",
+      "bytes": 11819
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/plans/e8_gpu_device_proof.json",
+      "sha256": "8a5f892548e355b5509035eb0cafb1390d14644d4141c92905db2755a48dc262",
+      "bytes": 1313
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/plans/e8_holdout_analysis_plan.json",
+      "sha256": "1d75f5dc35cd2e9f5b8ecdc51dc3cf7a0dc08f029952e99d20d9675eb4b5b235",
+      "bytes": 1189
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/plans/e8_holdout_lock_seed42.json",
+      "sha256": "6e9d67ab5b31caa80429537fd3529fced02b7da269f19fb15e88564d2ce8380b",
+      "bytes": 1690
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/plans/e8_repeat_plan.json",
+      "sha256": "293223b4fa83a1e51ff7ce025866937f0685a38f6e95b7096078da716f0e2356",
+      "bytes": 4767
+    },
+    {
+      "path": "Miscellaneous/model_artifacts/research_snapshot/plans/e9_balance_plan.json",
+      "sha256": "a7a3902bafe19ba994c85696859a86bd60169032a77658748f2e90738a6e283e",
+      "bytes": 58442
+    }
+  ]
+}
