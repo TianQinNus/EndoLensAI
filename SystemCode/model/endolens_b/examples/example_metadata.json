@@ -1,0 +1,12 @@
+{
+  "synthetic": true,
+  "clinical": false,
+  "device": "cpu",
+  "model_version": "unet-b-expanded-seed42-r98-v1",
+  "probability_shape": [
+    240,
+    320
+  ],
+  "inference_time_ms": 124.31679997825995,
+  "warning": "Real model output on synthetic graphics, NOT a ground-truth or clinical result"
+}

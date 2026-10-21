@@ -1,5 +1,9 @@
-请先阅读 ZIP 根目录的 E2_操作说明.md。训练只支持 CUDA。
+# E2 initialization controls
 
-数据划分已在Mac完成，请同时使用 runs/e2_data_seed42。
+Run from SystemCode/model. Formal training requires CUDA; CPU synthetic tests are expected. Use the fixed runs/e2_data_seed42 split rather than regenerating it.
 
-metadata_template.csv 是可选模板，默认不使用。只有获得可靠来源和患者/序列信息并填写完整后，才用 --metadata-csv 创建新的划分。
+Compare original U-Net, random ResNet34-U-Net and ImageNet-pretrained ResNet34-U-Net on1160 training/290 validation entries,100 development epochs. Select architecture/epoch by validation Dice, then reinitialize on1450 entries for the selected epoch budget. Keep the100-epoch schedule horizon; never select from test results.
+
+See the [team guide](../docs/TEAM_GUIDE.md) for installation, asset restoration and full commands, and [E0-E4 report](../../../ProjectReport/E0_E4_BASELINES.md) for actual completed results. metadata_template.csv is optional and must not be populated with guessed patient identity.
+
+The frozen Python implementation is unchanged. Download the official verified encoder initializer using run_e2.py download-weights; do not substitute a trained final checkpoint.

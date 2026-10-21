@@ -1,0 +1,7 @@
+﻿seed,source,count,dice_delta_B_minus_A,low05_delta_B_minus_A,near_zero01_delta_B_minus_A,zero_delta_B_minus_A
+42,original_validation,290,0.016722281029699748,-5,-1,0
+42,PolypGen-C5,204,0.10201337810970557,-25,-12,-10
+17,original_validation,290,0.00938546415455943,-6,0,0
+17,PolypGen-C5,204,0.09006105250343799,-26,-15,-15
+2024,original_validation,290,-0.014534841644385454,4,0,0
+2024,PolypGen-C5,204,0.12552441085907873,-28,-26,-16

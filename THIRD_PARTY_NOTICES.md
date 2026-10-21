@@ -20,7 +20,11 @@ PyTorch, torchvision, timm, NumPy and Pillow remain subject to their respective 
 
 ## Datasets and weights
 
-Dataset images, segmentation labels, model checkpoints and stored probability maps are not committed. Obtain them through authorized sources or the group's asset transfer. Dataset manifests contain benchmark filenames, dimensions and hashes, not images or patient identities. Availability of code or data does not imply unlimited reuse rights.
+Dataset images, segmentation labels, original training checkpoints and real-image probability caches are not newly committed. The explicit exception is the retained portable B inference weight, distributed as a reviewed regular Git binary, and clearly synthetic demonstration outputs. Obtain other assets through authorized sources or the group's transfer. Benchmark filenames/group identifiers and hashes are metadata, not a claim of restored patient identity. Availability does not imply unlimited reuse rights.
+
+Expanded B used PolypGen C1-C4 for training, C5 validation and C6 historical evaluation; FAR-POLYP-SEG was used for development, not B training. PolypGen sources: [author repository](https://github.com/DebeshJha/PolypGen), [paper](https://doi.org/10.1038/s41597-023-01981-y), [data identifier](https://www.synapse.org/Synapse:syn45200214). The downloaded archive license.txt labels CC BY-NC-SA4.0 while README/paper label CC BY4.0. This unresolved discrepancy is retained; noncommercial research intent is not a legal conclusion about commercial use or downstream weight rights. Clarify terms with rights holders before broader distribution.
+
+The reference Web stack adds OpenCV, PyAV/FFmpeg, FastAPI, Starlette, Uvicorn, python-multipart, HTTPX and transitives, each governed by its installed license/notice. See [the integration notices](SystemCode/model/endolens_b/THIRD_PARTY_NOTICES.md). No clinical/regulatory approval or blanket commercial authorization is granted.
 
 ## Course template
 

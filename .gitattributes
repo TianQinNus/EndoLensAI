@@ -6,3 +6,6 @@
 *.cmd text eol=crlf
 *.docx binary
 *.pdf binary
+# The reviewed portable weight fits the regular GitHub file limit; this public fork rejects new LFS objects.
+SystemCode/model/endolens_b/** -text
+SystemCode/model/endolens_b/weights/unet_b_expanded_seed42.pt binary

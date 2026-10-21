@@ -1,0 +1,29 @@
+{
+  "model_version": "unet-b-expanded-seed42-r98-v1",
+  "selected_seed42_validation_macro_dice": 0.8043223644283428,
+  "validation_images": 494,
+  "macro_definition": "0.5*old_validation_Dice+0.5*C5_Dice",
+  "three_seed_macro_dice_mean": 0.8058419406683327,
+  "three_seed_macro_dice_sample_sd": 0.001631186002991668,
+  "limitation": "Existing historical results, not rerun by release/export; FAR already adaptive development; C6 single-source83 positive frames. Not same-data architecture superiority or clinical validation.",
+  "C6": {
+    "role": "historical83-positive-frame held-out evaluation",
+    "count": 83,
+    "dice": 0.8470921352247455,
+    "iou": 0.7815090206007606,
+    "mae": 0.015525252463615847,
+    "dice_lt05": 7,
+    "dice_lt01": 2,
+    "zero_dice": 2
+  },
+  "FAR": {
+    "role": "reused adaptive development, NOT fresh blind test",
+    "count": 432,
+    "dice": 0.7742682372387071,
+    "iou": 0.6879366444606804,
+    "mae": 0.037177112285900406,
+    "dice_lt05": 62,
+    "dice_lt01": 12,
+    "zero_dice": 4
+  }
+}

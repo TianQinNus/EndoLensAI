@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "content": "SYNTHETIC_NONCLINICAL",
+  "actual_model": "unet-b-expanded-seed42-r98-v1",
+  "device": "cpu",
+  "progress": {
+    "target_frames": 4,
+    "processed_frames": 4,
+    "candidate_frames": 4,
+    "failed_frames": 0,
+    "percent": 100.0
+  },
+  "performance": {
+    "elapsed_seconds": 0.6169296000152826,
+    "processing_fps": 6.483721967467457
+  },
+  "frame_indices": [
+    0,
+    3,
+    6,
+    9
+  ],
+  "timestamps_seconds": [
+    0.0,
+    0.5,
+    1.0,
+    1.5
+  ],
+  "assets_downloaded": 12,
+  "report_counts_match": true,
+  "warning": "This proves integration only; neither FPS benchmark nor clinical detection performance."
+}

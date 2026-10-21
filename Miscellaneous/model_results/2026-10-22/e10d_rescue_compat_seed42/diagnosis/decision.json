@@ -1,0 +1,74 @@
+{
+  "status": "NO_FEASIBILITY_PASS_RETAIN_B",
+  "gates": {
+    "B_expanded_dice": false,
+    "B_expanded_mae": true,
+    "B_expanded_low05": true,
+    "B_expanded_near_zero": true,
+    "B_expanded_zero": true,
+    "E0_frozen_reference_dice": false,
+    "E0_frozen_reference_mae": true,
+    "E0_frozen_reference_low05": false,
+    "E0_frozen_reference_near_zero": true,
+    "E0_frozen_reference_zero": true,
+    "raw_equal_dice_retained": false,
+    "at_least_ten_accepted_components": false,
+    "at_least_five_accepted_patients": false,
+    "accepted_precision_at_least_080": false,
+    "accepted_weighted_precision_at_least_080": false,
+    "weighted_auc_at_least_060": true,
+    "tta_auc_gain_at_least_002": true,
+    "fold0_dice_lt01_protected_vs_B": true,
+    "fold0_zero_dice_protected_vs_B": true,
+    "fold1_dice_lt01_protected_vs_B": true,
+    "fold1_zero_dice_protected_vs_B": true,
+    "fold2_dice_lt01_protected_vs_B": true,
+    "fold2_zero_dice_protected_vs_B": true,
+    "fold3_dice_lt01_protected_vs_B": true,
+    "fold3_zero_dice_protected_vs_B": true,
+    "fold4_dice_lt01_protected_vs_B": true,
+    "fold4_zero_dice_protected_vs_B": true,
+    "four_folds_nonworse_dice_vs_B": true
+  },
+  "deltas": [
+    {
+      "reference": "B_expanded",
+      "dice_delta": 0.0,
+      "mae_delta": 0.0,
+      "dice_lt05_delta": 0,
+      "dice_lt01_delta": 0,
+      "zero_dice_delta": 0
+    },
+    {
+      "reference": "E0_frozen_reference",
+      "dice_delta": -0.00892248730766998,
+      "mae_delta": -0.0022766126170608927,
+      "dice_lt05_delta": 4,
+      "dice_lt01_delta": -2,
+      "zero_dice_delta": -2
+    }
+  ],
+  "tta_discrimination": {
+    "components": 2115,
+    "helpful": 532,
+    "weighted_auc": 0.6541434620358691,
+    "admitted": 0,
+    "precision": null,
+    "weighted_precision": null,
+    "admitted_groups": 0
+  },
+  "no_tta_discrimination": {
+    "components": 2115,
+    "helpful": 532,
+    "weighted_auc": 0.5451056982630427,
+    "admitted": 0,
+    "precision": null,
+    "weighted_precision": null,
+    "admitted_groups": 0
+  },
+  "base_network_training": 0,
+  "gate_fits": 10,
+  "selection_allowed": false,
+  "full_data_refit_allowed": false,
+  "independent_confirmation_performed": false
+}

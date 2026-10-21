@@ -1,0 +1,136 @@
+{
+  "stage": "E9_BALANCE_DEVELOPMENT",
+  "status": "NO_PASS_RETAIN_B",
+  "selected_recipe_for_next_protocol": "B_expanded",
+  "deployment_seed": 42,
+  "per_seed": [
+    {
+      "seed": 42,
+      "passed": false,
+      "gates": {
+        "unchanged_E8_macro_dice": true,
+        "unchanged_E8_original_validation_mae": true,
+        "unchanged_E8_original_validation_low_dice": true,
+        "unchanged_E8_PolypGen-C5_mae": true,
+        "unchanged_E8_PolypGen-C5_low_dice": true,
+        "macro_retained_vs_B": true,
+        "original_dice_protected_vs_A": true,
+        "original_validation_near_zero_vs_B": false,
+        "original_validation_zero_vs_B": false,
+        "C5_dice_retained_vs_B": true,
+        "PolypGen-C5_near_zero_vs_B": false,
+        "PolypGen-C5_zero_vs_B": false
+      }
+    },
+    {
+      "seed": 17,
+      "passed": false,
+      "gates": {
+        "unchanged_E8_macro_dice": true,
+        "unchanged_E8_original_validation_mae": true,
+        "unchanged_E8_original_validation_low_dice": true,
+        "unchanged_E8_PolypGen-C5_mae": true,
+        "unchanged_E8_PolypGen-C5_low_dice": true,
+        "macro_retained_vs_B": false,
+        "original_dice_protected_vs_A": true,
+        "original_validation_near_zero_vs_B": true,
+        "original_validation_zero_vs_B": false,
+        "C5_dice_retained_vs_B": true,
+        "PolypGen-C5_near_zero_vs_B": false,
+        "PolypGen-C5_zero_vs_B": true
+      }
+    },
+    {
+      "seed": 2024,
+      "passed": false,
+      "gates": {
+        "unchanged_E8_macro_dice": true,
+        "unchanged_E8_original_validation_mae": true,
+        "unchanged_E8_original_validation_low_dice": false,
+        "unchanged_E8_PolypGen-C5_mae": true,
+        "unchanged_E8_PolypGen-C5_low_dice": true,
+        "macro_retained_vs_B": false,
+        "original_dice_protected_vs_A": false,
+        "original_validation_near_zero_vs_B": true,
+        "original_validation_zero_vs_B": true,
+        "C5_dice_retained_vs_B": false,
+        "PolypGen-C5_near_zero_vs_B": false,
+        "PolypGen-C5_zero_vs_B": false
+      }
+    }
+  ],
+  "gates": {
+    "max_macro_dice_loss_vs_B": 0.003,
+    "max_C5_dice_loss_vs_B": 0.01,
+    "max_original_dice_loss_vs_A": 0.003,
+    "max_source_near_zero_increase_vs_B": 0,
+    "max_source_zero_increase_vs_B": 0,
+    "require_all_unchanged_E8_gates_vs_A": true,
+    "require_all_three_seeds": true
+  },
+  "source_details": [
+    {
+      "seed": 42,
+      "source": "original_validation",
+      "dice_delta_vs_A": 0.008616669972562052,
+      "dice_delta_vs_B": -0.008105611057137696,
+      "low05_delta_vs_A": -4,
+      "low05_delta_vs_B": 1,
+      "near_zero_delta_vs_B": 2,
+      "zero_delta_vs_B": 1
+    },
+    {
+      "seed": 42,
+      "source": "PolypGen-C5",
+      "dice_delta_vs_A": 0.10512408267891848,
+      "dice_delta_vs_B": 0.0031107045692129187,
+      "low05_delta_vs_A": -30,
+      "low05_delta_vs_B": -5,
+      "near_zero_delta_vs_B": 5,
+      "zero_delta_vs_B": 9
+    },
+    {
+      "seed": 17,
+      "source": "original_validation",
+      "dice_delta_vs_A": -0.0006547743607641099,
+      "dice_delta_vs_B": -0.01004023851532354,
+      "low05_delta_vs_A": -3,
+      "low05_delta_vs_B": 3,
+      "near_zero_delta_vs_B": 0,
+      "zero_delta_vs_B": 1
+    },
+    {
+      "seed": 17,
+      "source": "PolypGen-C5",
+      "dice_delta_vs_A": 0.08137889000644993,
+      "dice_delta_vs_B": -0.008682162496988055,
+      "low05_delta_vs_A": -20,
+      "low05_delta_vs_B": 6,
+      "near_zero_delta_vs_B": 4,
+      "zero_delta_vs_B": 0
+    },
+    {
+      "seed": 2024,
+      "source": "original_validation",
+      "dice_delta_vs_A": -0.004997083590797868,
+      "dice_delta_vs_B": 0.009537758053587586,
+      "low05_delta_vs_A": 2,
+      "low05_delta_vs_B": -2,
+      "near_zero_delta_vs_B": 0,
+      "zero_delta_vs_B": 0
+    },
+    {
+      "seed": 2024,
+      "source": "PolypGen-C5",
+      "dice_delta_vs_A": 0.1068892230593752,
+      "dice_delta_vs_B": -0.018635187799703523,
+      "low05_delta_vs_A": -29,
+      "low05_delta_vs_B": -1,
+      "near_zero_delta_vs_B": 5,
+      "zero_delta_vs_B": 5
+    }
+  ],
+  "C6_evaluations": 0,
+  "fusion_candidates": 0,
+  "limitation": "Same repeatedly used validation; selection is developmental, not new external superiority/noninferiority evidence."
+}

@@ -1,25 +1,22 @@
-# 模型资产与组内单独迁移清单
+# Model assets and provenance
 
-此目录共享固定数据清单和E0参考元数据，不包含图片、权重或预测概率。`e2_data_seed42/`七份JSON逐字保留；描述符及各文件的SHA可验证。E0的manifest/per_image/summary/audit逐字保留，run_info仅隐藏机器绝对路径；模型/清单哈希、指标和协议未变。指标分享目录的run_info也隐藏了机器路径，不用于恢复训练。
+This directory contains fixed split/reference metadata and import registries, not patient images or complete training runs. Historical E2 split files preserve original bytes. Lightweight E0 and shared numerical records are not recovery checkpoints. Machine paths in old metadata describe provenance, not installation locations.
 
-初始化后本地运行目录为 `SystemCode/model/`。资产保管人目前在组内提供原目录迁移；本仓库**没有假设已有云盘或Release下载链接**。获取后原样恢复以下相对路径：
+The current exception is the selected **portable B inference weight**, included as a regular binary at SystemCode/model/endolens_b/weights/unet_b_expanded_seed42.pt. Run the package verifier after cloning. The97,893,041-byte file fits the regular GitHub file limit; this public fork rejected new LFS objects, so no LFS retrieval is required. Do not add other ignored weights or datasets.
 
-| 工作 | 除源码和共享元数据之外需要恢复的内容 |
+| Task | Additional assets required |
 |---|---|
-| CPU合成功能测试 | 不需要外部资产；安装依赖即可 |
-| 查看进度/指标 | 不需要外部资产；读取model_results和ProjectReport |
-| E2重新训练 | 完整dataset/；下载e2_weights/resnet34-b627a593.pth |
-| E0重新推理 | dataset/TestDataset/五子集及合并test；model_pth/PolypPVT.pth；pretrained_pth/pvt_v2_b2.pth；E0依赖环境 |
-| E4开发 | 上述E2输入＋完整runs/e2_dev_C_resnet_pretrained_seed42/，含checkpoints/best.pth；仅CSV不能代替 |
-| E2/E4最终评估 | 相应完整final目录（checkpoints/final.pth、run_info、test_manifest等）、测试图片、E0参考元数据 |
-| E3/V3复跑 | 完整E0目录（798概率NPZ、mask、manifest、per_image、run_info）；完整E2 final及其evaluation_cuda_20261005_231641_102143；合并test图片和mask |
-| 下一步E5 | 完整E0与E4 final/evaluation_cuda_20261006_235221_022843概率和来源记录；专用E5代码尚未实现 |
-| 原设备中断后resume | 对应完整run（last/best、优化器/RNG状态、历史等）、相同源码/数据/初始化及匹配环境；不要只迁final.pth或跨平台直接恢复 |
+| Read reports and metrics | None |
+| Synthetic historical functional tests | Declared Python dependencies |
+| Current B inference/Web smoke | Selected included binary weight and package dependencies; synthetic video is included |
+| E2 training | Original dataset and verified ResNet34 initializer |
+| E4 development | E2 inputs plus complete E2-C reference run/best checkpoint |
+| E0 inference | Original test data, PolypPVT.pth, backbone initializer and compatible environment |
+| E3/E5/later cache replay | Complete matching source probability maps/masks/manifests and protocol-specific checkpoints |
+| Interrupted training recovery | Complete original run, optimizer/RNG, unchanged source/data/config and matching environment |
 
-外层数据1450训练、798测试；内部1160/290。恢复原图，不重编码，不换同名但不同内容文件；校验失败应核对资产，不改代码绕过检查。
+WEIGHT_REGISTRY.json describes historical paths/hashes; it is not a fabricated download service. CODE_IMPORT_MANIFEST.json protects frozen E0-E4 Python bytes. B_RELEASE_IMPORT.json records the original tested local integration export; its documentation was subsequently migrated to English, while weights/inference remain unchanged.
 
-`WEIGHT_REGISTRY.json`记录既有模型/编码器检查点哈希及必要相对路径，**不是下载链接**。完整运行由负责实验的组员提供；后续可增加经过权限核对的组内共享位置及下载后校验说明。模型权重和数据原始许可见根目录THIRD_PARTY_NOTICES。
+On model_exploration, RESEARCH_CODE_IMPORT.json and research_snapshot contain original E5-E11 source/split/protocol provenance. Read the branch reproduction guide before using historical source hashes. Documentation or report translations must not silently rewrite metric values or historical protocol signatures.
 
-`CODE_IMPORT_MANIFEST.json`记录导入时的源码大小和哈希。`verify_imported_code.py`只核对冻结Python文件，文档可以正常更新。
-
-完整runs默认不提交Git。完成新实验后应保留完整目录作本地/组内备份，再将经过审核的小型指标与报告复制到分享目录；不要把分享目录当成可resume的完整run。
+Full original runs remain separately maintained by the experiment owner. Do not copy Miscellaneous/model_results into runs and assume resume/preflight/fusion will work. Dataset/weight rights remain subject to the [third-party notices](../../THIRD_PARTY_NOTICES.md).

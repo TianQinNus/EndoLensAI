@@ -1,0 +1,52 @@
+{
+  "status": "COMPLETED",
+  "run_kind": "FULL_E5",
+  "started_at": "2026-10-10T18:13:02.019156+00:00",
+  "project": "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT",
+  "sources": {
+    "e0_run": "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\e0_20261004_221345_872444",
+    "e4_run": "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\e4_final_seed42",
+    "e4_eval": "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\e4_final_seed42\\evaluation_cuda_20261006_235221_022843",
+    "e3_run": "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\v3_fusion_equal_seed42"
+  },
+  "config": {
+    "weight_e0": 0.5,
+    "weight_e4": 0.5,
+    "threshold": 0.5,
+    "per_image_minmax": false,
+    "probability_precision": "float32",
+    "parameter_search": false,
+    "fusion_inputs": "original-resolution stored sigmoid probabilities"
+  },
+  "environment": {
+    "python": "3.11.17 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:16:54) [MSC v.1942 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "pillow": "10.2.0",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "device": "CPU (NumPy cached-probability fusion; no training/model inference)"
+  },
+  "source_hashes": {
+    "run_e5.py": "fcb87d3c68889cd6fbdc989bb8c335c349d342674c9d1b770acea98ab18f22d2",
+    "test_e5.py": "80aa7c0da351f9460b51e534cdeee35b4c3f2a0977d629a8d4918e6ed521902a"
+  },
+  "e0_checkpoint_sha256": "aef5ac34f7795b85af0ecbb730502db251d416a73a4c6b04a74e30aa45554048",
+  "e4_checkpoint_sha256": "ed5222bfddf285e9f15421f25fc9db0f1624424c9d4db0338cf98f89fb7c3937",
+  "e3_run_info_sha256": "44505f66a2c356a183fab6bf84150ac73a520fe1cc1830366d99d8bb41482119",
+  "source_metadata_sha256": {
+    "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\e0_20261004_221345_872444\\run_info.json": "14e9071007124aa508e208651abe743fa300d29b82f6237a00a5c2599372b32b",
+    "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\e0_20261004_221345_872444\\manifest.json": "ed9e510313ffee1ec8af5b8e6be90acddbc7f6f603d96b204a6eb2579da74b25",
+    "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\e0_20261004_221345_872444\\per_image.csv": "604356000fbbe23ecdf8cab79896565b6f260f9a196a126450ab333f67b324fd",
+    "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\e4_final_seed42\\run_info.json": "9bf6476ed69d1a921630823648eeac1221a18d90c390fbf26a96be7c5b06ad65",
+    "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\e4_final_seed42\\e4_stage.json": "266897e1d277507f65e57b50726b6a25c6c54e460147ce58c64079aa77f04105",
+    "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\e4_final_seed42\\test_manifest.json": "55f3677bc8205e7bdddb3b56d1386f2877a45a91fccb517c8ebf05578e588fd5",
+    "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\e4_final_seed42\\evaluation_cuda_20261006_235221_022843\\run_info.json": "78aab390bdf249c98200d101935f92043ebd5320c48ed09fc084b13ff16c066f",
+    "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\e4_final_seed42\\evaluation_cuda_20261006_235221_022843\\per_image.csv": "577973cfe49d6c5e8ebfabab49a098a73387376612454e1ac1ac73b9bec3b417",
+    "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\v3_fusion_equal_seed42\\run_info.json": "44505f66a2c356a183fab6bf84150ac73a520fe1cc1830366d99d8bb41482119",
+    "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\v3_fusion_equal_seed42\\manifest.json": "55f3677bc8205e7bdddb3b56d1386f2877a45a91fccb517c8ebf05578e588fd5",
+    "F:\\Semester1\\ISY5002-PracticeModule\\Polyp-PVT\\Polyp-PVT\\runs\\v3_fusion_equal_seed42\\per_image.csv": "e7f0672cc0608a1c26482d5bc3920e2da6c67827d5f8f69cf3c2b04b7d23eefa"
+  },
+  "processed_count": 798,
+  "finished_at": "2026-10-10T18:14:55.444414+00:00",
+  "elapsed_seconds": 113.42511470010504,
+  "timing": "Offline audit/fusion/file-output wall time; not model inference or video FPS"
+}

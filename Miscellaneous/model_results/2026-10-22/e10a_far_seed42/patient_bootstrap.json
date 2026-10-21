@@ -1,0 +1,32 @@
+{
+  "ALL": {
+    "group_count": 187,
+    "image_count": 432,
+    "mean_delta": 0.00841515140131816,
+    "ci95_low": -0.011523724243576023,
+    "ci95_high": 0.027751810112056817,
+    "repetitions": 20000,
+    "seed": 42,
+    "interpretation": "Descriptive patient-cluster interval; no refitting or correction for repeated development/selection."
+  },
+  "calibration": {
+    "group_count": 75,
+    "image_count": 160,
+    "mean_delta": -0.008922487307670058,
+    "ci95_low": -0.04812195490988054,
+    "ci95_high": 0.02318592927040071,
+    "repetitions": 20000,
+    "seed": 42,
+    "interpretation": "Descriptive patient-cluster interval; no refitting or correction for repeated development/selection."
+  },
+  "selection": {
+    "group_count": 112,
+    "image_count": 272,
+    "mean_delta": 0.018613762406605342,
+    "ci95_low": -0.004413044272488109,
+    "ci95_high": 0.04369297328165963,
+    "repetitions": 20000,
+    "seed": 42,
+    "interpretation": "Descriptive patient-cluster interval; no refitting or correction for repeated development/selection."
+  }
+}

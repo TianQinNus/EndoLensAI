@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-22",
+  "model_version": "unet-b-expanded-seed42-r98-v1",
+  "edition": "English repository integration edition",
+  "original_export_weight_sha256": "1e4531592942ac8683b3ea7ea7ac9af6e77e03b08a2e3481942cfbbb24f657bb",
+  "changes": ["English README, model card, integration guide and notices", "Regular Git binary distribution after the public fork rejected new LFS objects", "Reviewed file manifest regenerated for documentation changes"],
+  "inference_source_changed": false,
+  "training_performed": false,
+  "patient_images_distributed": false,
+  "historical_verification_scope": "Existing reference parity and synthetic integration evidence, not a new performance experiment"
+}

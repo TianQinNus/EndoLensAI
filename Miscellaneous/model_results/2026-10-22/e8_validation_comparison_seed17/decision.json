@@ -1,0 +1,118 @@
+{
+  "stage": "E8_VALIDATION_ONLY",
+  "seed": 17,
+  "selected_arm": "B_expanded",
+  "status": "DEVELOPMENT_PASS",
+  "results": [
+    {
+      "arm": "A_baseline",
+      "seed": 17,
+      "best_round": 68,
+      "macro_dice": 0.7559146583331865,
+      "count": 494,
+      "dice": 0.7836183795013201,
+      "iou": 0.7179477696699438,
+      "mae": 0.02860449083801736,
+      "median_dice": 0.9341319014878742,
+      "dice_p10": 0.2524748912566817,
+      "dice_lt05": 84,
+      "dice_lt01": 37,
+      "zero_dice": 31,
+      "optimizer_updates_total": 14496,
+      "amp_skipped_updates_total": 4
+    },
+    {
+      "arm": "B_expanded",
+      "seed": 17,
+      "best_round": 99,
+      "macro_dice": 0.8056379166621852,
+      "count": 494,
+      "dice": 0.8263192688039994,
+      "iou": 0.7616566357323574,
+      "mae": 0.025292270312671124,
+      "median_dice": 0.9416027344254783,
+      "dice_p10": 0.4857550631826901,
+      "dice_lt05": 52,
+      "dice_lt01": 22,
+      "zero_dice": 16,
+      "optimizer_updates_total": 14496,
+      "amp_skipped_updates_total": 4
+    },
+    {
+      "arm": "C_hard",
+      "seed": 17,
+      "best_round": 62,
+      "macro_dice": 0.7463451015710395,
+      "count": 494,
+      "dice": 0.7753946885671084,
+      "iou": 0.7062984883952423,
+      "mae": 0.03364123204281848,
+      "median_dice": 0.9304227114291266,
+      "dice_p10": 0.19184315076171624,
+      "dice_lt05": 79,
+      "dice_lt01": 40,
+      "zero_dice": 28,
+      "optimizer_updates_total": 14496,
+      "amp_skipped_updates_total": 4
+    },
+    {
+      "arm": "D_expanded_hard",
+      "seed": 17,
+      "best_round": 74,
+      "macro_dice": 0.7999038446371003,
+      "count": 494,
+      "dice": 0.8198149678401315,
+      "iou": 0.7514420941471927,
+      "mae": 0.025209879507838564,
+      "median_dice": 0.936481252623524,
+      "dice_p10": 0.4180102134436181,
+      "dice_lt05": 60,
+      "dice_lt01": 18,
+      "zero_dice": 13,
+      "optimizer_updates_total": 14495,
+      "amp_skipped_updates_total": 5
+    }
+  ],
+  "gates": [
+    {
+      "arm": "B_expanded",
+      "macro_dice_gain_vs_A": 0.04972325832899871,
+      "development_pass": true,
+      "gates": {
+        "macro_dice": true,
+        "original_validation_mae": true,
+        "original_validation_low_dice": true,
+        "PolypGen-C5_mae": true,
+        "PolypGen-C5_low_dice": true
+      }
+    },
+    {
+      "arm": "C_hard",
+      "macro_dice_gain_vs_A": -0.009569556762146991,
+      "development_pass": false,
+      "gates": {
+        "macro_dice": false,
+        "original_validation_mae": true,
+        "original_validation_low_dice": true,
+        "PolypGen-C5_mae": false,
+        "PolypGen-C5_low_dice": true
+      }
+    },
+    {
+      "arm": "D_expanded_hard",
+      "macro_dice_gain_vs_A": 0.043989186303913796,
+      "development_pass": true,
+      "gates": {
+        "macro_dice": true,
+        "original_validation_mae": true,
+        "original_validation_low_dice": true,
+        "PolypGen-C5_mae": true,
+        "PolypGen-C5_low_dice": true
+      }
+    }
+  ],
+  "protocol_signature": "5780eeb41192b28ab62674f5691213ec3b2ecda32b87fb7b9d1bb419c6f4e2b3",
+  "bundle_signature": "292878d54aac2b29f292b544e55f634fcf8ebba7179119ef774bc6aed437f6d6",
+  "holdout_metrics_used": false,
+  "limitation": "Model choice and reported gains use development validation; not external evidence."
+}
