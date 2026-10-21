@@ -9,3 +9,5 @@
 # The reviewed portable weight fits the regular GitHub file limit; this public fork rejects new LFS objects.
 SystemCode/model/endolens_b/** -text
 SystemCode/model/endolens_b/weights/unet_b_expanded_seed42.pt binary
+# Executed research snapshots must survive checkout without newline conversion.
+SystemCode/model/e*_windows/** -text
