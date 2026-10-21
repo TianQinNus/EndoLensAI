@@ -1,0 +1,59 @@
+{
+  "model_version": "unet-b-expanded-seed42-r98-v1",
+  "architecture": "ResNet34 encoder + five-stage U-Net decoder",
+  "source_checkpoint_sha256": "2ee7145fe5509d6cdbeefd90c8a2f0d87ca7f1d9daf78ce79e7edb4764ee7b5f",
+  "weights_file": "weights/unet_b_expanded_seed42.pt",
+  "weights_sha256": "1e4531592942ac8683b3ea7ea7ac9af6e77e03b08a2e3481942cfbbb24f657bb",
+  "seed": 42,
+  "selected_round": 98,
+  "parameters": 24436241,
+  "input": {
+    "format": "RGB uint8 HWC",
+    "size": [
+      352,
+      352
+    ],
+    "resize": "Pillow bilinear, square stretch (not letterbox)",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "output": {
+    "shape": "original H,W",
+    "dtype": "float32",
+    "range": [
+      0,
+      1
+    ],
+    "operation": "sigmoid(bilinear_resize(logits, original_size, align_corners=False))",
+    "per_image_minmax": false,
+    "segmentation_threshold": 0.5
+  },
+  "candidate_rule": {
+    "min_region_area_ratio": 0.0,
+    "connectivity": 8,
+    "validation_status": "UNVALIDATED_ENGINEERING_DEMO",
+    "mask_filtering": false,
+    "empty_mask_is_candidate": false
+  },
+  "scope": "Research/team integration only. Positive-frame evaluation; no clinical probability, negative-frame safety, distinct-polyp counting or real-time guarantee.",
+  "unreleased_models": [
+    "polyp-pvt-v1",
+    "ensemble"
+  ],
+  "training_data_images": 2269,
+  "reference_environment": {
+    "python": "3.11",
+    "torch": "2.9.1",
+    "torchvision": "0.24.1",
+    "numpy": "1.26.4",
+    "Pillow": "10.2.0"
+  }
+}

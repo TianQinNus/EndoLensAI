@@ -1,0 +1,84 @@
+{
+  "format_version": 1,
+  "experiment": "E6_CALIBRATED_FIXED_FUSION",
+  "validation_status": "NO_PASS",
+  "selection_rule": "Among gate-passing candidates maximize selection Dice, then worst-source delta, then minimize MAE, failure tail, alpha, and distance from threshold 0.5. If none pass, record nearest candidate but block formal test by default.",
+  "temperature_e0": 3.938100693349656,
+  "temperature_e4": 2.579113028515182,
+  "alpha_e4": 0.1,
+  "weight_e0": 0.9,
+  "threshold": 0.65,
+  "gates": {
+    "min_mean_dice_gain": 0.003,
+    "min_source_dice_delta": -0.003,
+    "max_mae_increase": 0.003,
+    "max_dice_lt05_increase": 0
+  },
+  "selection_baseline_e0": {
+    "count": 272,
+    "dice": 0.7679703689087412,
+    "iou": 0.68228290984645,
+    "mae": 0.037940100242635444,
+    "median_dice": 0.8852454024352254,
+    "dice_lt05": 42,
+    "zero_dice": 6,
+    "source_dice": {
+      "FAR-POLYP-SEG": 0.7679703689087412
+    }
+  },
+  "selected_validation_metrics": {
+    "count": 272,
+    "dice": 0.7709467594182555,
+    "iou": 0.686592344073785,
+    "mae": 0.06960525864269584,
+    "median_dice": 0.8846310729570641,
+    "dice_lt05": 41,
+    "zero_dice": 7,
+    "source_dice": {
+      "FAR-POLYP-SEG": 0.7709467594182555
+    },
+    "alpha": 0.1,
+    "threshold": 0.65,
+    "delta_dice_vs_e0": 0.0029763905095143706,
+    "delta_mae_vs_e0": 0.0316651584000604,
+    "worst_source_delta_vs_e0": 0.0029763905095143706,
+    "dice_lt05_delta_vs_e0": -1,
+    "passes": false,
+    "checks": {
+      "mean_dice_gain": false,
+      "worst_source": true,
+      "mae": false,
+      "failure_tail": true
+    },
+    "violation_score": 0.02868876789054603
+  },
+  "development_manifest_signature": "c4e021807bcab1b4203a02671136308f5e2e907a837214896b715504fa57b137",
+  "development_manifest_sha256": "85fda99e50134370fe994719f58e97ff6db92227db643f3e91fdddff49940786",
+  "development_inference_run_info_sha256": "d77f681b96b22265f34b8babb83a5c9d47bbec942bb013faf1118655a456fcae",
+  "e0_checkpoint_sha256": "aef5ac34f7795b85af0ecbb730502db251d416a73a4c6b04a74e30aa45554048",
+  "e4_checkpoint_sha256": "ed5222bfddf285e9f15421f25fc9db0f1624424c9d4db0338cf98f89fb7c3937",
+  "search_space": {
+    "alpha_e4": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6
+    ],
+    "threshold": [
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65
+    ]
+  },
+  "calibration_partition_count": 160,
+  "selection_partition_count": 272,
+  "created_at": "2026-10-10T19:10:20.273209+00:00",
+  "config_signature": "cd7c7ef04fde6623812eb9a895a1a79e076137ef1e837dc6106c5400aa8d7013"
+}
+

@@ -1,14 +1,5 @@
-# Windows 迁移适配验证
+# E1 Windows validation scope
 
-日期 2026-10-04，实际验证平台为 Mac arm64、Python 3.10.21、torch 2.2.2、NumPy 1.26.4、Pillow 10.2.0、CPU。
+The historical transfer package retained the Mac U-Net architecture and tested CPU synthetic training/evaluation, native probabilities, mask/metric replay and checkpoint behavior. The initial transfer simulation was not a real RTX5060 driver or CUDA installation test.
 
-- 五项自动检查全部通过：配对增强、指标空掩膜规则、断点恢复与连续训练一致、末尾梯度累积组、模型反向与安全权重加载。
-- 在真实现有数据上审计1450对训练数据与798个测试条目，完全相同训练/测试RGB重叠为0，冻结测试manifest与完整E0一致。
-- 适配版在真实图像上运行64×64/base=8的CPU smoke：8张训练图1轮、5张测试图；完成checkpoint保存、重新加载、评估、E0逐图差值与概率保存。该小模型不作为正式E1指标。
-- 模拟源机器绝对路径为 `D:\Projects\Polyp-PVT`，将源E0路径也改为Windows形式；明确提供Mac本机--project和--e0-run，重新评估成功。
-- 迁移后5张图的保存概率与迁移前CPU评估逐元素一致。
-- 全部5份NPZ的float32、原图尺寸、有限值/[0,1]、阈值PNG一致性、重算Dice/MAE、ALL平均及E0分数差值通过独立核验。
-- unet.py与原Mac包逐字节一致；训练设置保持原默认值。
-- 原Mac包已对标准31,031,745参数U-Net、352×352完成CPU smoke；用户已在M5 MPS上完成标准smoke。此次适配版只改变路径和本地E0引用，仍需在RTX5060上运行标准CUDA smoke。
-
-未在真实Windows/RTX5060测试，不声称已验证Windows驱动或torch2.9.1+cu128实际安装，也未执行正式100轮训练。回传模拟验证不等于真实跨后端数值一致性验证。新环境需依README完成安装与CUDA探针。
+Later formal E1 training completed on Windows CUDA and was evaluated separately on Mac CPU; see [the completed report](../../../ProjectReport/E0_E4_BASELINES.md). Preserve that distinction from preparation claims. New hardware still requires its own actual CUDA probe and standard smoke. Frozen Python was not changed for this English migration.

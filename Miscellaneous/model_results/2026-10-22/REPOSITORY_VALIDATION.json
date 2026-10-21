@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-22",
+  "scope": "Publication checks on the English master integration edition; not new clinical experiments",
+  "frozen_E0_E4_python_sources_verified": 34,
+  "historical_synthetic_suites": {"E0": 5, "E1_Windows": 5, "E2": 10, "V3": 4, "E4": 3},
+  "historical_synthetic_total": 27,
+  "historical_synthetic_success": true,
+  "integration_model_and_API_tests": 15,
+  "integration_tests_success": true,
+  "retained_B_cpu_fixture_replay": "PASS",
+  "retained_B_synthetic_video": {"completed_frames": 4, "failed_frames": 0, "assets_downloaded": 12, "report_counts_match": true},
+  "repository_English_and_local_link_audit": "PASS",
+  "weight_sha256": "1e4531592942ac8683b3ea7ea7ac9af6e77e03b08a2e3481942cfbbb24f657bb",
+  "limitations": ["No new formal training or patient-data evaluation", "No teammate React build or browser end-to-end acceptance", "Local Windows runtime, not a clean-machine installation matrix"],
+  "environment_note": "Default sandbox temp/MSYS restrictions required approved local test/LFS helper execution; unchanged frozen code passed on rerun"
+}

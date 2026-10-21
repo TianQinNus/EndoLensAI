@@ -1,0 +1,71 @@
+{
+  "status": "NO_PASS",
+  "scope": "ADAPTIVE_DEVELOPMENT_SELECTION_ONLY",
+  "candidate_count": 1,
+  "checks": {
+    "mean_dice_gain": false,
+    "worst_source": true,
+    "mae": true,
+    "failure_tail": false
+  },
+  "gates": {
+    "min_mean_dice_gain": 0.003,
+    "min_source_dice_delta": -0.003,
+    "max_mae_increase": 0.003,
+    "max_dice_lt05_increase": 0
+  },
+  "config_signature": "5a36c0bff1910775192c58f71cff9f2ff5b1ec989eb3eabed7c0ee460970c735",
+  "config_sha256": "049a6c2727b19db51b9319fcacb5974b30ed2ba6d778209bcc3565ab0147e4b0",
+  "candidate_metrics": {
+    "model": "e7b2",
+    "count": 272,
+    "dice": 0.7700985951722623,
+    "iou": 0.6841736135811693,
+    "mae": 0.03784098130456508,
+    "dice_lt05": 43,
+    "zero_dice": 6,
+    "source_dice": {
+      "FAR-POLYP-SEG": 0.7700985951722623
+    },
+    "delta_dice_vs_e0": 0.00212822626352116,
+    "delta_mae_vs_e0": -9.911893807036665e-05,
+    "worst_source_delta_vs_e0": 0.00212822626352116,
+    "dice_lt05_delta_vs_e0": 1,
+    "passes": false,
+    "checks": {
+      "mean_dice_gain": false,
+      "worst_source": true,
+      "mae": true,
+      "failure_tail": false
+    },
+    "violation_score": 0.004548244324714134
+  },
+  "baseline_metrics": {
+    "model": "e0",
+    "count": 272,
+    "dice": 0.7679703689087412,
+    "iou": 0.68228290984645,
+    "mae": 0.037940100242635444,
+    "dice_lt05": 42,
+    "zero_dice": 6,
+    "source_dice": {
+      "FAR-POLYP-SEG": 0.7679703689087412
+    },
+    "delta_dice_vs_e0": 0.0,
+    "delta_mae_vs_e0": 0.0,
+    "worst_source_delta_vs_e0": 0.0,
+    "dice_lt05_delta_vs_e0": 0,
+    "passes": false,
+    "checks": {
+      "mean_dice_gain": false,
+      "worst_source": true,
+      "mae": true,
+      "failure_tail": true
+    },
+    "violation_score": 0.003
+  },
+  "calibration_group_overlap": 0,
+  "formal_test_allowed": false,
+  "limitation": "Selection previously reused; single positive-only source; bootstrap conditional, not selection-adjusted.",
+  "next_step": "Preserve negative result; do not change rule or gates and rerun selection"
+}

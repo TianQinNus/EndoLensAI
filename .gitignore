@@ -34,3 +34,9 @@ Thumbs.db
 *.key
 .vscode/
 .idea/
+# The sole reviewed ordinary-Git inference weight and synthetic fixture are explicit exceptions.
+!/SystemCode/model/endolens_b/weights/unet_b_expanded_seed42.pt
+!/SystemCode/model/endolens_b/examples/synthetic_probability.npy
+/SystemCode/model/endolens_b/runtime_data/
+/SystemCode/model/endolens_b/single_frame_output/
+/SystemCode/model/endolens_b/_test_*/

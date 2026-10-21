@@ -1,34 +1,37 @@
-# 模型与评估协议
+# Model and evaluation protocol
 
-## 数据与选择
+## Data roles
 
-原Polyp-PVT外层划分：1450训练、798测试条目。固定seed42 bundle：1160开发训练/290内部验证；开发选型完成后从对应初始参数重新训练全部1450，而不是续训开发best。E2选择67轮，E4选择76轮；100轮scheduler时间轴保留。测试不用于选择轮次、权重或阈值。
+Historical E0-E5 use the original1,450 training /798 test entries. E2/E4 development uses1,160/290, then reinitializes for full-data training at the validation-selected epoch count,67 and76 respectively. Test results do not select epochs, weights or thresholds. There are701 distinct decoded RGB test images; exact overlap audits do not establish patient independence.
 
-完全相同RGB内容分组可以减少直接重复跨分区，但缺少可靠患者/序列身份，因此不声称患者级独立；测试798条目对应701种解码RGB内容。内部验证可能已包含在原PVT训练数据中，不能将其作为两个分支共同独立的融合调参集。
+E8 B uses1,151 original +1,118 PolypGen C1-C4 training images; validation is original290+C5 204. The1,160 image draws per round are with replacement, original/additional mass50/50, equal mass across new centers. A round is not a full-dataset epoch. C6 historical evaluation contains83 positive single frames. FAR432 uses160/272 images in75/112 disjoint patient groups, but has been repeatedly reused for development.
 
-## 模型
+## Architecture and training
 
-- E0：现有Polyp-PVT，352输入，两个输出logits相加后评估，固定参考权重。
-- E1 / E2-A：原始U-Net，随机初始化，无归一化层。
-- E2-B/C：ResNet34编码器＋U-Net解码器；B随机编码器，C为官方ImageNet初始化。编码器BatchNorm更新，解码器GroupNorm(8)，24,436,241参数。B/C是相同架构不同初始化，不是两个新架构。
-- E4：同E2-C模型与开发预算，改变增强。最终E2/E4轮数不同，最终测试不能全部独立归因于增强。
+The retained B is a24,436,241-parameter ResNet34-U-Net. Its encoder was ImageNet-initialized; five decoder stages use bilinear upsampling, skip concatenation and two3x3 convolutions with GroupNorm8/ReLU, channels256/128/64/32/16, followed by a one-channel head. It is not Polyp-PVT or a fusion model.
 
-输入RGB、Pillow bilinear缩放352×352、/255及ImageNet mean/std。标签最近邻插值；水平和垂直翻转各p=0.5。strong增加同步±15°旋转及仅图像亮度/对比度0.85–1.15；旋转不expand，边缘可能裁切/填充。
+B training uses strong paired flips/rotations within15 degrees and image-only brightness/contrast0.85-1.15. Labels use nearest interpolation. AdamW lr1e-4, weight decay1e-4, batch2/accumulation4, five-round warmup then the100-round cosine horizon, AMP forward and FP32 equal BCE+per-image soft Dice loss, smooth1. Encoder BatchNorm uses physical batch statistics; accumulation does not enlarge that batch.
 
-## 损失和优化
+B best selection maximizes0.5*original-validation mean Dice+0.5*C5 mean Dice, earliest tie. Seed42 round98 remains deployed; no favorable seed is substituted.
 
-E2/E4：`loss = BCEWithLogits(logits, mask) + mean(per-image soft Dice loss)`，两项权重1:1。soft Dice采用sigmoid概率、smooth=1；训练损失为FP32，不使用阈值二值mask反向传播。
+## Standardized inference
 
-AdamW lr1e-4、weight_decay1e-4；batch2/累积4；5轮warmup后cosine；AMP float16前向与FP32损失，验证/测试FP32。梯度累积不扩大BatchNorm物理统计批量。
+RGB uint8[H,W,3] -> Pillow bilinear352x352 square stretch -> /255 -> ImageNet mean[0.485,0.456,0.406], std[0.229,0.224,0.225] -> FP32 logits -> native-resolution bilinear resize, align_corners=False -> sigmoid float32[H,W]. No min-max, letterbox, TTA, region removal or AMP inference is silently added. Mask threshold is0.5.
 
-## 概率与指标接口
+E0 separately sums its two output logits. Historical cache compatibility includes backend numerical settings, not just tensor dtype; E10-D explicitly preserved distinct E0/B cuDNN TF32 settings. Do not relax replay tolerances to hide a mismatch.
 
-恢复原尺寸logits（bilinear、align_corners=False），再sigmoid；原尺寸float32 NPZ的键为`probability`，二维HxW、有限数值且位于[0,1]。二值mask是`probability >= 0.5`，PNG为0/255。不要将legacy逐图min–max图作为概率。
+## Metrics
 
-逐图 `Dice=2TP/(2TP+FP+FN)`、`IoU=TP/(TP+FP+FN)`，两者都空记1、仅一方空记0。分组算术平均；ALL按条目数量加权，不是五子集均值等权。MAE使用连续概率与二值GT。
+Per image Dice=2TP/(2TP+FP+FN), IoU=TP/(TP+FP+FN). Both empty gives1; only one empty gives0. Group averages are image-equal; the original ALL is entry-weighted, not five-subset-equal. MAE compares continuous probability with binary GT.
 
-E3：`p=0.5*p_E0+0.5*p_E2`，阈值0.5，分支冻结，不训练、不搜索配方。E5拟将E2替换E4并复用固定规则，尚未实现。
+Validation macro Dice in E8 is source-equal, not the494-image mean. Low/near-zero/zero Dice counts are reported alongside means. Pixel-pooled precision/recall is not image-equal recall or clinical lesion sensitivity. Seed sample SD is not a patient confidence interval. Cluster bootstrap is descriptive and does not undo adaptive selection.
 
-## 应用接口与待验证项
+## Fusion decisions
 
-视频模块应保留timestamp/frame_index、原尺寸、模型标识、预处理版本、概率和mask；修订mask与原预测分开存储。抽帧间隔可配置，候选帧数不能当成病灶数量。含阴性帧的视频、事件覆盖、误报、两模型联合推理和端到端延迟尚未验证，不以单图forward均值宣称实时视频FPS。
+E3/E5 use fixed equal probabilities. E6-E7 and E10 have distinct frozen hypotheses/gates and failed promotion. E10-B equal fusion improves calibration Dice but adds zero-Dice cases relative to B. E10-C improves NLL/Brier but raises MAE and retains critical failures. E10-D can preserve B TP but add FP; accepting nothing is not a successful fused model. No failed candidate is a default Web option.
+
+## Application contract
+
+The [standalone SDK/API](../endolens_b/README.md) uses version unet-b-expanded-seed42-r98-v1. Keep original AI masks immutable and human revisions separate. Preserve real video PTS, source frame index, native dimensions and configuration hashes. Candidate frames are not unique lesions, foreground score is not calibrated diagnostic confidence, and failed/unsampled frames are unknown.
+
+Only the segmentation threshold0.5 has the retained research protocol; the candidate area gate is unvalidated engineering behavior, default0 with empty masks explicitly false. No negative-frame specificity, clinical validity, authentication or real-time guarantee is implied. See the full [Web contract](../endolens_b/docs/WEB_INTEGRATION_GUIDE.md).

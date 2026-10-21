@@ -1,0 +1,31 @@
+{
+  "status": "OOF_NO_PASS",
+  "kind": "ADAPTIVE_CALIBRATION_CV_NOT_FORMAL_SELECTION",
+  "primary_policy": "logistic_safe",
+  "primary_checks": {
+    "mean_dice_gain": false,
+    "worst_source": true,
+    "mae": true,
+    "failure_tail": true
+  },
+  "comparator_checks": {
+    "mean_dice_gain": true,
+    "worst_source": true,
+    "mae": true,
+    "failure_tail": true
+  },
+  "comparator_promoted": false,
+  "primary_passing_folds": 0,
+  "primary_routed_images": 0,
+  "all_outer_calibrators_feasible": true,
+  "formal_test_allowed": false,
+  "selection_evaluated": false,
+  "next_step": "Record negative result; do not relax gates or auto-promote comparator",
+  "limitations": [
+    "Same calibration data informed E7-B0 hypotheses; CV is adaptive development.",
+    "Only one source and polyp-positive images.",
+    "Bootstrap does not refit calibrators or gate models.",
+    "Cross-fitted label calibrators use fewer training patients than final outer calibrators.",
+    "Single-class/nonconverged logistic fits conservatively route all images to E0."
+  ]
+}

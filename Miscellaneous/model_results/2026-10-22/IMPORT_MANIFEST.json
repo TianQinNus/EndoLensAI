@@ -1,0 +1,297 @@
+{
+  "date": "2026-10-22",
+  "scope": "Compact evidence only; no patient images, model caches, or runnable/resumable runs.",
+  "note": "Hashes describe original imported contents. Historical machine paths in run metadata are provenance, not installation paths.",
+  "files": [
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e5_fusion_equal_seed42/summary.csv",
+      "sha256": "a4f273597715df30fef85035d9196a4c7810f453ae5f1be1bd00328fdb2f19c1",
+      "bytes": 3882
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e5_fusion_equal_seed42/run_info.json",
+      "sha256": "ce796c12db7799d22bf845a8c992992f2a6d29ab7cc8983559c12495475d47c3",
+      "bytes": 4041
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e6_selection_seed42/selection_config.json",
+      "sha256": "3060c15e06bb072a00ba823751d2111c0c89591735efc2cfcb1f992a20d1a393",
+      "bytes": 2678
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e7a_selection_seed42/selection_config.json",
+      "sha256": "ffcac7b9527c1447a916eb5670425cc7c892c013a587ccbaa01d78ff2427ab5a",
+      "bytes": 3407
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e7a2_selection_seed42/selection_config.json",
+      "sha256": "4d8860b3c5ac6ea798c734591b07f1d16f40d34184e5bafa08bd7c17b3052c9e",
+      "bytes": 4106
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e7b0_diagnostics_seed42/oof_summary.csv",
+      "sha256": "76977440117476e2abca1cfb66be4b87f693b79fb3044777066bf9d4f4b3b4c5",
+      "bytes": 1073
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e7b0_diagnostics_seed42/fold_summary.csv",
+      "sha256": "e599b73b1b2347d286756b484b8c0dd5b5c98cb6623461c6a7f7ab408231e03a",
+      "bytes": 4786
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e7b0_diagnostics_seed42/diagnostic_decision.json",
+      "sha256": "04ea507270fcea87f27da9d66d71371192e97a53596407795427db2d5f46c55e",
+      "bytes": 1053
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e7b1_gate_cv_seed42/oof_summary.csv",
+      "sha256": "2298af400ffe921aa0345067be971e041a78b51932f03f95bb0ef40da507b254",
+      "bytes": 849
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e7b1_gate_cv_seed42/fold_summary.csv",
+      "sha256": "d57bda11ff185ffa47252aea79e39996edba25a239b2a577279f69adfe9c503d",
+      "bytes": 3661
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e7b1_gate_cv_seed42/cv_decision.json",
+      "sha256": "68888c3a9d34b8c2697c8cc136dd1ffcd9201463627b29484e28ecf374ef87f3",
+      "bytes": 1089
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e7b2_rule_selection_seed42/locked_config.json",
+      "sha256": "049a6c2727b19db51b9319fcacb5974b30ed2ba6d778209bcc3565ab0147e4b0",
+      "bytes": 17049
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e7b2_rule_selection_seed42/selection/summary.csv",
+      "sha256": "475439e7c50028f57709b4caf61939579c0ab3bd05945cd7db13b1a50ee8e4e0",
+      "bytes": 591
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e7b2_rule_selection_seed42/selection/decision.json",
+      "sha256": "592b0611018a29aad17b099d05a499acb949da170e5e8c105c10de67339deb99",
+      "bytes": 2117
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_holdout_seed42/summary.csv",
+      "sha256": "6b99124e40aeec4006dd6a6a26f7e6d82a176c670070059556a5e7855dbc7d4d",
+      "bytes": 683
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_holdout_analysis_seed42/model_summary.csv",
+      "sha256": "6b99124e40aeec4006dd6a6a26f7e6d82a176c670070059556a5e7855dbc7d4d",
+      "bytes": 683
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_repeat_summary/mean_sd.csv",
+      "sha256": "e7b82fb8186ece91799082cd803de55d33530477f7553dac477868e05197eb2c",
+      "bytes": 1501
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_repeat_summary/per_seed.csv",
+      "sha256": "81f64f876389c25087ff225fbc5137ef3a50af72ab842e4f8678b13873909adf",
+      "bytes": 2261
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_repeat_summary/groups_per_seed.csv",
+      "sha256": "179a2cc87f8a8fad173a485072d950cd892ed0ce9ae2e64ba65fc88e4a1d3ca9",
+      "bytes": 9736
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_repeat_summary/paired_contrasts.csv",
+      "sha256": "b1ccf39d1377d24786b522aba04e137f2ecfd81f0e2cfc0a88b5d168e624a270",
+      "bytes": 1838
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_repeat_summary/paired_contrast_mean_sd.csv",
+      "sha256": "5b209aa20aa97520f7452c02cfc2689d0e3f25668657a47ebd7b63005a42b844",
+      "bytes": 1856
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_repeat_summary/stability.json",
+      "sha256": "dd993122e832cd4ae467804ee37f67d4ef51a075936ee5b8a10f2dd50c666d47",
+      "bytes": 7384
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_repeat_summary/B_source_tail_details.csv",
+      "sha256": "9b1d4eaacca09ff03c4a393ec319eaad2206ed85bb488abe68bd119812464568",
+      "bytes": 442
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e9_balance_summary/decision.json",
+      "sha256": "6fe8c26327f79d5437ac1961b7c328a20b7427c5b9acaa4c412b64950565b044",
+      "bytes": 4417
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e9_balance_summary/mean_sd.csv",
+      "sha256": "4a9adce4216326aa633017c3ad1f56fdc798a2406ea4f62630c20d923e2c3612",
+      "bytes": 1205
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e9_balance_summary/paired_contrast_mean_sd.csv",
+      "sha256": "82ea1dfd4aaf1108cea2a3fbc76af2dc8da094bacfe77434eb2cbe14747e442f",
+      "bytes": 1050
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e10a_far_seed42/model_summary.csv",
+      "sha256": "1e319850294d5c3f95ae88107d75b334741c04a2ec9dd72cd86b64a6b90e77e5",
+      "bytes": 887
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e10a_far_seed42/complementarity.json",
+      "sha256": "7ea738caa592fec5b9ff83ba41ebfe41dfd9d418bb30ee4f16b846347ea57e08",
+      "bytes": 1991
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e10a_far_seed42/patient_bootstrap.json",
+      "sha256": "757a8a274ca211047111a31588fe80b88716da708e01942ae5d33ca289658871",
+      "bytes": 1090
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e10a_far_seed42/decision.json",
+      "sha256": "9dd0da7845c59b02d79ff77baf653348ad75be51007a4e63bb4a41e45fe8827f",
+      "bytes": 478
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e10b_fusion_seed42/locked_config.json",
+      "sha256": "5dc087960f55b090228a9869f8f45b10cf9aea2a6273e68883974f5ad68ddcc9",
+      "bytes": 4192
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e10b_fusion_seed42/calibration/summary.csv",
+      "sha256": "7f0269443b7ce8bb907cb8eb535afa9d448b9bc981d9c55646792eca9874ac36",
+      "bytes": 694
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e10b_fusion_seed42/calibration/candidate_gates.json",
+      "sha256": "b6ae39a5a83dfcfd81602f27132fe5cad505a218f941b1d7a13803228ad11ff8",
+      "bytes": 3091
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e10c_temperature_seed42/cross_validation/summary.csv",
+      "sha256": "0e3ed5cc7440e979b7c4e400a828cf13f32467a8b0951e3fd3c9df0ff624e78a",
+      "bytes": 1103
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e10c_temperature_seed42/cross_validation/decision.json",
+      "sha256": "a1f2a68b54dd51b5ae54034f4d9848f8ee9e04b3e7de1c0fc51debca55133c2a",
+      "bytes": 1967
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e10c_temperature_seed42/cross_validation/fold_fits.json",
+      "sha256": "f6f33a8b3cb2f470b15d5e5616e96c23da98974292bc64289b0665fdd75a8a8c",
+      "bytes": 155450
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e10c_temperature_seed42/cross_validation/fold_metrics.csv",
+      "sha256": "ae1f79e9a3b84ba3ff28794f21a36d99c1226ff196fde683dc9213e5f8287dd2",
+      "bytes": 5091
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e10d_rescue_compat_seed42/diagnosis/summary.csv",
+      "sha256": "05656bab50990fd94fddb59c283015c0cb52a0bafacc64598f36a39535941ff9",
+      "bytes": 954
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e10d_rescue_compat_seed42/diagnosis/decision.json",
+      "sha256": "32205ef00a3dc30985d0f0cda4d1172ce3dc19c8b647bbf567f5639c828bbbbd",
+      "bytes": 2291
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e10d_rescue_compat_seed42/diagnosis/fold_metrics.csv",
+      "sha256": "b432273d663f660272448f901065dd7002e83fdf047267308023e91c8690ef8a",
+      "bytes": 4475
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e11_cached_error_review/summary.json",
+      "sha256": "cdb60df040a6295267b2bddd44cf4ec9e4fc4bf03fa09906ec7829d23c31f773",
+      "bytes": 357
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e11_B_background_seed42/run_info.json",
+      "sha256": "e4b4d8a08c91f677153f816d2e645a39f0ea11480983e5fc5e95700c0796380e",
+      "bytes": 5661
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e11_B_background_seed42/train_history.csv",
+      "sha256": "3345a37c0d1bd3efd021c3c5b9f5513d9b0e71bed8a8fd8037518fd2140632f3",
+      "bytes": 15911
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_A_baseline_seed42/run_info.json",
+      "sha256": "8d3839b0462dc9325ee599c7d67c0e8ef29231b0bd3ee5fcd5a7447eb5435b8d",
+      "bytes": 4721
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_A_baseline_seed17/run_info.json",
+      "sha256": "7aa54eb247690c57bd89e37ff0e53742b40895b52d595e5d90a19d933bcb36f4",
+      "bytes": 4721
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_A_baseline_seed2024/run_info.json",
+      "sha256": "7e7ffa296c3b2da3a1697b89f0d24506fb45ab22e1d011cc97b6a9228a44dacc",
+      "bytes": 4723
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_B_expanded_seed42/run_info.json",
+      "sha256": "0821e1acb39acb36131372659fc7c875b9154da89d572d37454213636bcaf181",
+      "bytes": 4720
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_B_expanded_seed17/run_info.json",
+      "sha256": "21d4387853ba3be41d521f8893fe87f2d8d383a07e7223009c298f1dcdcc8e6c",
+      "bytes": 4720
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_B_expanded_seed2024/run_info.json",
+      "sha256": "12ab065306754b0bb0563a1ef11affd61bb10408223ef8a8bd2370c10d7ed327",
+      "bytes": 4757
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_C_hard_seed42/run_info.json",
+      "sha256": "4f2e18a9640bd8339ceb418ee10c213f247a837b3da075a8191d6d90df48534e",
+      "bytes": 4716
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_C_hard_seed17/run_info.json",
+      "sha256": "1b7c384b7d1d11348b22685548a05bebba88c49c3fe0e4b9ca75ca1d106a53f6",
+      "bytes": 4716
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_C_hard_seed2024/run_info.json",
+      "sha256": "3c2ec1f5fe70b7d38a7fa30c80c8b33c1c2a46ae41a9144580ebba336df23ad2",
+      "bytes": 4718
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_D_expanded_hard_seed42/run_info.json",
+      "sha256": "d6be05886a6675ab5fa63504dbd0b3b82b883134f5bd9db0cfae69b2aa847926",
+      "bytes": 4724
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_D_expanded_hard_seed17/run_info.json",
+      "sha256": "bd7435a1d206cdb99e88c1f78360e919d0328b1d3e072446767f09149be8b1fb",
+      "bytes": 4724
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_D_expanded_hard_seed2024/run_info.json",
+      "sha256": "a8de3e4b1b3fec4f3bae2469eb7c7aae73a4f750b6a023e99b4e826a6b4aeffb",
+      "bytes": 4726
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_validation_comparison_seed42/decision.json",
+      "sha256": "3eef47358fa0bda18b21677a55aa24457436a3cab4dae135d42d686b89203f42",
+      "bytes": 3460
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_validation_comparison_seed17/decision.json",
+      "sha256": "e50b6d77e89956cdd030c0d29c31e110ebbb182f959ef66a434222fe14a9cc6c",
+      "bytes": 3464
+    },
+    {
+      "path": "Miscellaneous/model_results/2026-10-22/e8_validation_comparison_seed2024/decision.json",
+      "sha256": "0e86831626a73e67b355d5b81cec6dd912542a1751b93bfa06eb71d06587f250",
+      "bytes": 3489
+    }
+  ]
+}

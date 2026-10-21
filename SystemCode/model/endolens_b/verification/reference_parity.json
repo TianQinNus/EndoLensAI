@@ -1,0 +1,30 @@
+{
+  "model_version": "unet-b-expanded-seed42-r98-v1",
+  "source_checkpoint_sha256": "2ee7145fe5509d6cdbeefd90c8a2f0d87ca7f1d9daf78ce79e7edb4764ee7b5f",
+  "result": "PASS_EXACT_GPU_CACHE_REPLAY",
+  "images": [
+    {
+      "sample_id": "FAR-POLYP-SEG/Patient100__1403-09-251048237-7307",
+      "mean_abs_difference": 0.0,
+      "max_abs_difference": 0.0,
+      "exact_probability_match": true,
+      "mask_difference_pixels": 0
+    },
+    {
+      "sample_id": "FAR-POLYP-SEG/Patient105__1403-06-181114112-6784",
+      "mean_abs_difference": 0.0,
+      "max_abs_difference": 0.0,
+      "exact_probability_match": true,
+      "mask_difference_pixels": 0
+    },
+    {
+      "sample_id": "FAR-POLYP-SEG/Patient108__1403-06-25123686-6823",
+      "mean_abs_difference": 0.0,
+      "max_abs_difference": 0.0,
+      "exact_probability_match": true,
+      "mask_difference_pixels": 0
+    }
+  ],
+  "new_performance_evaluation": false,
+  "research_weights_modified": false
+}

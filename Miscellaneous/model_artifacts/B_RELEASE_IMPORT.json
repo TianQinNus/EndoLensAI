@@ -1,0 +1,212 @@
+{
+  "date": "2026-10-22",
+  "source": "Verified local EndoLens_B_Model_Integration_v1",
+  "note": "Original imported bytes. Repository English documentation is a later presentation migration; model weights and inference unchanged.",
+  "files": [
+    {
+      "path": "SystemCode/model/endolens_b/backend/__init__.py",
+      "sha256": "3f30d490535163225698009d43b75c5b8c6fa14585d629bece8d0da3a7256154",
+      "bytes": 68
+    },
+    {
+      "path": "SystemCode/model/endolens_b/backend/app.py",
+      "sha256": "ec7c24b195325a3db14bf4a82449dd4495631ea03e0655e18ae680969e06415c",
+      "bytes": 20464
+    },
+    {
+      "path": "SystemCode/model/endolens_b/backend/storage.py",
+      "sha256": "2a74b9b98a307309674680bea4a3c6ca528548d2863829d3988e0980ac438670",
+      "bytes": 3789
+    },
+    {
+      "path": "SystemCode/model/endolens_b/backend/video.py",
+      "sha256": "67e703d7e640c102668636e3129bf3ef4d7f3958ea6d394264cc7befeb784018",
+      "bytes": 3927
+    },
+    {
+      "path": "SystemCode/model/endolens_b/docs/INPUT_INTEGRATION_SPEC_v1_DRAFT.md",
+      "sha256": "7761c70aab5f55462807721877f2ad76988b140af590661e1a81f13beec06728",
+      "bytes": 23431
+    },
+    {
+      "path": "SystemCode/model/endolens_b/docs/MODEL_CARD.md",
+      "sha256": "d02ac14b0230523efd609b47873831b13ef37d7c03a70dcb91bd2255eea4678b",
+      "bytes": 4429
+    },
+    {
+      "path": "SystemCode/model/endolens_b/docs/openapi.json",
+      "sha256": "ca879290cc59d6522c57eae9a8001091bf7f3cd8a4e79db9b508aa5d186ab2ee",
+      "bytes": 18970
+    },
+    {
+      "path": "SystemCode/model/endolens_b/docs/WEB_INTEGRATION_GUIDE.md",
+      "sha256": "e6686c51716cdb1d4a05706c6c0d6488ee3b4886af8ad4ffd529f470f0a149b3",
+      "bytes": 11565
+    },
+    {
+      "path": "SystemCode/model/endolens_b/endolens_model/__init__.py",
+      "sha256": "b46f243b9e0e47f0a8b63c56f950df96540fc828b5ec39ee86fbd2b179faf32d",
+      "bytes": 152
+    },
+    {
+      "path": "SystemCode/model/endolens_b/endolens_model/adapter.py",
+      "sha256": "fabc2b24461d0e81dddb87cd39ac6047d3d88884a5b8f955b837f3f5a9204485",
+      "bytes": 5476
+    },
+    {
+      "path": "SystemCode/model/endolens_b/endolens_model/network.py",
+      "sha256": "f0a430adbe420794b7970a627f261053f79bb03ee062b9d993edcdf175de6419",
+      "bytes": 1887
+    },
+    {
+      "path": "SystemCode/model/endolens_b/endolens_model/postprocess.py",
+      "sha256": "894eebc1936d1f45320d0f7fb2a0b4380984f49e5ded9c09ecf04c261e7388db",
+      "bytes": 2651
+    },
+    {
+      "path": "SystemCode/model/endolens_b/examples/api_smoke.py",
+      "sha256": "9a4e9f48b5af9852f7b92735902c5ea23aecd2d055f1253749a779ec7d9675fc",
+      "bytes": 3821
+    },
+    {
+      "path": "SystemCode/model/endolens_b/examples/example_metadata.json",
+      "sha256": "458940a7acb27883a1d94127b439f144a623db3544d41cb4d998b914ffa7ad35",
+      "bytes": 313
+    },
+    {
+      "path": "SystemCode/model/endolens_b/examples/infer_image.py",
+      "sha256": "d4f660055324dd28e78bc0ce2dfd4447b954cf7e52d64ddeca3ae9d0c63a68de",
+      "bytes": 1481
+    },
+    {
+      "path": "SystemCode/model/endolens_b/examples/make_demo_video.py",
+      "sha256": "5c34b0061b37d6db8fdf682730b694ab3fbf0abe4f73cfde43dc08971f520791",
+      "bytes": 1570
+    },
+    {
+      "path": "SystemCode/model/endolens_b/examples/smoke_real_video.py",
+      "sha256": "53205f75443d9086830f2f3d3c1cf5ddae51edb5a8cfadfe466d6497db3bb959",
+      "bytes": 3016
+    },
+    {
+      "path": "SystemCode/model/endolens_b/examples/synthetic_demo.mp4",
+      "sha256": "7ec730f4ccf8dd097c8366fb91372a6ce5b7fd3ae2bd04885fee9e9c32da9381",
+      "bytes": 10330
+    },
+    {
+      "path": "SystemCode/model/endolens_b/examples/synthetic_frame.png",
+      "sha256": "cab5263af965ba74bd63a55365d281d6e4965c38845c0f2fb20a20d6642e312c",
+      "bytes": 3536
+    },
+    {
+      "path": "SystemCode/model/endolens_b/examples/synthetic_mask.png",
+      "sha256": "841db329d4291fe720db06bf7d33b82cd83fe4e66505755ce7092145eb01c543",
+      "bytes": 499
+    },
+    {
+      "path": "SystemCode/model/endolens_b/examples/synthetic_probability.npy",
+      "sha256": "8e4746cc84bb801dfc823790ddc4108d6279dc5f05a02d65a1a3fd8406e71193",
+      "bytes": 307328
+    },
+    {
+      "path": "SystemCode/model/endolens_b/frontend_examples/endpoints.ts",
+      "sha256": "652ac61f4ce2060a772e54cac5ee3b08b36d372edf8433a8b460b90e08122c98",
+      "bytes": 3981
+    },
+    {
+      "path": "SystemCode/model/endolens_b/frontend_examples/FrameOverlay.tsx",
+      "sha256": "72c594201b92d700783cf819271db7e6d4c0953d205fa2c0c57a04b952e5c643",
+      "bytes": 2283
+    },
+    {
+      "path": "SystemCode/model/endolens_b/model.json",
+      "sha256": "b45c6eebdc365fd53b91e5b0d5ec2b72bb0ecee0dc0c09b869ba611bae8efa96",
+      "bytes": 1647
+    },
+    {
+      "path": "SystemCode/model/endolens_b/README.md",
+      "sha256": "bad2b5af42a4dadf8288ea076fc055281523a0612bed1ce5da3f0f15b6c7cad3",
+      "bytes": 6544
+    },
+    {
+      "path": "SystemCode/model/endolens_b/requirements-model.txt",
+      "sha256": "aeb87b88881de643b660e3db1d79fd088fb2eb1cc4b33582c2ebd5ed18aea391",
+      "bytes": 194
+    },
+    {
+      "path": "SystemCode/model/endolens_b/requirements.txt",
+      "sha256": "16c4240d43178a722d2ffbc1a1a4e442d22ce4e70b6c70511ef88d1bd36ce3cb",
+      "bytes": 322
+    },
+    {
+      "path": "SystemCode/model/endolens_b/run_tests.py",
+      "sha256": "8a091beb107648ee38cabb49af62b23e5a2bb1dfe58fdb71c09abf4372925c03",
+      "bytes": 869
+    },
+    {
+      "path": "SystemCode/model/endolens_b/start_backend.cmd",
+      "sha256": "bc35ea9be8672b96a5d4ff0a30368521304a257db577b387620686e331357de5",
+      "bytes": 210
+    },
+    {
+      "path": "SystemCode/model/endolens_b/tests/test_contracts.py",
+      "sha256": "d1e2a0162be67545cf7457d8337952bd50b324fa27baa8581381322e8fbc89e7",
+      "bytes": 11940
+    },
+    {
+      "path": "SystemCode/model/endolens_b/tests/test_model.py",
+      "sha256": "6ac2a107b9513c8ffde9a049444c6f268f8e5395b8124f093acf5c30213c3aef",
+      "bytes": 1729
+    },
+    {
+      "path": "SystemCode/model/endolens_b/THIRD_PARTY_NOTICES.md",
+      "sha256": "c226da9ca105728f012915249f65bb3649cc68745950039b31ae0b2b17929d6d",
+      "bytes": 3169
+    },
+    {
+      "path": "SystemCode/model/endolens_b/validation_results.json",
+      "sha256": "175d4ef967ed66deeba63709fd3a8c2bb3899aa3526cc22d29b3fca56e0d67da",
+      "bytes": 1063
+    },
+    {
+      "path": "SystemCode/model/endolens_b/verification/dependency_versions.json",
+      "sha256": "49cd29de0365ef87215297584b01413a17f7d05f7c17c9b0e28a39e4e97034c2",
+      "bytes": 590
+    },
+    {
+      "path": "SystemCode/model/endolens_b/verification/real_http_smoke.json",
+      "sha256": "d98c03978dee140f68118e015b7078661e2c453c315e27d1d09c18269f3a130a",
+      "bytes": 525
+    },
+    {
+      "path": "SystemCode/model/endolens_b/verification/real_video_smoke.json",
+      "sha256": "3de64a8c2b33b029daae7fa57bc5e40600840273026cf8085bdb326a957c03a4",
+      "bytes": 694
+    },
+    {
+      "path": "SystemCode/model/endolens_b/verification/reference_parity.json",
+      "sha256": "3ffc22007b792fe2a7287f3cd673eced993f9059ff9f3ab12ec6e4b8cc0638e8",
+      "bytes": 992
+    },
+    {
+      "path": "SystemCode/model/endolens_b/verification/test_results.json",
+      "sha256": "50ea236c6bbf38b843e28c31ec719e847a600ed3f58e9b5a5f569f09a4eb7fbe",
+      "bytes": 197
+    },
+    {
+      "path": "SystemCode/model/endolens_b/verify_bundle.py",
+      "sha256": "75fdff9c7b85637e6fb225b1b576febeba0e5849b947abd0ba8d433255b79f24",
+      "bytes": 1337
+    },
+    {
+      "path": "SystemCode/model/endolens_b/weights/unet_b_expanded_seed42.pt",
+      "sha256": "1e4531592942ac8683b3ea7ea7ac9af6e77e03b08a2e3481942cfbbb24f657bb",
+      "bytes": 97893041
+    },
+    {
+      "path": "SystemCode/model/endolens_b/MANIFEST.json",
+      "sha256": "e669f1b7670a3b6a665bd38944c0dfe4c9986012f186f855d6ca596c253cac40",
+      "bytes": 4131
+    }
+  ]
+}

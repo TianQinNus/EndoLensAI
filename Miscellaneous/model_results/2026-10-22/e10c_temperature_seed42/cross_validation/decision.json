@@ -1,0 +1,62 @@
+{
+  "stage": "E10_C_PATIENT_OOF",
+  "status": "NO_OOF_PASS_RETAIN_B",
+  "gates": {
+    "B_expanded_dice": true,
+    "B_expanded_mae": false,
+    "B_expanded_low05": true,
+    "B_expanded_near_zero": true,
+    "B_expanded_zero": false,
+    "E0_frozen_reference_dice": true,
+    "E0_frozen_reference_mae": false,
+    "E0_frozen_reference_low05": true,
+    "E0_frozen_reference_near_zero": true,
+    "E0_frozen_reference_zero": true,
+    "raw_equal_dice_retained": true,
+    "raw_equal_mae_protected": false,
+    "raw_equal_dice_lt05_protected": true,
+    "raw_equal_dice_lt01_protected": true,
+    "raw_equal_zero_dice_protected": true,
+    "fold0_dice_lt01_vs_raw": true,
+    "fold0_zero_dice_vs_raw": true,
+    "fold1_dice_lt01_vs_raw": true,
+    "fold1_zero_dice_vs_raw": true,
+    "fold2_dice_lt01_vs_raw": false,
+    "fold2_zero_dice_vs_raw": true,
+    "fold3_dice_lt01_vs_raw": true,
+    "fold3_zero_dice_vs_raw": true,
+    "fold4_dice_lt01_vs_raw": true,
+    "fold4_zero_dice_vs_raw": true,
+    "at_least_four_folds_retain_raw_dice": true
+  },
+  "deltas": [
+    {
+      "reference": "B_expanded",
+      "dice_delta": 0.034452759999776594,
+      "mae_delta": 0.01483735784277087,
+      "dice_lt05_delta": -6,
+      "dice_lt01_delta": 0,
+      "zero_dice_delta": 1
+    },
+    {
+      "reference": "E0_frozen_reference",
+      "dice_delta": 0.025530272692106504,
+      "mae_delta": 0.012560745225709977,
+      "dice_lt05_delta": -2,
+      "dice_lt01_delta": -2,
+      "zero_dice_delta": -1
+    },
+    {
+      "reference": "raw_equal",
+      "dice_delta": 0.00850503389118562,
+      "mae_delta": 0.013699051381263413,
+      "dice_lt05_delta": 0,
+      "dice_lt01_delta": 0,
+      "zero_dice_delta": 0
+    }
+  ],
+  "plan_sha256": "477b0735e7ec2d2bc08142673db401c55d81241f7fa6e50760bd71dec1942f56",
+  "selection_evaluations": 0,
+  "full_calibration_fit_allowed": false,
+  "independent_confirmation": false
+}

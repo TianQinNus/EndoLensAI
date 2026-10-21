@@ -1,0 +1,27 @@
+{
+  "kind": "DIAGNOSTIC_ONLY_NOT_FORMAL_VALIDATION",
+  "recommendation": "HEADROOM_PRESENT_TEST_SIMPLE_PREDICTION_ONLY_GATE_IN_E7B1",
+  "fixed_fusion_checks": {
+    "mean_dice_gain": true,
+    "worst_source": true,
+    "mae": false,
+    "failure_tail": true
+  },
+  "oracle_safe_checks": {
+    "mean_dice_gain": true,
+    "worst_source": true,
+    "mae": true,
+    "failure_tail": true
+  },
+  "oracle_safe_uses_fusion": 24,
+  "oracle_dice_uses_fusion": 106,
+  "all_folds_feasible": true,
+  "limitations": [
+    "Oracles use heldout ground truth; they are not deployable gates.",
+    "Safe oracle is conservative; failure does not rule out a budget-constrained gate.",
+    "Earlier calibration data and selection outcomes influenced this fixed hypothesis.",
+    "Cluster bootstrap describes OOF deltas conditional on fitted folds; it does not refit models.",
+    "Boundary width is fixed original-image pixels, so spatial scale varies with resolution.",
+    "Only polyp-positive images and one external source are present."
+  ]
+}

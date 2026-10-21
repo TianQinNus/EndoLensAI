@@ -1,0 +1,137 @@
+{
+  "experiment": "E7A2_MAE_CONSTRAINED_POST_FUSION",
+  "format_version": 1,
+  "validation_status": "NO_PASS",
+  "alpha_e4": 0.5,
+  "raw_threshold": 0.5,
+  "calibrated_threshold": 0.15589116146089807,
+  "affine_slope": 0.48460425646980665,
+  "affine_intercept": -1.6891233610843757,
+  "family": "constrained_affine",
+  "strength": 0.9,
+  "gates": {
+    "min_mean_dice_gain": 0.003,
+    "min_source_dice_delta": -0.003,
+    "max_mae_increase": 0.003,
+    "max_dice_lt05_increase": 0
+  },
+  "selection_baseline_e0": {
+    "count": 272,
+    "dice": 0.7679703689087412,
+    "iou": 0.68228290984645,
+    "mae": 0.037940100242635444,
+    "median_dice": 0.8852454024352254,
+    "dice_lt05": 42,
+    "zero_dice": 6,
+    "source_dice": {
+      "FAR-POLYP-SEG": 0.7679703689087412
+    }
+  },
+  "selected_validation_metrics": {
+    "count": 272,
+    "dice": 0.777276379951369,
+    "iou": 0.689867881709492,
+    "mae": 0.04163470311751178,
+    "median_dice": 0.8841956854520122,
+    "dice_lt05": 42,
+    "zero_dice": 5,
+    "source_dice": {
+      "FAR-POLYP-SEG": 0.777276379951369
+    },
+    "alpha": 0.5,
+    "threshold": 0.5,
+    "raw_threshold": 0.5,
+    "calibrated_threshold": 0.15589116146089807,
+    "slope": 0.48460425646980665,
+    "intercept": -1.6891233610843757,
+    "strength": 0.9,
+    "family": "constrained_affine",
+    "delta_dice_vs_e0": 0.009306011042627849,
+    "delta_mae_vs_e0": 0.0036946028748763363,
+    "worst_source_delta_vs_e0": 0.009306011042627849,
+    "dice_lt05_delta_vs_e0": 0,
+    "passes": false,
+    "checks": {
+      "mean_dice_gain": true,
+      "worst_source": true,
+      "mae": false,
+      "failure_tail": true
+    },
+    "violation_score": 0.0006946028748763362
+  },
+  "patient_bootstrap": {
+    "unit": "patient_group",
+    "group_count": 112,
+    "image_count": 272,
+    "mean_delta": 0.009306011042627686,
+    "ci95_low": 0.0021779219087747917,
+    "ci95_high": 0.018080416393803568,
+    "repetitions": 20000,
+    "seed": 42
+  },
+  "protocol": {
+    "experiment": "E7A2_MAE_CONSTRAINED_POST_FUSION",
+    "alpha_e4": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6
+    ],
+    "raw_thresholds": [
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65
+    ],
+    "strengths": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "gates": {
+      "min_mean_dice_gain": 0.003,
+      "min_source_dice_delta": -0.003,
+      "max_mae_increase": 0.003,
+      "max_dice_lt05_increase": 0
+    },
+    "constraint": "Full-resolution per-image mean calibration MAE <= raw E0 MAE + 0.003",
+    "fitting": "Sampled NLL affine fit; choose lowest sampled NLL feasible point on identity-to-fit path",
+    "families": [
+      "identity",
+      "constrained_affine"
+    ],
+    "selection_reuse": "Adaptive reuse after E6/E7-A; exploratory development, not fresh validation",
+    "bootstrap": "Patient cluster percentile CI after selection; descriptive, not selection-adjusted",
+    "source_code_sha256": "bba9452518be2e5ace1fc2495a52027025c2aa94972bd34e1b413dcfc514be97",
+    "seed": 42,
+    "max_pixels_per_image": 8192
+  },
+  "development_manifest_signature": "c4e021807bcab1b4203a02671136308f5e2e907a837214896b715504fa57b137",
+  "development_manifest_sha256": "85fda99e50134370fe994719f58e97ff6db92227db643f3e91fdddff49940786",
+  "inference_info_sha256": "d77f681b96b22265f34b8babb83a5c9d47bbec942bb013faf1118655a456fcae",
+  "prior_config_sha256": "ffcac7b9527c1447a916eb5670425cc7c892c013a587ccbaa01d78ff2427ab5a",
+  "e0_checkpoint_sha256": "aef5ac34f7795b85af0ecbb730502db251d416a73a4c6b04a74e30aa45554048",
+  "e4_checkpoint_sha256": "ed5222bfddf285e9f15421f25fc9db0f1624424c9d4db0338cf98f89fb7c3937",
+  "created_at": "2026-10-11T11:46:12.599612+00:00",
+  "config_signature": "9fe95fca2ab30bc8f659e50572bffbfddcdbda7d4ca4dd5eb044c7d38ce2c264"
+}

@@ -1,56 +1,32 @@
-# E0–E4 当前成果与下一步
+# Experiment status
 
-更新：2026-10-08。以下为已完成的seed42实验记录，E5及视频性能不在本次完成范围内。
+Snapshot22 October2026. Current integration model: original E8 B, seed42 round98. A higher partial epoch score, a favorable example, or the best mean among failing fusion candidates does not change this selection.
 
-## 当前技术路线
+| Stage | Main intervention | Recorded outcome |
+|---|---|---|
+| E0 | Fixed pretrained Polyp-PVT | Historical798 Dice0.836783 |
+| E1 | Random conventional U-Net | Historical798 Dice0.5707 |
+| E2 | Initialization controls | Pretrained ResNet34 selected; final historical798 Dice0.754879 |
+| E3/V3 | Equal E0+E2 probabilities | Dice0.832898; below E0 |
+| E4 | Strong augmentation | Dice0.760910; subset/FP trade-offs |
+| E5 | Equal E0+E4 | Dice0.837386; worse MAE/tail than E0 |
+| E6 | Temperature/weight/threshold development | NO_PASS; formal test blocked |
+| E7-A/A2 | Post-fusion affine calibration | NO_PASS; MAE constraint failed |
+| E7-B0 | Grouped diagnostics | GT-oracle headroom only; not a deployable result |
+| E7-B1 | Prediction-only learned gate | OOF_NO_PASS; primary routes nothing |
+| E7-B2 | One frozen shallow rule | NO_PASS; gain too small and low-Dice count increases |
+| E8 | Expansion vs image hard sampling | Retain expanded B, not hard-sampling D |
+| E8-R | Three matched seeds | Average gains; full source gates not reproduced in every seed |
+| E8-H | Prior selected seed42 on C6 | B Dice0.847092 vs E0 0.830458 on83 positive images |
+| E9 | Source ratio70/30 | NO_PASS_RETAIN_B; keep50/50 |
+| E10-A | B/E0 FAR comparison | B all-image Dice0.774268 vs E0 0.765853; partition disagreement |
+| E10-B | Three fixed mixture weights | NO_CALIBRATION_PASS_SELECTION_BLOCKED |
+| E10-C | NLL temperature calibration, patient CV | NO_OOF_PASS_RETAIN_B |
+| E10-D | B-preserving local/TTA rescue | NO_FEASIBILITY_PASS_RETAIN_B; fixed gate accepts nothing |
+| E11 | Bounded training-background BCE | Incomplete; saved seed42 state56/100, best round54 macro Dice0.791550 |
 
-现有Polyp-PVT作E0参考 → 原始U-Net随机初始化E1 → E2三方案内部验证对照 → 选预训练ResNet34-U-Net，67轮全量重训 → E3固定等权概率融合 → E4强增强开发对照，76轮全量重训 → 计划E5固定E0＋E4融合。
+The E11 record was last updated14 October; process activity is not inferred from its saved TRAINING label. No completed three-seed E11 result exists in this snapshot.
 
-固定输入352，原尺寸概率阈值0.5，逐图二值Dice/IoU算术平均；ALL按798条目加权。主指标不是论文MATLAB协议的直接复现。
+[Full rationale/results](../../../ProjectReport/README.md), [next steps](../../../ProjectReport/ROADMAP.md), [exact evidence](../../../Miscellaneous/model_results/2026-10-22/README.md), [retained model card](../endolens_b/docs/MODEL_CARD.md).
 
-## E4开发与全量训练
-
-内部划分与E2-C相同：1160训练/290验证，100轮，唯一开发配方差异为flips→strong。最佳验证Dice 0.91618→0.91777，最优轮次67→76；末20轮平均Dice 0.90402→0.91417。最佳检查点低分均6条，E4有140条改善/150条退步，不能仅凭很小best增量认定稳定全面收益。
-
-最终模型从原ImageNet编码器及随机解码器重新开始，全部1450条目，76轮；Windows RTX5060 Laptop CUDA/AMP，约35分3秒。最终E2和E4轮数不同，因此测试对比是完整方案的对比。
-
-## 固定完整测试结果
-
-| 子集 | n | E0 Dice | E2 Dice | E4 Dice | E4 − E2 |
-|---|---:|---:|---:|---:|---:|
-| ALL | 798 | 0.8368 | 0.7549 | 0.7609 | +0.0060 |
-| Kvasir | 100 | 0.9204 | 0.8885 | 0.9116 | +0.0231 |
-| CVC-ClinicDB | 62 | 0.9403 | 0.8851 | 0.8755 | −0.0095 |
-| CVC-ColonDB | 380 | 0.8114 | 0.7545 | 0.7295 | −0.0251 |
-| ETIS | 196 | 0.7901 | 0.6105 | 0.6828 | +0.0723 |
-| CVC-300 | 60 | 0.9039 | 0.8718 | 0.8456 | −0.0261 |
-
-E1 ALL Dice/IoU为0.5707/0.4876；E2较其显著数值提升，但本项目未进行统计显著性检验。E3 ALL为0.8329/0.7606，仍低于E0的0.8368/0.7630。
-
-E4整体IoU 0.6903，MAE 0.04503（E2为0.03456）。零Dice 51→19，全背景预测18→0，但Dice<0.5为149→151。E4减少漏分的同时增加背景误分，像素汇总精确率0.6813→0.6110、召回率0.7748→0.8313；这些不是临床病灶检测指标。
-
-核验过798份概率/掩膜及逐图统计；E4最终评估来自匹配final检查点，完整状态COMPLETED。单图CUDA前向平均14.68ms不等于两分支/视频端到端FPS。
-
-## 下一步E5：先检验互补性
-
-冻结E0和E4现有原尺寸float32概率；配方预定为 `p_E5=0.5*p_E0+0.5*p_E4`、阈值0.5，不训练、不搜索权重或阈值。
-
-必须实现独立的E5入口和来源检查，不能直接用带E2来源标签的V3脚本冒充E5。保留完整来源哈希、清单、逐图和分组指标、低分/零分/增益下降统计及代表图。
-
-与E0、E4和E3对比；只超过较弱E4不足以称整体优化。特别检查ColonDB和ETIS，以及平均提高是否伴随较大样本退步。若改善E0/E3且重要子集/失败尾部可接受，再同GPU/精度/输入测联合前向、中位数/P95及端到端延迟。
-
-若仍未提高，优先一项内部开发对照：拆分几何与亮度/对比度增强，或单独改损失；不要同时改。必要时重复种子。继续使用内部验证选型，不追加轮次或在反复查看的测试集搜索最佳配方。
-
-## 应用工作与边界
-
-确定模型后，视频模块接入可配置抽帧/逐帧处理、时间戳、候选帧可视化；网页支持回看、人工mask修订和系统输出报告。需有时序且含阳性/阴性帧的视频评估覆盖和误报，候选帧数量不等于病灶数量，不声称已验证临床诊断或实时流式性能。
-
-固定官方划分与共享训练池本身不构成泄漏，但不保证患者/序列独立；测试重复及多轮已查看限制结论。内部验证可能被原PVT用于训练，未来如果需要学习融合参数必须获得两分支共同独立的数据。
-
-## 证据入口
-
-- [分享指标及训练历史](../../../Miscellaneous/model_results/)
-- [完整Word报告](../../../ProjectReport/)
-- [外部资产恢复](../../../Miscellaneous/model_artifacts/README.md)
-
-分享的summary/per_image便于组员同步分析；完整概率、掩膜和模型仍需单独迁移。
+FAR is adaptively reused development. C5 participates in checkpoint selection; C6 and the original798 are already viewed. Positive-only metrics do not establish negative-frame specificity, patient independence, clinical diagnostic performance or Web/video FPS. All NO_PASS statuses and original gates remain unchanged.

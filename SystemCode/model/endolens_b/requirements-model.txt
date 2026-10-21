@@ -1,0 +1,4 @@
+# Only the frame-level SDK; install torch2.9.1 and torchvision0.24.1 separately.
+numpy==1.26.4
+Pillow==10.2.0
+# Optional postprocess() helper additionally needs opencv-python-headless4.10.0.84.

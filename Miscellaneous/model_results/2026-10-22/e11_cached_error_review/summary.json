@@ -1,0 +1,8 @@
+{
+  "low_images": 30,
+  "far_fp_majority_images": 29,
+  "pooled_far_fp_fraction": 0.9606834190937703,
+  "definition": "Nearest-resized binary masks at352; GT dilation Chebyshev radius5. Descriptive only; does not identify folds/highlights or separate connected overgrowth from remote components.",
+  "new_model_forwards": 0,
+  "training_exports": 0
+}
