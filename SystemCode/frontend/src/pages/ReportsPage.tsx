@@ -1,0 +1,7 @@
+import { ReportCard } from '../components/ReportCard'
+import { mockDetections, mockReport } from '../utils/dataQueries'
+
+function ReportsPage() {
+  return <div className="mx-auto max-w-[1100px]"><section className="mb-2 rounded-lg bg-gradient-to-r from-[#112a47] to-[#1d5f9b] p-5 text-white"><h1 className="mb-1 text-[22px]">{mockReport.title}</h1><p className="text-xs text-[#c8e0f9]">{mockReport.caseName} · {mockReport.generatedAt} · Demo output for interface validation only</p></section><div className="mb-2 grid grid-cols-3 gap-2.5 max-[850px]:grid-cols-1"><ReportCard label="Candidate regions" value={String(mockDetections.length)} detail="Requires clinician review" /><ReportCard label="Highest confidence" value="92%" detail="Candidate polyp 001" /><ReportCard label="Video duration" value="12:30" detail="2,418 frames at 28.7 FPS" /></div><section className="rounded-md border border-slate-200 bg-white p-4 shadow-sm"><h2 className="mb-3 text-sm">Analysis summary</h2><p>{mockReport.summary}. This page presents deterministic mock data and is not a clinical diagnosis or medical recommendation.</p><div className="mt-3 flex gap-2"><button className="rounded bg-[#1677f2] px-3.5 py-2 text-xs text-white" onClick={() => window.print()}>Print report</button><button className="rounded border border-[#cbd9e8] bg-white px-[13px] py-2 text-xs text-[#35516f]">Export PDF</button></div></section></div>
+}
+export default ReportsPage

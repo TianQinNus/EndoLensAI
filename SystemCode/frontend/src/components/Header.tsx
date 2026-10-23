@@ -1,0 +1,3 @@
+export function Header() {
+  return <header className="flex h-[50px] items-center gap-6 bg-gradient-to-r from-[#0d1c30] to-[#142943] px-[18px] text-white"><div className="flex items-center gap-2.5 whitespace-nowrap text-[17px] font-bold"><span className="relative h-8 w-8 rounded-full border-[5px] border-[#2875f5] border-r-[#7148d9] after:absolute after:inset-[5px] after:rounded-full after:bg-[#102035]" aria-hidden="true" />EndoLens AI</div><span className="h-6 w-px bg-[#667891] opacity-65" /><span className="text-[13px] font-normal text-[#b9cbe0]">AI-assisted polyp detection for colonoscopy</span><span className="flex-1" /><span className="text-xl text-[#d6e2f0]" aria-label="User">♙</span></header>
+}
