@@ -1,5 +1,12 @@
 # Model and evaluation protocol
 
+**Current release, 31 October 2026:** E13 ResNet50 U-Net, epoch 94, rotate4,
+native pixel threshold 0.5 and component mean score >=0.8. The ResNet34 B model
+below is a historical baseline. Start with the [final SDK](../endolens_e13/README.md)
+and [final release/evaluation record](FINAL_MODEL_RELEASE.md).
+
+## Historical E0-E11 record (22 October snapshot)
+
 ## Data roles
 
 Historical E0-E5 use the original1,450 training /798 test entries. E2/E4 development uses1,160/290, then reinitializes for full-data training at the validation-selected epoch count,67 and76 respectively. Test results do not select epochs, weights or thresholds. There are701 distinct decoded RGB test images; exact overlap audits do not establish patient independence.

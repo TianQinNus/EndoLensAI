@@ -1,5 +1,12 @@
 # Team installation and reproduction guide
 
+**Current release, 31 October 2026:** E13 ResNet50 U-Net, epoch 94, rotate4,
+native pixel threshold 0.5 and component mean score >=0.8. The ResNet34 B model
+below is a historical baseline. Start with the [final SDK](../endolens_e13/README.md)
+and [final release/evaluation record](FINAL_MODEL_RELEASE.md).
+
+## Historical E0-E11 record (22 October snapshot)
+
 Updated22 October2026. Use master for the frozen B SDK/reference API; use model_exploration for E5-E11 experiment source and original-source recovery guidance. Preserve the separate frontend branch and teammate model work.
 
 ## Web integration

@@ -1,0 +1,16 @@
+{
+  "python": "3.11.17 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:16:54) [MSC v.1942 64 bit (AMD64)]",
+  "packages": {
+    "torch": "2.9.1+cu128",
+    "torchvision": "0.24.1+cu128",
+    "numpy": "1.26.4",
+    "Pillow": "10.2.0",
+    "opencv-python-headless": "4.10.0.84",
+    "av": "17.1.0",
+    "fastapi": "0.157.0",
+    "starlette": "0.52.1",
+    "uvicorn": "0.54.0",
+    "python-multipart": "0.0.32",
+    "httpx": "0.28.1"
+  }
+}

@@ -1,3 +1,2 @@
-from .adapter import ModelAdapter, PredictionResult, MODEL_VERSION, predict
-
-__all__ = ["ModelAdapter", "PredictionResult", "MODEL_VERSION", "predict"]
+"""Compatibility import for the canonical final E13 SDK."""
+from model.endolens_e13.endolens_model import *  # noqa: F401,F403

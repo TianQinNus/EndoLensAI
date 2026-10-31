@@ -1,63 +1,73 @@
-# EndoLens video-analysis backend
+# EndoLens AI modular backend
 
-This package integrates the frozen `unet-b-expanded-seed42-r98-v1` model and
-the recorded-video FastAPI service into the main EndoLensAI project.
+The current backend uses the final **E13 ResNet50 U-Net**, epoch 94, input 320,
+four-rotation logit averaging and native connected-region mean score >=0.8.
+Its model version is `e13-r50-joint-r94-r4-region080-v2`.
 
-The backend follows the formal boundaries in the technical specification:
-`core` contains configuration, `schemas` contains Pydantic contracts,
-`repositories` owns persistence adapters, `services` owns video and inference
-logic, `workers` owns task lifecycle adapters, and `api/v1` is the versioned
-route registration boundary. `main.py` is the application entrypoint; `app.py`
-remains a compatibility import for existing commands.
+## Model location
 
-It is a research/teaching integration service, not a clinical or public-facing
-deployment. The service supports H264 MP4 uploads, PTS-based sampling,
-asynchronous frame inference, AI masks, human mask review, reports, and CSV or
-JSON metadata exports.
+Canonical source, configuration, installer and the external weight live in
+[`../model/endolens_e13`](../model/endolens_e13/README.md).
+`backend.endolens_model` forwards imports to that SDK. The backend does not load
+the old ResNet34 model or a separate weight in `backend/weights`.
+`model.json` in this folder is a compatibility pointer, not a second model config.
+
+From the repository root, download and install the two Drive parts as described in
+[README section 4.1](../../README.md#41-system-requirements-and-model-download).
+Install Python 3.11, matching PyTorch/torchvision wheels and `requirements.txt`.
 
 ## Run
 
-From the repository root, after installing the dependencies in this directory,
-run the one-time configuration below. Uvicorn reads `UVICORN_HOST` and
-`UVICORN_PORT` before loading the application, so these two settings cannot be
-overridden by FastAPI code after startup.
+From the repository root with the backend environment active:
 
-```bash
-conda env config vars set -n endolens \
-  UVICORN_HOST=127.0.0.1 \
-  UVICORN_PORT=8000 \
-  ENDO_DEVICE=auto \
-  ENDO_STORAGE_DIR=runtime_data \
-  ENDO_MIN_REGION_AREA_RATIO=0 \
-  ENDO_CORS_ORIGINS=http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000
-```
-
-Close and reopen the terminal after changing conda environment variables.
-After that, the normal startup command is:
-
-```bash
+```powershell
 cd SystemCode
-conda activate endolens
-uvicorn backend.main:app --workers 1
+$env:ENDO_DEVICE = "auto"
+$env:ENDO_STORAGE_DIR = Join-Path (Get-Location) "runtime_data_e13"
+$env:ENDO_MIN_REGION_AREA_RATIO = "0"
+python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000 --workers 1
 ```
 
-For a LAN-only development server, set `UVICORN_HOST=0.0.0.0` once instead.
-Do not expose this research service directly to the public internet.
+On macOS/Linux, use `export NAME=value` for environment settings. CPU is supported.
+One process and one Uvicorn worker must own a storage directory. Avoid reload.
+Use a fresh storage directory and new tasks after upgrading the model: old masks
+do not update automatically. The old B model version is rejected in new requests.
 
-The complete project-local template is
-[`backend/.env.example`](.env.example). The backend only accepts explicit CORS
-origins; wildcard `*` is rejected to prevent accidental cross-origin exposure.
-The backend must run with one Uvicorn worker and one process per storage
-directory.
+Check `/api/v1/health` and `/api/v1/models` for both frozen release identities.
+API documentation is available at `/docs`, with a matching snapshot in `docs/openapi.json`.
+`ENDO_CORS_ORIGINS` accepts explicit frontend origins, not wildcard `*`.
+Uvicorn also accepts its normal `UVICORN_HOST`/`UVICORN_PORT` settings.
+The `.env.example` is a configuration reference, not an automatically loaded file.
+
+## Filtered output contract
+
+The adapter returns the canonical native `binary_mask` and its associated
+`postprocess_result`. The inference service uses that object directly.
+For injected test adapters that return raw probabilities only, the service applies
+the same frozen rule. Region means below 0.8 are deleted from masks, contours,
+regions and candidate counts. An empty final mask is not a candidate.
+
+`probability_map` is diagnostic. Do not threshold it again in the frontend.
+No area gate or temporal confirmation is enabled. Nonzero
+`ENDO_MIN_REGION_AREA_RATIO` is rejected. Region scores are not calibrated disease
+probabilities and candidate counts are frames, not unique lesions.
+
+The existing boundaries remain: `core`, `schemas`, `repositories`, `services`,
+`workers` and `api/v1`. Uploads, PTS sampling, cancellation, immutable AI masks,
+human revisions, reports and CSV/JSON exports retain their existing endpoints.
 
 ## Test
 
-```bash
+```powershell
 cd SystemCode
-python -m unittest discover -s backend/tests -p 'test*.py' -v
+python -m unittest discover -s backend/tests -p "test*.py" -v
 ```
 
-The CPU model tests use the committed model contract and weight asset. The
-weight file is ignored by the repository's existing large-artifact policy, so
-deployment must provision `weights/unet_b_expanded_seed42.pt` alongside this
-package.
+Run this command from the repository root in a new terminal. The real CPU fixture
+requires the installed E13 weight. Other tests use synthetic adapters to check
+HTTP and storage contracts. They do not evaluate clinical performance or FPS.
+
+The earlier [technical specification](docs/BACKEND_TECHNICAL_SPEC.md) records the
+historical B integration. Current model details above, the OpenAPI snapshot and
+[final release record](../model/docs/FINAL_MODEL_RELEASE.md) supersede its old
+352-input, B-weight and candidate-area-only statements.

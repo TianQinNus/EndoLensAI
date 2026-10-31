@@ -1,0 +1,4 @@
+# Install matching torch2.9.1 / torchvision0.24.1 CPU or CUDA wheels separately.
+numpy==1.26.4
+Pillow==10.2.0
+opencv-python-headless==4.10.0.84

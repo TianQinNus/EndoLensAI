@@ -6,8 +6,8 @@ ROOT = Path(__file__).resolve().parent.parent
 MAX_UPLOAD = 100 * 1024**2
 WARNINGS = [
     "RESEARCH_DEMO_NOT_CLINICAL",
-    "POSITIVE_ONLY_MODEL:NO_NEGATIVE_FRAME_SPECIFICITY_CLAIM",
-    "AREA_GATE_UNVALIDATED_ENGINEERING_RULE",
+    "POSITIVE_NEGATIVE_TRAINING:RESIDUAL_FALSE_POSITIVES_REMAIN",
+    "C6_REUSED_DEVELOPMENT:NOT_INDEPENDENT_VALIDATION",
     "CANDIDATE_COUNT_IS_FRAMES_NOT_DISTINCT_POLYPS",
     "FOREGROUND_SCORE_NOT_CALIBRATED_CLINICAL_PROBABILITY",
 ]
@@ -15,8 +15,8 @@ WARNINGS = [
 
 def area_gate() -> float:
     value = float(os.getenv("ENDO_MIN_REGION_AREA_RATIO", "0"))
-    if not math.isfinite(value) or not 0 <= value <= 1:
-        raise ValueError("Invalid ENDO_MIN_REGION_AREA_RATIO")
+    if not math.isfinite(value) or value != 0.0:
+        raise ValueError("E13 fixes ENDO_MIN_REGION_AREA_RATIO=0; component mean >=0.8 is the released rule")
     return value
 
 

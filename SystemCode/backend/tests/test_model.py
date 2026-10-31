@@ -6,7 +6,7 @@ import torch
 from backend.endolens_model import ModelAdapter, MODEL_VERSION
 from backend.endolens_model.adapter import preprocess
 
-ROOT=Path(__file__).resolve().parent.parent
+ROOT=Path(__file__).resolve().parents[2]/"model/endolens_e13"
 
 
 class RealModelTests(unittest.TestCase):
@@ -30,8 +30,8 @@ class RealModelTests(unittest.TestCase):
     def test_preprocessing_matches_fixed_rgb_normalization(self):
         rgb=np.zeros((12,19,3),np.uint8);rgb[:,:,0]=255
         x=preprocess(rgb)
-        self.assertEqual(tuple(x.shape),(1,3,352,352))
-        expected=torch.tensor([(1-.485)/.229,-.456/.224,-.406/.225])
+        self.assertEqual(tuple(x.shape),(1,3,320,320))
+        expected=torch.tensor([1.,0.,0.])  # ImageNet normalisation is embedded in UNet
         torch.testing.assert_close(x[0,:,0,0],expected,rtol=1e-6,atol=1e-6)
 
 

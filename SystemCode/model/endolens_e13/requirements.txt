@@ -1,0 +1,11 @@
+# Install torch2.9.1 + torchvision0.24.1 separately (CPU or official cu128 wheel).
+# Python3.11. This list was installed and tested in an isolated directory.
+numpy==1.26.4
+Pillow==10.2.0
+opencv-python-headless==4.10.0.84
+av==17.1.0
+fastapi==0.157.0
+starlette==0.52.1
+uvicorn==0.54.0
+python-multipart==0.0.32
+httpx==0.28.1

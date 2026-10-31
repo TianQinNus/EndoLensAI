@@ -41,3 +41,9 @@ Thumbs.db
 /SystemCode/model/endolens_b/runtime_data/
 /SystemCode/model/endolens_b/single_frame_output/
 /SystemCode/model/endolens_b/_test_*/
+
+# Final E13 weights stay on Google Drive. Only the synthetic regression fixture is tracked.
+!/SystemCode/model/endolens_e13/examples/synthetic_probability.npy
+/SystemCode/model/endolens_e13/runtime_data/
+/SystemCode/model/endolens_e13/_test_*/
+/SystemCode/backend/_test_*/

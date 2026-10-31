@@ -24,7 +24,7 @@ from .core.config import (
     device as configured_device,
     storage_dir as configured_storage_dir,
 )
-from .endolens_model import ModelAdapter
+from .endolens_model import ModelAdapter, POSTPROCESS_VERSION
 from .services.inference_service import InferenceService, image_bytes
 from .services.video_service import VideoService
 from .storage import Store
@@ -133,9 +133,12 @@ class Runtime:
                     contours=post.contours,
                     regions=post.regions,
                     component_count=post.component_count,
+                    raw_component_count=post.raw_component_count,
+                    removed_component_count=post.removed_component_count,
+                    postprocessing_version=POSTPROCESS_VERSION,
                     display_geometry_truncated=post.display_geometry_truncated,
                     foreground_score=post.foreground_score,
-                    score_type="mean_foreground_score_of_largest_component",
+                    score_type="mean_foreground_score_of_largest_retained_component",
                     segmented_area_ratio=post.segmented_area_ratio,
                     inference_time_ms=result.inference_time_ms,
                     device=result.device,
@@ -185,7 +188,7 @@ def create_app(storage_dir=None, adapter=None, device=None):
                 app.state.runtime.close()
             store.close()
 
-    app = FastAPI(title="EndoLens B integration starter", version="1.0.0", lifespan=lifespan)
+    app = FastAPI(title="EndoLens AI E13 video analysis", version="2.0.0", lifespan=lifespan)
     app.add_middleware(
         CORSMiddleware,
         allow_origins=cors_origins(),

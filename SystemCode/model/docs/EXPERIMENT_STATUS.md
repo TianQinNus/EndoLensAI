@@ -1,5 +1,12 @@
 # Experiment status
 
+**Current release, 31 October 2026:** E13 ResNet50 U-Net, epoch 94, rotate4,
+native pixel threshold 0.5 and component mean score >=0.8. The ResNet34 B model
+below is a historical baseline. Start with the [final SDK](../endolens_e13/README.md)
+and [final release/evaluation record](FINAL_MODEL_RELEASE.md).
+
+## Historical E0-E11 record (22 October snapshot)
+
 Snapshot22 October2026. Current integration model: original E8 B, seed42 round98. A higher partial epoch score, a favorable example, or the best mean among failing fusion candidates does not change this selection.
 
 | Stage | Main intervention | Recorded outcome |

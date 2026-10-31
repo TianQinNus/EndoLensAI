@@ -3,7 +3,7 @@ import time
 from fastapi import APIRouter, HTTPException, Request
 
 from ...core.config import WARNINGS
-from ...endolens_model import MODEL_VERSION
+from ...endolens_model import MODEL_VERSION, POSTPROCESS_VERSION
 from ...schemas.requests import AnalysisInput
 from ..dependencies import get_frame_rows, get_record, get_runtime, now, identity
 
@@ -20,12 +20,16 @@ def analyze(body: AnalysisInput, request: Request):
         **body.model_dump(),
         "segmentation_threshold": 0.5,
         "min_region_area_ratio": runtime.area_gate,
-        "candidate_rule_status": "UNVALIDATED_ENGINEERING_DEMO",
+        "min_region_mean_score": 0.8,
+        "mask_filtering": True,
+        "connectivity": 8,
+        "temporal_confirmation": False,
+        "candidate_rule_status": "FINAL_TEAM_SELECTION_C6_DEVELOPMENT_REUSED",
         "source_checkpoint_sha256": description["source_checkpoint_sha256"],
         "model_weights_sha256": description.get("weights_sha256", "TEST_ONLY"),
         "model_device": description["device"],
         "preprocessing": description.get("input", {}),
-        "postprocessing_version": "candidate-area-demo-v1",
+        "postprocessing_version": POSTPROCESS_VERSION,
     }
     value = {
         "task_id": task_id,

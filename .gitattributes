@@ -9,3 +9,9 @@
 # The reviewed portable weight fits the regular GitHub file limit; this public fork rejects new LFS objects.
 SystemCode/model/endolens_b/** -text
 SystemCode/model/endolens_b/weights/unet_b_expanded_seed42.pt binary
+
+# Preserve the frozen portable E13 source, configuration and fixture bytes.
+SystemCode/model/endolens_e13/** -text whitespace=cr-at-eol
+# Preserve the original result CSV bytes, including their Windows line endings.
+Miscellaneous/model_results/2026-10-31/*.csv -text whitespace=cr-at-eol
+SystemCode/backend/docs/openapi.json -text whitespace=cr-at-eol

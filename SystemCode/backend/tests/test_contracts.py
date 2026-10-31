@@ -38,10 +38,11 @@ class PostprocessingTests(unittest.TestCase):
         self.assertFalse(result.is_candidate);self.assertIsNone(result.foreground_score)
         self.assertEqual(result.max_region_area_ratio,0.)
 
-    def test_area_gate_never_deletes_small_mask(self):
+    def test_high_score_small_mask_retained_and_area_gate_rejected(self):
         p=np.zeros((100,100),np.float32);p[30:32,50:52]=.9
-        result=postprocess(p,min_region_area_ratio=.01)
-        self.assertFalse(result.is_candidate);self.assertEqual(int(result.binary_mask.sum()),4)
+        result=postprocess(p)
+        self.assertTrue(result.is_candidate);self.assertEqual(int(result.binary_mask.sum()),4)
+        with self.assertRaises(ValueError):postprocess(p,min_region_area_ratio=.01)
         self.assertAlmostEqual(result.foreground_score,.9,places=6)
         self.assertEqual(result.binary_mask.dtype,np.uint8)
 

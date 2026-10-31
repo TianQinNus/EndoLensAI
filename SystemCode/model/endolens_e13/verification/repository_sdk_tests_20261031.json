@@ -1,0 +1,7 @@
+{
+  "tests": 22,
+  "failures": 0,
+  "errors": 0,
+  "success": true,
+  "scope": "Synthetic API edge cases + real CPU model fixture. Stub API tests are not real-model clinical performance."
+}

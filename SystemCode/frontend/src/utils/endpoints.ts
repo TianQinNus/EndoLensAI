@@ -43,7 +43,7 @@ export function createAnalysis(videoId: string): Promise<{ task_id: string }> {
       video_id: videoId,
       sampling_mode: 'interval',
       interval_seconds: 1,
-      model_version: 'unet-b-expanded-seed42-r98-v1',
+      model_version: 'e13-r50-joint-r94-r4-region080-v2',
     }),
   })
 }

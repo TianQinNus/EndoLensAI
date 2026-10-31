@@ -15,6 +15,10 @@ def models(request: Request):
         "postprocessing": {
             "segmentation_threshold": 0.5,
             "min_region_area_ratio": runtime.area_gate,
-            "validation_status": "engineering_demo_unvalidated_area_gate",
+            "min_region_mean_score": 0.8,
+            "mask_filtering": True,
+            "connectivity": 8,
+            "temporal_confirmation": False,
+            "validation_status": "C6_DEVELOPMENT_REUSED_NOT_INDEPENDENT",
         },
     }

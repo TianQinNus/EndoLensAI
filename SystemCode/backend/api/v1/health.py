@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Request
 
-from ...endolens_model import MODEL_VERSION
+from ...endolens_model import MODEL_VERSION, POSTPROCESS_VERSION
 from ..dependencies import get_runtime
 
 router = APIRouter()
@@ -13,6 +13,7 @@ def health(request: Request):
     return {
         "status": "ready",
         "model_version": MODEL_VERSION,
+        "postprocessing_version": POSTPROCESS_VERSION,
         "device": description["device"],
         "clinical_use": False,
     }

@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "scope": "Actual CPU E13 model through modular FastAPI TestClient and synthetic video; not a clinical/FPS test",
+  "model_version": "e13-r50-joint-r94-r4-region080-v2",
+  "postprocessing_version": "native-cc8-pixel050-mean080-v1",
+  "frames": 4,
+  "candidate_frames": 0,
+  "failed_frames": 0,
+  "mask_candidate_region_consistency": true,
+  "weight_sha256": "dc6c9092baf68cf9e66264f632fae76642ff621282aaa7f65dbf8a899f168e68"
+}

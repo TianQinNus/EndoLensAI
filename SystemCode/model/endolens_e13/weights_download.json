@@ -1,0 +1,24 @@
+{
+  "model_version": "e13-r50-joint-r94-r4-region080-v2",
+  "weights_file": "e13_resnet50_joint_seed42_epoch94.pt",
+  "weights_size_bytes": 130413723,
+  "weights_sha256": "dc6c9092baf68cf9e66264f632fae76642ff621282aaa7f65dbf8a899f168e68",
+  "parts": [
+    {
+      "file": "e13_resnet50_joint_seed42_epoch94.pt.part01",
+      "size_bytes": 67108864,
+      "sha256": "eef396d846ae57c5d96860faed522e34a6ac2b4ccb89021eb51839b1aa2d9b3c",
+      "drive_file_id": "1pw_dTRumCR9gzV01QwTre7jnBrnS1EQF",
+      "drive_view_url": "https://drive.google.com/file/d/1pw_dTRumCR9gzV01QwTre7jnBrnS1EQF/view?usp=drivesdk"
+    },
+    {
+      "file": "e13_resnet50_joint_seed42_epoch94.pt.part02",
+      "size_bytes": 63304859,
+      "sha256": "0cbf71ed1ca6c15e8c39636122f97d433f7c1e892509b9c94f2fe38fee8782f3",
+      "drive_file_id": "1jK8p2FNagEAzYvKJ5aNW9XcCnKJ6BESa",
+      "drive_view_url": "https://drive.google.com/file/d/1jK8p2FNagEAzYvKJ5aNW9XcCnKJ6BESa/view?usp=drivesdk"
+    }
+  ],
+  "reason": "Lossless split to satisfy the upload connector 100 MiB per-file limit. Concatenate in listed order; no weight conversion.",
+  "drive_folder_url": "https://drive.google.com/drive/folders/12nddUWrat2Ih4sHpa4c8M-DuO76tDEKO"
+}

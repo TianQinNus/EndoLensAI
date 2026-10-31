@@ -1,8 +1,8 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "EndoLens B integration starter",
-    "version": "1.0.0"
+    "title": "EndoLens AI E13 video analysis",
+    "version": "2.0.0"
   },
   "paths": {
     "/api/v1/health": {
@@ -200,6 +200,43 @@
         ],
         "responses": {
           "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/analyses/{task_id}/report": {
+      "get": {
+        "summary": "Report",
+        "operationId": "report_api_v1_analyses__task_id__report_get",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
             "description": "Successful Response",
             "content": {
               "application/json": {
@@ -431,43 +468,6 @@
         }
       }
     },
-    "/api/v1/analyses/{task_id}/report": {
-      "get": {
-        "summary": "Report",
-        "operationId": "report_api_v1_analyses__task_id__report_get",
-        "parameters": [
-          {
-            "name": "task_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "title": "Task Id"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/v1/analyses/{task_id}/exports": {
       "post": {
         "summary": "Export",
@@ -587,9 +587,9 @@
           },
           "model_version": {
             "type": "string",
-            "const": "unet-b-expanded-seed42-r98-v1",
+            "const": "e13-r50-joint-r94-r4-region080-v2",
             "title": "Model Version",
-            "default": "unet-b-expanded-seed42-r98-v1"
+            "default": "e13-r50-joint-r94-r4-region080-v2"
           }
         },
         "additionalProperties": false,

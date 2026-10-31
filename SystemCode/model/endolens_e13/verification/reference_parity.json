@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "model_version": "e13-r50-joint-r94-r4-region080-v2",
+  "postprocessing_version": "native-cc8-pixel050-mean080-v1",
+  "source_checkpoint_sha256": "1dadc0706f69069104f1395a3959ade36beca8be4be0b2c4b2cf821471a59088",
+  "export_weights_sha256": "dc6c9092baf68cf9e66264f632fae76642ff621282aaa7f65dbf8a899f168e68",
+  "all_state_tensors_equal": true,
+  "state_tensor_keys": 352,
+  "native_rule_replay_samples": 1843,
+  "positive_count": 83,
+  "positive_dice": 0.8560726717069738,
+  "positive_iou": 0.7929913926921509,
+  "negative_count": 1760,
+  "negative_false_positive_frames": 369,
+  "negative_frame_fpr": 0.2096590909090909,
+  "actual_exported_forward_cases": [
+    {
+      "case": "positive",
+      "sample_id": "PolypGen-C6/EndoCV2021_C6_0100001",
+      "probability_max_abs_difference": 0.0,
+      "mask_exact": true,
+      "is_candidate": true
+    },
+    {
+      "case": "small_positive",
+      "sample_id": "PolypGen-C6/EndoCV2021_C6_0100039",
+      "probability_max_abs_difference": 0.0,
+      "mask_exact": true,
+      "is_candidate": true
+    },
+    {
+      "case": "zero_overlap_positive",
+      "sample_id": "PolypGen-C6/EndoCV2021_C6_0100065",
+      "probability_max_abs_difference": 0.0,
+      "mask_exact": true,
+      "is_candidate": false
+    },
+    {
+      "case": "retained_negative",
+      "sample_id": "negative-single-C6/EndoCV2021_C6_0100056",
+      "probability_max_abs_difference": 0.0,
+      "mask_exact": true,
+      "is_candidate": true
+    },
+    {
+      "case": "confidence_rejected_negative",
+      "sample_id": "negative-single-C6/EndoCV2021_C6_0100059",
+      "probability_max_abs_difference": 0.0,
+      "mask_exact": true,
+      "is_candidate": false
+    },
+    {
+      "case": "raw_empty_negative",
+      "sample_id": "negative-single-C6/EndoCV2021_C6_0100070",
+      "probability_max_abs_difference": 0.0,
+      "mask_exact": true,
+      "is_candidate": false
+    }
+  ],
+  "note": "Packaging equivalence to E13/E14; not new independent performance validation. No patient images redistributed."
+}

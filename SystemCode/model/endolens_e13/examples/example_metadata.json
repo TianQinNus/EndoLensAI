@@ -1,0 +1,10 @@
+{
+  "synthetic": true,
+  "clinical": false,
+  "model_version": "e13-r50-joint-r94-r4-region080-v2",
+  "postprocessing_version": "native-cc8-pixel050-mean080-v1",
+  "is_candidate": false,
+  "retained_components": 0,
+  "removed_components": 0,
+  "warning": "Actual released model output on nonclinical synthetic graphics; not an accuracy or FPS result"
+}

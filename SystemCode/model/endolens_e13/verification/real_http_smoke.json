@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "transport": "real HTTP",
+  "task_id": "d60ff4abf041419898e622e3af2b6947",
+  "model_version": "e13-r50-joint-r94-r4-region080-v2",
+  "progress": {
+    "target_frames": 4,
+    "processed_frames": 4,
+    "candidate_frames": 0,
+    "failed_frames": 0,
+    "percent": 100.0
+  },
+  "keyframes": 4,
+  "range_206": true,
+  "assets_ok": true,
+  "report_counts_match": true,
+  "csv_download_ok": true,
+  "warning": "Integration only. Default video is synthetic; not a clinical/FPS evaluation."
+}

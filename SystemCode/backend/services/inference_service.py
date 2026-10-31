@@ -21,11 +21,14 @@ class InferenceService:
 
     def predict(self, frame_rgb: np.ndarray, model_version: str):
         result = self.adapter.predict(frame_rgb, model_version)
-        return result, postprocess(
-            result.probability_map,
-            segmentation_threshold=0.5,
-            min_region_area_ratio=self.area_gate,
-        )
+        if self.area_gate != 0.0:
+            raise ValueError("The final release has no area gate")
+        # Production adapters already attach the canonical native filtered result.
+        # The fallback supports injected raw-only test adapters with the same rule.
+        filtered = result.postprocess_result
+        if filtered is None:
+            filtered = postprocess(result.probability_map)
+        return result, filtered
 
     @staticmethod
     def source_image(frame_rgb: np.ndarray) -> Image.Image:
